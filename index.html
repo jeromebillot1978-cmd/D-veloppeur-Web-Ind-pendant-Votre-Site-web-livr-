@@ -455,6 +455,98 @@
       .section, .cta { padding: 70px 28px; }
       .stack, footer { padding: 50px 28px; }
     }
+    /* ── FORMULAIRE DEVIS ── */
+    .devis-section {
+      padding: 100px 80px;
+      background: var(--surface);
+    }
+    .devis-form {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      width: 100%;
+      appearance: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(201,168,76,0.1);
+    }
+    .form-group select option { background: var(--card); color: var(--text); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-submit {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .form-notice {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 12px;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px;
+      border: 1px solid var(--gold);
+      background: rgba(201,168,76,0.05);
+    }
+    .form-success .success-icon { font-size: 40px; margin-bottom: 16px; }
+    .form-success h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .form-success p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .devis-section { padding: 70px 24px; }
+    }
   </style>
 </head>
 <body>
@@ -646,15 +738,95 @@
     </div>
   </div>
 
-  <!-- ── CTA ── -->
-  <section class="cta" id="contact">
+  <!-- ── FORMULAIRE DEVIS ── -->
+  <section class="devis-section" id="contact">
     <div class="section-tag">Prêt à commencer ?</div>
-    <h2>Parlons de <em>votre projet</em></h2>
+    <h2 class="section-title">Demande de <em>Devis Gratuit</em></h2>
     <div class="ornament">✦</div>
-    <p>Un projet en tête ? Écrivez-moi et recevez une réponse sous 24h. Premier échange toujours gratuit.</p>
-    <a href="mailto:jercat.bilman@gmail.com" class="btn-gold">✉ Envoyer un message</a>
+    <p class="section-intro">Remplissez le formulaire — je vous réponds sous 24h avec un devis personnalisé.</p>
 
-    <div class="contact-row">
+    <form class="devis-form" id="devisForm">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nom">Nom & Prénom *</label>
+          <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required />
+        </div>
+        <div class="form-group">
+          <label for="tel">Téléphone *</label>
+          <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Adresse Email *</label>
+        <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="adresse">Adresse / Ville</label>
+        <input type="text" id="adresse" name="adresse" placeholder="Paris, France" />
+      </div>
+
+      <div class="form-group">
+        <label for="type">Type de site souhaité *</label>
+        <select id="type" name="type" required>
+          <option value="" disabled selected>Choisir...</option>
+          <option value="Site Vitrine">Site Vitrine</option>
+          <option value="E-Commerce">E-Commerce / Boutique en ligne</option>
+          <option value="Landing Page">Landing Page</option>
+          <option value="Refonte">Refonte de site existant</option>
+          <option value="Application Web">Application Web</option>
+          <option value="SEO">SEO & Performance</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="budget">Budget estimé</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Choisir...</option>
+            <option value="Moins de 300€">Moins de 300€</option>
+            <option value="300€ - 600€">300€ - 600€</option>
+            <option value="600€ - 1000€">600€ - 1 000€</option>
+            <option value="1000€ - 2000€">1 000€ - 2 000€</option>
+            <option value="Plus de 2000€">Plus de 2 000€</option>
+            <option value="À définir">À définir ensemble</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="delai">Délai souhaité</label>
+          <select id="delai" name="delai">
+            <option value="" disabled selected>Choisir...</option>
+            <option value="Le plus vite possible">Le plus vite possible</option>
+            <option value="1 à 2 semaines">1 à 2 semaines</option>
+            <option value="1 mois">1 mois</option>
+            <option value="Pas de contrainte">Pas de contrainte</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="projet">Description de votre projet *</label>
+        <textarea id="projet" name="projet" placeholder="Décrivez votre activité, vos besoins, vos idées, des exemples de sites que vous aimez..." required></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-gold">✉ Envoyer ma demande de devis</button>
+        <p class="form-notice">Réponse garantie sous 24h — Premier échange toujours gratuit</p>
+      </div>
+
+    </form>
+
+    <!-- Message de succès -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">✦</div>
+      <h3>Demande envoyée !</h3>
+      <p>Merci pour votre message. Je vous réponds sous 24h à l'adresse indiquée.</p>
+    </div>
+
+    <div class="contact-row" style="margin-top: 48px;">
       <a href="mailto:jercat.bilman@gmail.com">jercat.bilman@gmail.com</a>
       <span class="sep">—</span>
       <a href="https://t.me/JEROME1978" target="_blank">✈ Telegram @JEROME1978</a>
@@ -685,7 +857,49 @@
       });
     });
 
-    // Scroll reveal
+    // ── FORMULAIRE DEVIS → Gmail ──
+    document.getElementById('devisForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nom     = document.getElementById('nom').value;
+      const tel     = document.getElementById('tel').value;
+      const email   = document.getElementById('email').value;
+      const adresse = document.getElementById('adresse').value;
+      const type    = document.getElementById('type').value;
+      const budget  = document.getElementById('budget').value;
+      const delai   = document.getElementById('delai').value;
+      const projet  = document.getElementById('projet').value;
+
+      const sujet = encodeURIComponent(`[DEVIS] ${type} — ${nom}`);
+      const corps = encodeURIComponent(
+`📋 NOUVELLE DEMANDE DE DEVIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👤 Nom       : ${nom}
+📞 Téléphone : ${tel}
+📧 Email     : ${email}
+📍 Adresse   : ${adresse || 'Non renseignée'}
+
+🌐 Type de site : ${type}
+💰 Budget       : ${budget || 'Non renseigné'}
+⏱ Délai        : ${delai || 'Non renseigné'}
+
+📝 Description du projet :
+${projet}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Demande reçue via jercat.vercel.app`
+      );
+
+      // Ouvre Gmail avec les infos pré-remplies
+      window.location.href = `mailto:jercat.bilman@gmail.com?subject=${sujet}&body=${corps}`;
+
+      // Affiche le message de succès
+      setTimeout(() => {
+        document.getElementById('devisForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }, 800);
+    });
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
