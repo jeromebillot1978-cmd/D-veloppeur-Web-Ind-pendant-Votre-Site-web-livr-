@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Développeur Web — Jercat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a08;
+      --surface: #111110;
+      --card: #141412;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-dark: #8b6914;
+      --text: #f0e6d0;
+      --muted: #8a7d65;
+      --border: rgba(201,168,76,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Gold divider ornament */
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+    }
+    .ornament::before, .ornament::after {
+      content: '';
+      height: 1px;
+      width: 60px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .ornament::after { background: linear-gradient(90deg, var(--gold), transparent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 50% 100%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    }
+
+    .hero-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 1s 0.2s forwards;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(52px, 8vw, 110px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      opacity: 0;
+      animation: fadeUp 1s 0.4s forwards;
+    }
+    h1 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.15em;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+
+    .hero-sub {
+      margin-top: 32px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 1s 0.6s forwards;
+    }
+
+    .hero-actions {
+      margin-top: 52px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s 0.8s forwards;
+    }
+
+    .btn-gold {
+      padding: 16px 40px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+      background-size: 200% 200%;
+      color: #0a0a08;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-position 0.4s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.2);
+    }
+    .btn-gold:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+    }
+
+    .btn-outline-gold {
+      padding: 15px 40px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+    .btn-outline-gold:hover {
+      background: rgba(201,168,76,0.08);
+      transform: translateY(-2px);
+    }
+
+    /* ── STATS ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat-item {
+      padding: 48px 40px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 52px;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      margin-top: 10px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-family: 'Cinzel', serif;
+    }
+
+    /* ── SECTION COMMONS ── */
+    .section { padding: 100px 80px; }
+    .section-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(36px, 4vw, 64px);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .section-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
+    .section-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--muted);
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 60px;
+      line-height: 1.7;
+    }
+
+    /* ── AVANTAGES — cartes 3D ── */
+    .avantages { background: var(--surface); }
+
+    .avantages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      perspective: 1000px;
+    }
+
+    .card-3d {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 44px 32px;
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease, box-shadow 0.3s;
+      cursor: default;
+    }
+    .card-3d::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card-3d:hover::before { opacity: 1; }
+    .card-3d:hover {
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(201,168,76,0.08);
+    }
+    .card-3d::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card-3d:hover::after { opacity: 1; }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .card-num {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gold-dark);
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      perspective: 1000px;
+    }
+
+    /* ── PROCESS ── */
+    .process { background: var(--surface); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .step {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+    .step:hover { border-top-color: var(--gold); }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 72px;
+      color: rgba(201,168,76,0.08);
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+    .step-title {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      color: var(--gold-light);
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ── TECH ── */
+    .stack { padding: 60px 80px; border-top: 1px solid var(--border); }
+    .stack-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .tech-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tech-pill {
+      padding: 8px 20px;
+      border: 1px solid var(--border);
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tech-pill:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── CTA ── */
+    .cta {
+      padding: 120px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);
+    }
+    .cta h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(40px, 5vw, 80px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .cta h2 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+      display: block;
+    }
+    .cta p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .contact-row {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .contact-row a { color: var(--gold); text-decoration: none; }
+    .contact-row a:hover { color: var(--gold-light); }
+    .sep { color: var(--border); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 80px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface);
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+    }
+    .footer-copy {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .stats { grid-template-columns: 1fr; }
+      .avantages-grid, .services-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .section, .cta { padding: 70px 28px; }
+      .stack, footer { padding: 50px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-tag">Développeur Web Indépendant</div>
+    <h1>
+      Votre Site
+      <em>web livré.</em>
+    </h1>
+    <div class="ornament">✦</div>
+    <p class="hero-sub">
+      Full-stack spécialisé dans la création de sites performants, modernes et sur-mesure — du landing page au e-commerce complet.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-gold">Démarrer un projet</a>
+      <a href="#services" class="btn-outline-gold">Mes services</a>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-num">5★</div>
+      <div class="stat-label">Note moyenne</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7j</div>
+      <div class="stat-label">Délai moyen</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Clients satisfaits</div>
+    </div>
+  </div>
+
+  <!-- ── AVANTAGES ── -->
+  <section class="section avantages" id="avantages">
+    <div class="section-tag">Pourquoi c'est essentiel</div>
+    <h2 class="section-title">Pourquoi avoir <em>un site web ?</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Dans un monde 100% connecté, votre présence en ligne n'est plus une option — c'est votre premier commercial.</p>
+    <div class="avantages-grid">
+
+      <div class="card-3d">
+        <div class="card-num">01</div>
+        <span class="card-icon">🌐</span>
+        <div class="card-title">Visible 24h/24, 7j/7</div>
+        <p class="card-desc">Votre site travaille même quand vous dormez. Vos clients peuvent vous trouver et vous contacter à n'importe quelle heure.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">02</div>
+        <span class="card-icon">🎯</span>
+        <div class="card-title">Crédibilité & Confiance</div>
+        <p class="card-desc">75% des consommateurs jugent la crédibilité d'une entreprise par son site. Sans site, vous perdez des clients avant même qu'ils vous contactent.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">03</div>
+        <span class="card-icon">📈</span>
+        <div class="card-title">Nouveaux Clients en Continu</div>
+        <p class="card-desc">Grâce au référencement Google, votre site attire des prospects qualifiés qui cherchent exactement ce que vous proposez.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">04</div>
+        <span class="card-icon">💼</span>
+        <div class="card-title">Votre Vitrine Professionnelle</div>
+        <p class="card-desc">Présentez vos services, vos réalisations, vos avis clients. Un site bien fait remplace une brochure, un commercial et un service client.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">05</div>
+        <span class="card-icon">🚀</span>
+        <div class="card-title">Devancer la Concurrence</div>
+        <p class="card-desc">Vos concurrents ont déjà un site. Si ce n'est pas vous qui apparaissez en premier sur Google, c'est eux.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">06</div>
+        <span class="card-icon">💰</span>
+        <div class="card-title">Meilleur Retour sur Investissement</div>
+        <p class="card-desc">Un site internet est l'outil marketing le moins cher et le plus rentable. Chaque visiteur est un client potentiel sans coût supplémentaire.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="section" id="services">
+    <div class="section-tag">Ce que je fais</div>
+    <h2 class="section-title">Mes <em>Services</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Des solutions web taillées sur-mesure pour chaque besoin, chaque budget, chaque ambition.</p>
+    <div class="services-grid">
+
+      <div class="card-3d">
+        <div class="card-num">01</div>
+        <span class="card-icon">🖥</span>
+        <div class="card-title">Site Vitrine</div>
+        <p class="card-desc">Un site professionnel qui présente votre activité, renforce votre image et convertit vos visiteurs en clients. Design soigné, rapide et mobile-first.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">02</div>
+        <span class="card-icon">🛒</span>
+        <div class="card-title">E-Commerce</div>
+        <p class="card-desc">Boutique en ligne complète avec gestion des produits, paiement sécurisé, suivi des commandes. Prêt à vendre dès le lancement.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">03</div>
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Landing Page</div>
+        <p class="card-desc">Une page percutante, optimisée pour la conversion. Idéale pour lancer un produit, une offre ou une campagne publicitaire.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">04</div>
+        <span class="card-icon">🔍</span>
+        <div class="card-title">SEO & Performance</div>
+        <p class="card-desc">Audit, optimisation technique et référencement naturel pour que votre site remonte sur Google et charge en moins d'une seconde.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">05</div>
+        <span class="card-icon">🔧</span>
+        <div class="card-title">Refonte & Maintenance</div>
+        <p class="card-desc">Votre site est vieillissant ou cassé ? Je le remets à neuf, modernise son design et assure sa maintenance continue.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">06</div>
+        <span class="card-icon">📱</span>
+        <div class="card-title">Application Web</div>
+        <p class="card-desc">Tableau de bord, outil métier, app sur-mesure. Interface intuitive, données en temps réel, expérience utilisateur irréprochable.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <section class="section process">
+    <div class="section-tag">Comment ça marche</div>
+    <h2 class="section-title">Mon <em>Processus</em></h2>
+    <div class="ornament">✦</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Échange Gratuit</div>
+        <p class="step-desc">On discute de votre projet, vos objectifs, votre budget. Je cerne exactement ce dont vous avez besoin.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Devis & Maquette</div>
+        <p class="step-desc">Devis clair et première maquette visuelle. Vous validez avant qu'on commence — aucune surprise.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Développement</div>
+        <p class="step-desc">Je code votre site en vous tenant informé à chaque étape. Accès à une préversion en temps réel.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Livraison & Suivi</div>
+        <p class="step-desc">Mise en ligne, formation, support post-lancement. Votre site est entre de bonnes mains.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TECH ── -->
+  <div class="stack">
+    <div class="stack-label">Technologies maîtrisées</div>
+    <div class="tech-row">
+      <div class="tech-pill">HTML / CSS</div>
+      <div class="tech-pill">JavaScript</div>
+      <div class="tech-pill">React</div>
+      <div class="tech-pill">Vue.js</div>
+      <div class="tech-pill">Node.js</div>
+      <div class="tech-pill">PHP</div>
+      <div class="tech-pill">WordPress</div>
+      <div class="tech-pill">Shopify</div>
+      <div class="tech-pill">MySQL</div>
+      <div class="tech-pill">Figma</div>
+      <div class="tech-pill">Git</div>
+      <div class="tech-pill">Vercel</div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <section class="cta" id="contact">
+    <div class="section-tag">Prêt à commencer ?</div>
+    <h2>Parlons de <em>votre projet</em></h2>
+    <div class="ornament">✦</div>
+    <p>Un projet en tête ? Écrivez-moi et recevez une réponse sous 24h. Premier échange toujours gratuit.</p>
+    <a href="mailto:jercat.bilman@gmail.com" class="btn-gold">✉ Envoyer un message</a>
+
+    <div class="contact-row">
+      <a href="mailto:jercat.bilman@gmail.com">jercat.bilman@gmail.com</a>
+      <span class="sep">—</span>
+      <a href="https://t.me/JEROME1978" target="_blank">✈ Telegram @JEROME1978</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo">Jercat</div>
+    <div class="footer-copy">© 2026 — Développeur Web Indépendant</div>
+  </footer>
+
+  <script>
+    // 3D tilt effect on cards
+    document.querySelectorAll('.card-3d').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rotateX = ((y - cy) / cy) * -10;
+        const rotateY = ((x - cx) / cx) * 10;
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(8px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = e.target.classList.contains('card-3d')
+            ? 'perspective(800px) rotateX(0) rotateY(0) translateZ(0)'
+            : 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card-3d, .stat-item, .step').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = el.classList.contains('card-3d')
+        ? 'perspective(800px) rotateX(4deg) rotateY(0) translateZ(-10px)'
+        : 'translateY(20px)';
+      el.style.transition = 'opacity 0.7s, transform 0.7s';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
