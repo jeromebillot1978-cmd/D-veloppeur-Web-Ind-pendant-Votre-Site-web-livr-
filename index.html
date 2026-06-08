@@ -725,6 +725,41 @@
     .modal-box strong { color: var(--text); }
     .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; }
 
+    /* ── PORTFOLIO ── */
+    .portfolio { padding: 100px 80px; background: var(--bg); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 0; }
+    .portfolio-card {
+      position: relative; overflow: hidden;
+      border: 1px solid var(--border); background: var(--card);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none; display: block;
+    }
+    .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+    .portfolio-img-wrap { position: relative; overflow: hidden; height: 200px; }
+    .portfolio-img-wrap iframe {
+      width: 170%; height: 170%;
+      transform: scale(0.59) translate(-25%, -25%);
+      border: none; pointer-events: none;
+    }
+    .portfolio-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(10,10,8,0.95) 100%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-visit {
+      position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em;
+      color: var(--gold); text-transform: uppercase; white-space: nowrap;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .portfolio-card:hover .portfolio-visit { opacity: 1; }
+    .portfolio-info { padding: 20px 22px; border-top: 1px solid var(--border); }
+    .portfolio-title { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.1em; color: var(--gold-light); margin-bottom: 6px; }
+    .portfolio-desc { font-size: 12px; color: var(--muted); font-family: 'DM Sans', sans-serif; line-height: 1.5; }
+    .portfolio-tag { display: inline-block; margin-top: 10px; padding: 3px 10px; border: 1px solid var(--border); font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
+    @media (max-width: 900px) { .portfolio-grid { grid-template-columns: 1fr; } .portfolio { padding: 70px 24px; } }
+
     @media (max-width: 900px) {
       .tarifs-grid, .temoignages-grid { grid-template-columns: 1fr; }
       .garanties-row { flex-direction: column; }
@@ -1016,6 +1051,82 @@
       <a href="mailto:jercat.bilman@gmail.com">jercat.bilman@gmail.com</a>
       <span class="sep">—</span>
       <a href="https://t.me/JEROME1978" target="_blank">✈ Telegram @JEROME1978</a>
+    </div>
+  </section>
+
+  <!-- ── PORTFOLIO ── -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-tag">Mes réalisations</div>
+    <h2 class="section-title">Sites créés <em>par Jercat</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Découvrez quelques-uns de mes derniers projets livrés — chaque site est unique et sur-mesure.</p>
+    <div class="portfolio-grid">
+
+      <a href="https://plateforme-revenus.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://plateforme-revenus.vercel.app/" title="Plateforme Revenus" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Plateforme Revenus</div>
+          <div class="portfolio-desc">Plateforme web de gestion et suivi de revenus en ligne.</div>
+          <span class="portfolio-tag">Application Web</span>
+        </div>
+      </a>
+
+      <a href="https://aux-folie-s-burger.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://aux-folie-s-burger.vercel.app/" title="Aux Folie's Burger" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Aux Folie's Burger</div>
+          <div class="portfolio-desc">Site vitrine élégant pour un restaurant burger artisanal.</div>
+          <span class="portfolio-tag">Site Vitrine</span>
+        </div>
+      </a>
+
+      <a href="https://fredrenovation.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://fredrenovation.vercel.app/" title="Fred Rénovation" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Fred Rénovation</div>
+          <div class="portfolio-desc">Site professionnel pour un artisan en rénovation intérieure.</div>
+          <span class="portfolio-tag">Site Vitrine</span>
+        </div>
+      </a>
+
+      <a href="https://bi-by-doris.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://bi-by-doris.vercel.app/" title="Bi by Doris" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Bi by Doris</div>
+          <div class="portfolio-desc">Boutique en ligne mode & accessoires tendance.</div>
+          <span class="portfolio-tag">E-Commerce</span>
+        </div>
+      </a>
+
+      <a href="https://tanjiro59.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://tanjiro59.vercel.app/" title="Tanjiro59" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Tanjiro59</div>
+          <div class="portfolio-desc">Site web créé sur-mesure par Jercat.</div>
+          <span class="portfolio-tag">Site Web</span>
+        </div>
+      </a>
+
     </div>
   </section>
 
