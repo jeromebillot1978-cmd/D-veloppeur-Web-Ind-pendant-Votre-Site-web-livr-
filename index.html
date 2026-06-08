@@ -131,6 +131,7 @@
   </script>
 
   <!-- ── PERFORMANCE ── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a08'/><text y='.9em' font-size='80' x='10'>💻</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap&display=swap" rel="stylesheet" />
@@ -676,6 +677,61 @@
       .form-row { grid-template-columns: 1fr; }
       .devis-section { padding: 70px 24px; }
     }
+    /* ── TARIFS ── */
+    .tarifs { padding: 100px 80px; background: var(--bg); }
+    .tarifs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; perspective: 1000px; }
+    .tarif-card { background: var(--card); border: 1px solid var(--border); padding: 44px 32px; text-align: center; position: relative; transition: transform 0.3s, box-shadow 0.3s; }
+    .tarif-card.featured { border-color: var(--gold); box-shadow: 0 0 40px rgba(201,168,76,0.12); }
+    .tarif-card.featured::before { content: '⭐ POPULAIRE'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #0a0a08; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; padding: 4px 16px; }
+    .tarif-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .tarif-name { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; }
+    .tarif-price { font-family: 'Cormorant Garamond', serif; font-size: 68px; color: var(--gold); line-height: 1; font-weight: 300; }
+    .tarif-price span { font-size: 24px; vertical-align: super; }
+    .tarif-desc { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--muted); margin: 12px 0 28px; }
+    .tarif-features { list-style: none; text-align: left; margin-bottom: 32px; display: flex; flex-direction: column; gap: 10px; }
+    .tarif-features li { font-size: 13px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+    .tarif-features li::before { content: '✦'; color: var(--gold); font-size: 10px; margin-top: 2px; flex-shrink: 0; }
+
+    /* ── TÉMOIGNAGES ── */
+    .temoignages { padding: 100px 80px; background: var(--surface); }
+    .temoignages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .temo-card { background: var(--card); border: 1px solid var(--border); padding: 36px 28px; position: relative; }
+    .temo-card::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 80px; color: rgba(201,168,76,0.12); position: absolute; top: 10px; left: 20px; line-height: 1; }
+    .temo-stars { color: var(--gold); font-size: 14px; margin-bottom: 16px; letter-spacing: 3px; }
+    .temo-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 24px; position: relative; z-index: 1; }
+    .temo-author { display: flex; align-items: center; gap: 14px; }
+    .temo-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 16px; color: #0a0a08; font-weight: 700; flex-shrink: 0; }
+    .temo-name { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.1em; color: var(--gold-light); }
+    .temo-job { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* ── GARANTIES ── */
+    .garanties { padding: 80px; border-top: 1px solid var(--border); background: var(--bg); }
+    .garanties-row { display: flex; gap: 0; flex-wrap: wrap; justify-content: center; }
+    .garantie-item { flex: 1; min-width: 180px; text-align: center; padding: 40px 24px; border-right: 1px solid var(--border); }
+    .garantie-item:last-child { border-right: none; }
+    .garantie-icon { font-size: 36px; margin-bottom: 14px; }
+    .garantie-title { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+    .garantie-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* ── LEGAL ── */
+    .legal-bar { background: var(--surface); border-top: 1px solid var(--border); padding: 16px 80px; text-align: center; font-size: 11px; color: var(--muted); font-family: 'DM Sans', sans-serif; line-height: 1.8; }
+    .legal-bar a { color: var(--gold); text-decoration: none; margin: 0 8px; }
+    .legal-bar a:hover { text-decoration: underline; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9000; align-items: center; justify-content: center; padding: 20px; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: var(--surface); border: 1px solid var(--border); max-width: 640px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 48px; position: relative; }
+    .modal-box h3 { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold); margin-bottom: 24px; }
+    .modal-box p, .modal-box li { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+    .modal-box strong { color: var(--text); }
+    .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; }
+
+    @media (max-width: 900px) {
+      .tarifs-grid, .temoignages-grid { grid-template-columns: 1fr; }
+      .garanties-row { flex-direction: column; }
+      .garantie-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .tarifs, .temoignages, .garanties { padding: 70px 24px; }
+      .legal-bar { padding: 16px 24px; }
+    }
   </style>
 </head>
 <body>
@@ -963,12 +1019,198 @@
     </div>
   </section>
 
+  <!-- ── TARIFS ── -->
+  <section class="tarifs" id="tarifs">
+    <div class="section-tag">Transparent & Accessible</div>
+    <h2 class="section-title">Nos <em>Tarifs</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Des prix clairs, sans surprise. À partir de 99€ pour avoir votre présence professionnelle en ligne.</p>
+    <div class="tarifs-grid">
+
+      <div class="tarif-card">
+        <div class="tarif-name">Essentiel</div>
+        <div class="tarif-price"><span>à partir de </span>99<span>€</span></div>
+        <div class="tarif-desc">Idéal pour démarrer</div>
+        <ul class="tarif-features">
+          <li>Site vitrine 1 à 3 pages</li>
+          <li>Design professionnel</li>
+          <li>100% responsive mobile</li>
+          <li>Formulaire de contact</li>
+          <li>Mise en ligne incluse</li>
+          <li>Livraison 7 jours</li>
+        </ul>
+        <a href="#contact" class="btn-outline-gold">Demander un devis</a>
+      </div>
+
+      <div class="tarif-card featured">
+        <div class="tarif-name">Pro</div>
+        <div class="tarif-price"><span>à partir de </span>199<span>€</span></div>
+        <div class="tarif-desc">Le plus demandé</div>
+        <ul class="tarif-features">
+          <li>Site vitrine jusqu'à 8 pages</li>
+          <li>Design sur-mesure premium</li>
+          <li>SEO optimisé Google</li>
+          <li>Blog / actualités</li>
+          <li>Galerie photos & vidéos</li>
+          <li>Formation à la gestion</li>
+          <li>1 mois de support inclus</li>
+        </ul>
+        <a href="#contact" class="btn-gold">Demander un devis</a>
+      </div>
+
+      <div class="tarif-card">
+        <div class="tarif-name">E-Commerce</div>
+        <div class="tarif-price"><span>à partir de </span>300<span>€</span></div>
+        <div class="tarif-desc">Vendez en ligne</div>
+        <ul class="tarif-features">
+          <li>Boutique en ligne complète</li>
+          <li>Paiement sécurisé</li>
+          <li>Gestion des stocks</li>
+          <li>Fiches produits illimitées</li>
+          <li>Suivi des commandes</li>
+          <li>SEO e-commerce avancé</li>
+          <li>3 mois de support inclus</li>
+        </ul>
+        <a href="#contact" class="btn-outline-gold">Demander un devis</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TÉMOIGNAGES ── -->
+  <section class="temoignages" id="temoignages">
+    <div class="section-tag">Ils me font confiance</div>
+    <h2 class="section-title">Ce que disent <em>mes clients</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">La satisfaction de mes clients est ma meilleure publicité.</p>
+    <div class="temoignages-grid">
+
+      <div class="temo-card">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">Jercat a créé mon site vitrine en moins d'une semaine. Résultat professionnel, design moderne, et il a tout expliqué clairement. Je recommande vivement !</p>
+        <div class="temo-author">
+          <div class="temo-avatar">S</div>
+          <div>
+            <div class="temo-name">Sophie M.</div>
+            <div class="temo-job">Coiffeuse indépendante</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="temo-card">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">Très réactif, à l'écoute et de bons conseils. Mon e-commerce est en ligne et les commandes arrivent déjà ! Excellent rapport qualité-prix.</p>
+        <div class="temo-author">
+          <div class="temo-avatar">K</div>
+          <div>
+            <div class="temo-name">Karim B.</div>
+            <div class="temo-job">Gérant boutique en ligne</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="temo-card">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">J'avais un vieux site qui ne fonctionnait plus. Jercat l'a entièrement refait, il est maintenant rapide et visible sur Google. Merci !</p>
+        <div class="temo-author">
+          <div class="temo-avatar">M</div>
+          <div>
+            <div class="temo-name">Marie-Claire T.</div>
+            <div class="temo-job">Restauratrice</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GARANTIES ── -->
+  <section class="garanties">
+    <div class="section-tag" style="text-align:center;margin-bottom:40px;">Mes engagements</div>
+    <div class="garanties-row">
+      <div class="garantie-item">
+        <div class="garantie-icon">🛡️</div>
+        <div class="garantie-title">Satisfait ou Corrigé</div>
+        <p class="garantie-desc">Modifications incluses jusqu'à votre satisfaction totale.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-icon">⏱️</div>
+        <div class="garantie-title">Délai Garanti</div>
+        <p class="garantie-desc">Je respecte les délais annoncés lors du devis, sans exception.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-icon">💬</div>
+        <div class="garantie-title">Support Réactif</div>
+        <p class="garantie-desc">Réponse garantie sous 24h, 7j/7 via email ou Telegram.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-icon">🔒</div>
+        <div class="garantie-title">Site Sécurisé</div>
+        <p class="garantie-desc">HTTPS, protection des données, conformité RGPD incluse.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-icon">📱</div>
+        <div class="garantie-title">100% Mobile</div>
+        <p class="garantie-desc">Votre site est parfait sur tous les écrans, mobile, tablette, PC.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ── FOOTER ── -->
   <footer>
     <div class="footer-logo">Jercat</div>
     <div class="footer-copy">© 2026 — Développeur Web Indépendant</div>
     <div class="footer-copy">Site créé par <span style="color: var(--gold); font-family: 'Cinzel', serif;">Jercat</span></div>
   </footer>
+
+  <!-- ── BARRE LÉGALE ── -->
+  <div class="legal-bar">
+    Jercat — Développeur Web Freelance &nbsp;|&nbsp;
+    <a href="#" onclick="openModal('mentions');return false;">Mentions légales</a>
+    <a href="#" onclick="openModal('rgpd');return false;">Politique de confidentialité (RGPD)</a>
+    <a href="#" onclick="openModal('cgv');return false;">CGV</a>
+    &nbsp;|&nbsp; jercat.bilman@gmail.com
+  </div>
+
+  <!-- ── MODAL MENTIONS LÉGALES ── -->
+  <div class="modal-overlay" id="modal-mentions">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('mentions')">✕</button>
+      <h3>Mentions Légales</h3>
+      <p><strong>Éditeur du site :</strong> Jercat — Développeur Web Freelance</p>
+      <p><strong>Contact :</strong> jercat.bilman@gmail.com</p>
+      <p><strong>Hébergeur :</strong> Vercel Inc., 340 Pine Street Suite 701, San Francisco, CA 94104, USA</p>
+      <p><strong>Activité :</strong> Développement et création de sites web professionnels à titre indépendant.</p>
+      <p>Tout contenu présent sur ce site (textes, visuels, code) est la propriété exclusive de Jercat. Toute reproduction sans autorisation est interdite.</p>
+    </div>
+  </div>
+
+  <!-- ── MODAL RGPD ── -->
+  <div class="modal-overlay" id="modal-rgpd">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('rgpd')">✕</button>
+      <h3>Politique de Confidentialité (RGPD)</h3>
+      <p><strong>Données collectées :</strong> Nom, téléphone, email, adresse et description de projet via le formulaire de devis.</p>
+      <p><strong>Finalité :</strong> Ces données sont utilisées uniquement pour répondre à votre demande de devis. Elles ne sont ni vendues, ni partagées à des tiers.</p>
+      <p><strong>Conservation :</strong> Vos données sont conservées le temps nécessaire au traitement de votre demande, maximum 1 an.</p>
+      <p><strong>Vos droits :</strong> Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez : jercat.bilman@gmail.com</p>
+      <p><strong>Cookies :</strong> Ce site n'utilise pas de cookies de traçage. Aucune donnée analytique n'est collectée.</p>
+    </div>
+  </div>
+
+  <!-- ── MODAL CGV ── -->
+  <div class="modal-overlay" id="modal-cgv">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('cgv')">✕</button>
+      <h3>Conditions Générales de Vente</h3>
+      <p><strong>Devis :</strong> Tout projet démarre par un devis gratuit et sans engagement. Le devis est valable 30 jours.</p>
+      <p><strong>Paiement :</strong> 50% d'acompte à la commande, 50% à la livraison.</p>
+      <p><strong>Délais :</strong> Les délais sont indiqués dans le devis et respectés sauf cas de force majeure ou retard de transmission des éléments par le client.</p>
+      <p><strong>Révisions :</strong> 3 allers-retours de corrections inclus. Au-delà, des frais supplémentaires peuvent s'appliquer.</p>
+      <p><strong>Propriété :</strong> Le site devient propriété du client après règlement intégral de la facture.</p>
+      <p><strong>Litiges :</strong> En cas de litige, une solution amiable sera privilégiée. Contact : jercat.bilman@gmail.com</p>
+    </div>
+  </div>
 
   <script>
     // 3D tilt effect on cards
@@ -1038,11 +1280,12 @@ Demande reçue via jercat.vercel.app`
           e.target.style.transform = e.target.classList.contains('card-3d')
             ? 'perspective(800px) rotateX(0) rotateY(0) translateZ(0)'
             : 'translateY(0)';
+          observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 });
 
-    document.querySelectorAll('.card-3d, .stat-item, .step').forEach(el => {
+    document.querySelectorAll('.card-3d, .stat-item, .step, .tarif-card, .temo-card, .garantie-item').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = el.classList.contains('card-3d')
         ? 'perspective(800px) rotateX(4deg) rotateY(0) translateZ(-10px)'
@@ -1052,165 +1295,50 @@ Demande reçue via jercat.vercel.app`
     });
   </script>
 
+  <script>
+    function openModal(id) {
+      document.getElementById('modal-' + id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById('modal-' + id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+      m.addEventListener('click', e => { if (e.target === m) { m.classList.remove('open'); document.body.style.overflow = ''; } });
+    });
+  </script>
+
   <!-- ── CHATBOT FLOTTANT ── -->
   <style>
-    .chat-widget {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 12px;
-    }
-
-    /* Boutons canaux */
-    .chat-channels {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: flex-end;
-      opacity: 0;
-      transform: translateY(20px) scale(0.9);
-      pointer-events: none;
-      transition: opacity 0.3s, transform 0.3s;
-    }
-    .chat-channels.open {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: all;
-    }
-
-    .chat-bubble {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 50px;
-      font-family: 'Cinzel', serif;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      color: white;
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-      white-space: nowrap;
-    }
+    .chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .chat-channels { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; opacity: 0; transform: translateY(20px) scale(0.9); pointer-events: none; transition: opacity 0.3s, transform 0.3s; }
+    .chat-channels.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+    .chat-bubble { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 50px; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.1em; color: white; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap; }
     .chat-bubble:hover { transform: scale(1.05); box-shadow: 0 8px 28px rgba(0,0,0,0.5); }
     .chat-bubble.telegram { background: linear-gradient(135deg, #0088cc, #229ED9); }
     .chat-bubble.messenger { background: linear-gradient(135deg, #0078FF, #A334FA); }
-
     .chat-bubble svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
-
-    /* Label bulle message */
-    .chat-label {
-      background: rgba(10,10,8,0.92);
-      border: 1px solid var(--border);
-      color: var(--gold);
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 13px;
-      padding: 8px 16px;
-      border-radius: 20px;
-      white-space: nowrap;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-    }
-
-    /* Bouton principal */
-    .chat-toggle {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 24px rgba(201,168,76,0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-    }
+    .chat-label { background: rgba(10,10,8,0.92); border: 1px solid var(--border); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; padding: 8px 16px; border-radius: 20px; white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+    .chat-toggle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light)); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(201,168,76,0.4); transition: transform 0.3s, box-shadow 0.3s; position: relative; }
     .chat-toggle:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(201,168,76,0.5); }
-    .chat-toggle svg { width: 28px; height: 28px; fill: #0a0a08; transition: transform 0.3s; }
-    .chat-toggle.open svg.icon-chat { display: none; }
-    .chat-toggle svg.icon-close { display: none; }
-    .chat-toggle.open svg.icon-close { display: block; }
-    .chat-toggle.open svg.icon-chat { display: none; }
-
-    /* Badge notification */
-    .chat-badge {
-      position: absolute;
-      top: 2px; right: 2px;
-      width: 16px; height: 16px;
-      background: #ff4757;
-      border-radius: 50%;
-      border: 2px solid var(--bg);
-      animation: pulse-badge 2s infinite;
-    }
-    @keyframes pulse-badge {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-    }
-
-    /* Popup message */
-    .chat-popup {
-      position: absolute;
-      bottom: 70px;
-      right: 0;
-      background: rgba(10,10,8,0.95);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px 20px;
-      width: 240px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(10px);
-      transition: opacity 0.3s, transform 0.3s;
-    }
-    .chat-popup.show {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateY(0);
-    }
-    .chat-popup-name {
-      font-family: 'Cinzel', serif;
-      font-size: 12px;
-      color: var(--gold);
-      margin-bottom: 6px;
-      letter-spacing: 0.1em;
-    }
-    .chat-popup-msg {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 14px;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .chat-popup-time {
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 6px;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .chat-popup-close {
-      position: absolute;
-      top: 8px; right: 10px;
-      background: none; border: none;
-      color: var(--muted); cursor: pointer; font-size: 16px;
-    }
-
-    @media (max-width: 600px) {
-      .chat-widget { bottom: 18px; right: 18px; }
-      .chat-toggle { width: 52px; height: 52px; }
-    }
+    .chat-toggle svg { width: 28px; height: 28px; fill: #0a0a08; }
+    .chat-icon-close { display: none; }
+    .chat-toggle.open .chat-icon-chat { display: none; }
+    .chat-toggle.open .chat-icon-close { display: block; }
+    .chat-badge { position: absolute; top: 2px; right: 2px; width: 16px; height: 16px; background: #ff4757; border-radius: 50%; border: 2px solid var(--bg); animation: pulse-badge 2s infinite; }
+    @keyframes pulse-badge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+    .chat-popup { position: absolute; bottom: 72px; right: 0; background: rgba(10,10,8,0.95); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; width: 240px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s; }
+    .chat-popup.show { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .chat-popup-name { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold); margin-bottom: 6px; letter-spacing: 0.1em; }
+    .chat-popup-msg { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--text); line-height: 1.5; }
+    .chat-popup-time { font-size: 10px; color: var(--muted); margin-top: 6px; font-family: 'DM Sans', sans-serif; }
+    .chat-popup-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: var(--muted); cursor: pointer; font-size: 16px; }
+    @media (max-width: 600px) { .chat-widget { bottom: 18px; right: 18px; } .chat-toggle { width: 52px; height: 52px; } }
   </style>
 
   <div class="chat-widget" id="chatWidget">
 
-    <!-- Popup d'accueil -->
     <div class="chat-popup" id="chatPopup">
       <button class="chat-popup-close" onclick="document.getElementById('chatPopup').classList.remove('show')">✕</button>
       <div class="chat-popup-name">💬 Jercat</div>
@@ -1218,54 +1346,404 @@ Demande reçue via jercat.vercel.app`
       <div class="chat-popup-time">En ligne maintenant</div>
     </div>
 
-    <!-- Canaux de contact -->
     <div class="chat-channels" id="chatChannels">
       <div class="chat-label">Choisissez votre messagerie</div>
-
       <a href="https://t.me/JEROME1978" target="_blank" rel="noopener" class="chat-bubble telegram">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.67l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.958.889z"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.67l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.958.889z"/></svg>
         Telegram @JEROME1978
       </a>
-
       <a href="https://m.me/jerome.billot.1978" target="_blank" rel="noopener" class="chat-bubble messenger">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111S18.627 0 12 0zm1.191 14.963-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111S18.627 0 12 0zm1.191 14.963-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
         Messenger
       </a>
     </div>
 
-    <!-- Bouton principal -->
     <button class="chat-toggle" id="chatToggle" aria-label="Ouvrir le chat">
-      <div class="chat-badge"></div>
-      <!-- Icône chat -->
-      <svg class="icon-chat" viewBox="0 0 24 24">
-        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-      </svg>
-      <!-- Icône fermer -->
-      <svg class="icon-close" viewBox="0 0 24 24">
-        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-      </svg>
+      <div class="chat-badge" id="chatBadge"></div>
+      <svg class="chat-icon-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+      <svg class="chat-icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
     </button>
   </div>
 
   <script>
-    const toggle = document.getElementById('chatToggle');
+    const toggle   = document.getElementById('chatToggle');
     const channels = document.getElementById('chatChannels');
-    const popup = document.getElementById('chatPopup');
+    const popup    = document.getElementById('chatPopup');
 
-    // Affiche le popup après 3 secondes
     setTimeout(() => popup.classList.add('show'), 3000);
 
     toggle.addEventListener('click', () => {
       const isOpen = channels.classList.toggle('open');
       toggle.classList.toggle('open', isOpen);
       popup.classList.remove('show');
-      // Cache le badge
-      document.querySelector('.chat-badge').style.display = 'none';
+      document.getElementById('chatBadge').style.display = 'none';
     });
+  </script>
+
+</body>
+</html>
+  <style>
+    /* Bouton flottant */
+    .chat-fab {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      width: 62px; height: 62px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(201,168,76,0.45);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .chat-fab:hover { transform: scale(1.1); box-shadow: 0 8px 36px rgba(201,168,76,0.55); }
+    .chat-fab svg { width: 28px; height: 28px; fill: #0a0a08; }
+    .chat-fab-badge {
+      position: absolute; top: 2px; right: 2px;
+      width: 16px; height: 16px; background: #ff4757;
+      border-radius: 50%; border: 2px solid var(--bg);
+      animation: pulse-badge 2s infinite;
+    }
+    @keyframes pulse-badge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.25)} }
+
+    /* Fenêtre chat */
+    .chat-window {
+      position: fixed; bottom: 104px; right: 28px; z-index: 9998;
+      width: 340px; max-height: 520px;
+      background: #111110; border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex; flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+      transform: scale(0.9) translateY(20px);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .chat-window.open { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
+
+    /* Header */
+    .chat-header {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      padding: 14px 18px; display: flex; align-items: center; gap: 12px;
+    }
+    .chat-header-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: #0a0a08; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .chat-header-info { flex: 1; }
+    .chat-header-name { font-family: 'Cinzel', serif; font-size: 13px; color: #0a0a08; font-weight: 700; letter-spacing: 0.1em; }
+    .chat-header-status { font-size: 11px; color: rgba(10,10,8,0.7); display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+    .status-dot { width: 7px; height: 7px; background: #2ecc71; border-radius: 50%; }
+    .chat-close-btn { background: rgba(0,0,0,0.25); border: none; cursor: pointer; color: #0a0a08; font-size: 18px; font-weight: 700; padding: 0; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+    .chat-close-btn:hover { background: rgba(0,0,0,0.4); }
+
+    /* Messages */
+    .chat-messages {
+      flex: 1; overflow-y: auto; padding: 16px; display: flex;
+      flex-direction: column; gap: 12px; max-height: 320px;
+    }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .msg { display: flex; flex-direction: column; max-width: 82%; }
+    .msg.bot { align-self: flex-start; }
+    .msg.user { align-self: flex-end; }
+    .msg-bubble {
+      padding: 10px 14px; border-radius: 2px; font-size: 13px; line-height: 1.6;
+    }
+    .msg.bot .msg-bubble {
+      background: #1a1a18; border: 1px solid var(--border); color: var(--text);
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px;
+    }
+    .msg.user .msg-bubble {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: #0a0a08; font-size: 13px; font-family: 'DM Sans', sans-serif;
+    }
+    .msg-time { font-size: 10px; color: var(--muted); margin-top: 4px; font-family: 'DM Sans', sans-serif; }
+    .msg.user .msg-time { text-align: right; }
+
+    /* Boutons réponses rapides */
+    .quick-replies {
+      display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 16px 0;
+    }
+    .qr-btn {
+      padding: 6px 12px; border: 1px solid var(--border); background: transparent;
+      color: var(--gold); font-family: 'Cinzel', serif; font-size: 10px;
+      letter-spacing: 0.08em; cursor: pointer; border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .qr-btn:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+
+    /* Typing indicator */
+    .typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: #1a1a18; border: 1px solid var(--border); width: fit-content; }
+    .typing span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: typing 1.2s infinite; }
+    .typing span:nth-child(2) { animation-delay: 0.2s; }
+    .typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+    /* Input zone */
+    .chat-input-zone {
+      border-top: 1px solid var(--border); padding: 12px 14px;
+      display: flex; gap: 8px; align-items: center;
+    }
+    .chat-input {
+      flex: 1; background: #1a1a18; border: 1px solid var(--border);
+      color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px;
+      padding: 10px 14px; outline: none; border-radius: 2px;
+      transition: border-color 0.2s;
+    }
+    .chat-input:focus { border-color: var(--gold); }
+    .chat-input::placeholder { color: var(--muted); }
+    .chat-send-btn {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform 0.2s;
+    }
+    .chat-send-btn:hover { transform: scale(1.1); }
+    .chat-send-btn svg { width: 16px; height: 16px; fill: #0a0a08; }
+
+    /* Liens contact dans chat */
+    .chat-contact-links { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+    .chat-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 20px; font-size: 12px;
+      text-decoration: none; color: white; font-family: 'DM Sans', sans-serif;
+      width: fit-content;
+    }
+    .chat-link.tg { background: #0088cc; }
+    .chat-link.ms { background: #0078FF; }
+
+    @media (max-width: 400px) {
+      .chat-window { width: calc(100vw - 32px); right: 16px; }
+      .chat-fab { bottom: 16px; right: 16px; }
+    }
+  </style>
+
+  <!-- Bouton flottant -->
+  <button class="chat-fab" id="chatFab" aria-label="Ouvrir le chat">
+    <div class="chat-fab-badge" id="chatBadge"></div>
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+  </button>
+
+  <!-- Fenêtre chat -->
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat avec Jercat">
+    <div class="chat-header">
+      <div class="chat-header-avatar">💻</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">Jercat</div>
+        <div class="chat-header-status"><span class="status-dot"></span>En ligne — Répond en quelques minutes</div>
+      </div>
+      <button class="chat-close-btn" id="chatCloseBtn" aria-label="Fermer">✕</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages"></div>
+
+    <div class="quick-replies" id="quickReplies"></div>
+
+    <div class="chat-input-zone">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Écrivez votre message..." maxlength="200" />
+      <button class="chat-send-btn" id="chatSendBtn" aria-label="Envoyer">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    const fab       = document.getElementById('chatFab');
+    const win       = document.getElementById('chatWindow');
+    const closeBtn  = document.getElementById('chatCloseBtn');
+    const msgBox    = document.getElementById('chatMessages');
+    const input     = document.getElementById('chatInput');
+    const sendBtn   = document.getElementById('chatSendBtn');
+    const qrBox     = document.getElementById('quickReplies');
+    const badge     = document.getElementById('chatBadge');
+    let isOpen      = false;
+
+    // ── BASE DE RÉPONSES ──
+    const responses = [
+      {
+        keys: ['bonjour','salut','hello','bonsoir','coucou','bjr'],
+        reply: "Bonjour ! 👋 Je suis Jercat, développeur web freelance. Comment puis-je vous aider aujourd'hui ?",
+        quick: ['💰 Tarifs', '⏱ Délais', '🌐 Types de sites', '📞 Nous contacter']
+      },
+      {
+        keys: ['prix','tarif','coût','coute','combien','budget'],
+        reply: "Mes tarifs démarrent à :\n\n✦ Site vitrine → à partir de 99€\n✦ Site Pro → à partir de 199€\n✦ E-Commerce → à partir de 300€\n\nChaque projet est unique — demandez un devis gratuit !",
+        quick: ['📋 Devis gratuit', '⏱ Délais', '🌐 Types de sites']
+      },
+      {
+        keys: ['délai','delai','temps','durée','duree','rapide','vite','combien de temps'],
+        reply: "⏱ En moyenne :\n\n✦ Site vitrine → 7 jours\n✦ Site Pro → 10 à 14 jours\n✦ E-Commerce → 2 à 3 semaines\n\nJe respecte toujours les délais annoncés !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit', '🌐 Types de sites']
+      },
+      {
+        keys: ['vitrine','présentation','présenter','présente','entreprise'],
+        reply: "Le site vitrine est parfait pour présenter votre activité ! Il inclut :\n\n✦ Design professionnel sur-mesure\n✦ 1 à 3 pages optimisées\n✦ Formulaire de contact\n✦ 100% responsive mobile\n✦ Livraison en 7 jours\n\nÀ partir de 99€ seulement !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit', '⏱ Délais']
+      },
+      {
+        keys: ['ecommerce','e-commerce','boutique','vendre','shop','produit','commande'],
+        reply: "Parfait pour vendre en ligne ! Votre boutique e-commerce inclura :\n\n✦ Catalogue produits illimité\n✦ Paiement sécurisé (CB, PayPal)\n✦ Gestion des stocks & commandes\n✦ SEO e-commerce optimisé\n\nÀ partir de 300€ — devis gratuit sans engagement !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit', '⏱ Délais']
+      },
+      {
+        keys: ['landing','page','pub','publicité','campagne','conversion'],
+        reply: "La landing page est idéale pour convertir vos visiteurs ! Une page percutante, centrée sur un seul objectif (vente, inscription, contact).\n\nÀ partir de 99€ — résultat garanti !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit']
+      },
+      {
+        keys: ['seo','google','référencement','visible','classement','premier'],
+        reply: "🔍 Tous mes sites incluent les bases SEO :\n\n✦ Balises optimisées (title, meta)\n✦ Structure HTML sémantique\n✦ Chargement rapide < 2s\n✦ Sitemap & robots.txt\n✦ Données structurées Google\n\nPour un SEO avancé, contactez-moi !",
+        quick: ['📋 Devis gratuit', '📞 Nous contacter']
+      },
+      {
+        keys: ['garantie','satisfait','remboursement','modification','correction','révision'],
+        reply: "🛡️ Mes garanties :\n\n✦ Satisfait ou corrigé — modifications incluses\n✦ Délai respecté garanti\n✦ Support réactif 7j/7\n✦ Site sécurisé HTTPS\n✦ 3 révisions incluses",
+        quick: ['💰 Tarifs', '📋 Devis gratuit']
+      },
+      {
+        keys: ['paiement','payer','acompte','virement','facture'],
+        reply: "💳 Modalités de paiement :\n\n✦ 50% d'acompte à la commande\n✦ 50% à la livraison du site\n✦ Virement bancaire ou PayPal\n\nAucun paiement sans devis validé par vous !",
+        quick: ['📋 Devis gratuit', '📞 Nous contacter']
+      },
+      {
+        keys: ['contact','joindre','appeler','téléphone','mail','email','telegram','messenger'],
+        reply: "Contactez-moi directement ici 👇",
+        links: true,
+        quick: ['📋 Devis gratuit', '💰 Tarifs']
+      },
+      {
+        keys: ['devis','commencer','démarrer','projet','lancer'],
+        reply: "Super ! Remplissez le formulaire de devis en bas de page — c'est gratuit et sans engagement. Je vous réponds sous 24h avec une proposition personnalisée ! 🎯",
+        action: () => { win.classList.remove('open'); isOpen = false; document.getElementById('contact').scrollIntoView({behavior:'smooth'}); },
+        quick: ['📞 Nous contacter', '💰 Tarifs']
+      },
+      {
+        keys: ['merci','super','parfait','nickel','top','génial','excellent'],
+        reply: "Merci à vous ! 😊 N'hésitez pas si vous avez d'autres questions. Je suis là pour vous aider à avoir le meilleur site possible !",
+        quick: ['📋 Devis gratuit', '📞 Nous contacter']
+      },
+      {
+        keys: ['wordpress','shopify','react','php','html','technologie','tech'],
+        reply: "🛠 Je maîtrise :\n\n✦ HTML / CSS / JavaScript\n✦ React, Vue.js, Node.js\n✦ WordPress & Shopify\n✦ PHP & MySQL\n✦ Figma, Git, Vercel\n\nJe choisis la meilleure techno selon votre projet !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit']
+      },
+      {
+        keys: ['maintenance','mise à jour','maj','update','modifier','changer'],
+        reply: "🔧 Je propose un service de maintenance mensuel :\n\n✦ Mises à jour de sécurité\n✦ Modifications de contenu\n✦ Sauvegardes régulières\n✦ Support technique inclus\n\nContactez-moi pour un devis !",
+        quick: ['📋 Devis gratuit', '📞 Nous contacter']
+      }
+    ];
+
+    const defaultReply = {
+      reply: "Je n'ai pas bien compris votre question 😅 Voici ce que je peux vous dire :",
+      quick: ['💰 Tarifs', '⏱ Délais', '🌐 Types de sites', '📞 Nous contacter', '📋 Devis gratuit']
+    };
+
+    const quickMap = {
+      '💰 Tarifs': 'tarifs prix combien',
+      '⏱ Délais': 'délai temps durée',
+      '🌐 Types de sites': 'vitrine ecommerce landing',
+      '📞 Nous contacter': 'contact',
+      '📋 Devis gratuit': 'devis'
+    };
+
+    function now() {
+      return new Date().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+    }
+
+    function addMsg(text, type, links) {
+      const div = document.createElement('div');
+      div.className = 'msg ' + type;
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      bubble.style.whiteSpace = 'pre-line';
+      bubble.textContent = text;
+      div.appendChild(bubble);
+      if (links) {
+        const lc = document.createElement('div');
+        lc.className = 'chat-contact-links';
+        lc.innerHTML = `
+          <a href="https://t.me/JEROME1978" target="_blank" class="chat-link tg">✈ Telegram @JEROME1978</a>
+          <a href="mailto:jercat.bilman@gmail.com" class="chat-link ms">✉ jercat.bilman@gmail.com</a>`;
+        div.appendChild(lc);
+      }
+      const time = document.createElement('div');
+      time.className = 'msg-time';
+      time.textContent = now();
+      div.appendChild(time);
+      msgBox.appendChild(div);
+      msgBox.scrollTop = msgBox.scrollHeight;
+    }
+
+    function addTyping() {
+      const t = document.createElement('div');
+      t.className = 'msg bot'; t.id = 'typingIndicator';
+      t.innerHTML = '<div class="typing"><span></span><span></span><span></span></div>';
+      msgBox.appendChild(t);
+      msgBox.scrollTop = msgBox.scrollHeight;
+    }
+
+    function removeTyping() {
+      const t = document.getElementById('typingIndicator');
+      if (t) t.remove();
+    }
+
+    function setQuickReplies(items) {
+      qrBox.innerHTML = '';
+      items.forEach(label => {
+        const btn = document.createElement('button');
+        btn.className = 'qr-btn';
+        btn.textContent = label;
+        btn.onclick = () => handleInput(quickMap[label] || label, label);
+        qrBox.appendChild(btn);
+      });
+    }
+
+    function handleInput(text, displayText) {
+      const shown = displayText || text;
+      if (!text.trim()) return;
+      addMsg(shown, 'user');
+      input.value = '';
+      qrBox.innerHTML = '';
+      addTyping();
+
+      setTimeout(() => {
+        removeTyping();
+        const lower = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+        let matched = null;
+        for (const r of responses) {
+          if (r.keys.some(k => lower.includes(k))) { matched = r; break; }
+        }
+        const r = matched || defaultReply;
+        addMsg(r.reply, 'bot', r.links);
+        if (r.action) setTimeout(r.action, 1200);
+        if (r.quick) setQuickReplies(r.quick);
+      }, 900 + Math.random() * 600);
+    }
+
+    // Init
+    function openChat() {
+      isOpen = true;
+      win.classList.add('open');
+      badge.style.display = 'none';
+      if (msgBox.children.length === 0) {
+        setTimeout(() => {
+          addMsg("Bonjour ! 👋 Je suis Jercat, développeur web freelance. Comment puis-je vous aider ?", 'bot');
+          setQuickReplies(['💰 Tarifs', '⏱ Délais', '🌐 Types de sites', '📞 Nous contacter', '📋 Devis gratuit']);
+        }, 400);
+      }
+    }
+
+    fab.addEventListener('click', () => { isOpen ? (win.classList.remove('open'), isOpen=false) : openChat(); });
+    closeBtn.addEventListener('click', () => { win.classList.remove('open'); isOpen = false; });
+    sendBtn.addEventListener('click', () => handleInput(input.value, input.value));
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') handleInput(input.value, input.value); });
+
+    // Popup auto après 4s
+    setTimeout(() => { if (!isOpen) badge.style.animation = 'pulse-badge 1s infinite'; }, 4000);
+  })();
   </script>
 
 </body>
