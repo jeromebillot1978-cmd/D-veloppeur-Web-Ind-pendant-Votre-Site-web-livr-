@@ -1547,7 +1547,7 @@
           <span class="gen-result-label">✦ Publicité générée</span>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
             <button class="gen-copy-btn" onclick="copierPub()">Copier</button>
-            <button class="gen-fb-btn" onclick="partagerFacebook()">f Partager</button>
+            <button class="gen-fb-btn" onclick="copierEtPartager()">f Copier + Facebook</button>
           </div>
         </div>
         <div class="gen-output" id="genOutput">
@@ -2221,6 +2221,32 @@ Réponds uniquement avec le texte publicitaire, sans explication, sans balises m
 
       genBtn.disabled = false;
       genBtn.textContent = '✦ Générer ma publicité';
+    };
+
+    window.copierEtPartager = function() {
+      const texte = document.getElementById('genText').textContent;
+      const lien  = document.getElementById('genLienImage').value.trim();
+      if (!texte) return;
+
+      // 1. Copier le texte
+      navigator.clipboard.writeText(texte).then(() => {
+        // 2. Afficher le tooltip
+        const btn = document.querySelector('.gen-fb-btn');
+        const original = btn.textContent;
+        btn.textContent = '✓ Texte copié — colle-le sur Facebook !';
+        btn.style.background = '#2d7a2d';
+
+        // 3. Ouvrir Facebook après 800ms
+        setTimeout(() => {
+          const base = 'https://www.facebook.com/sharer/sharer.php?';
+          const params = lien
+            ? 'u=' + encodeURIComponent(lien)
+            : 'u=' + encodeURIComponent(window.location.href);
+          window.open(base + params, '_blank', 'width=600,height=500,noopener');
+          btn.textContent = original;
+          btn.style.background = '';
+        }, 800);
+      });
     };
 
     window.partagerFacebook = function() {
