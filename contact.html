@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – JERCAT Développeur Web Freelance</title>
+  <meta name="description" content="Contactez JERCAT, développeur web freelance. Devis gratuit, réponse rapide. Sites vitrine, e-commerce, applications web sur mesure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --border: #1e1e2e;
+      --accent: #6c63ff;
+      --accent-glow: rgba(108, 99, 255, 0.18);
+      --text: #e8e8f0;
+      --muted: #6b6b80;
+      --success: #3dd68c;
+      --error: #ff5c5c;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Space Grotesk', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .logo span { color: var(--text); }
+    nav a.back {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    nav a.back:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 300px;
+      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* INFO PANEL */
+    .info-panel { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
+    }
+    .info-card h3 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent-glow);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .info-text { flex: 1; }
+    .info-text strong {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .info-text span {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .info-text a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.82rem;
+    }
+    .info-text a:hover { text-decoration: underline; }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .badge {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .badge.active {
+      border-color: var(--success);
+      color: var(--success);
+      background: rgba(61,214,140,0.07);
+    }
+
+    /* FORM */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .form-card h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .form-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .form-group { margin-bottom: 1.2rem; }
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
+    }
+    input, textarea, select {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    textarea { resize: vertical; min-height: 110px; }
+    select option { background: var(--bg); }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: opacity 0.2s, transform 0.15s;
+      margin-top: 1.5rem;
+    }
+    .submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    /* FEEDBACK */
+    .feedback {
+      display: none;
+      padding: 0.9rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      border: 1px solid;
+    }
+    .feedback.success {
+      background: rgba(61,214,140,0.08);
+      border-color: var(--success);
+      color: var(--success);
+    }
+    .feedback.error {
+      background: rgba(255,92,92,0.08);
+      border-color: var(--error);
+      color: var(--error);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .container { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero { padding: 3rem 1.5rem 2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">JERCAT<span>.dev</span></a>
+  <a href="/" class="back">← Retour au portfolio</a>
+</nav>
+
+<section class="hero">
+  <p class="hero-label">// contact</p>
+  <h1>Démarrons votre<br><em>projet ensemble</em></h1>
+  <p>Devis gratuit sous 24h. Que ce soit un site vitrine, une boutique en ligne ou une app sur mesure — décrivez votre besoin.</p>
+</section>
+
+<div class="container">
+
+  <!-- INFOS -->
+  <aside class="info-panel">
+    <div class="info-card">
+      <h3>// Me contacter</h3>
+      <div class="info-item">
+        <div class="info-icon">✉️</div>
+        <div class="info-text">
+          <strong>Email</strong>
+          <a href="mailto:jercat.bilman@gmail.com">jercat.bilman@gmail.com</a>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">✈️</div>
+        <div class="info-text">
+          <strong>Telegram</strong>
+          <a href="https://t.me/JEROME1978" target="_blank" rel="noopener">@JEROME1978</a>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <strong>Localisation</strong>
+          <span>Aisne (02) · Hauts-de-France<br>Interventions toute France</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>// Disponibilité</h3>
+      <div class="info-item">
+        <div class="info-icon">🟢</div>
+        <div class="info-text">
+          <strong>Statut actuel</strong>
+          <span>Disponible pour nouveaux projets</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">⏱️</div>
+        <div class="info-text">
+          <strong>Délai de réponse</strong>
+          <span>Moins de 24h ouvrées</span>
+        </div>
+      </div>
+      <div class="badge-row">
+        <span class="badge active">● Disponible</span>
+        <span class="badge">Freelance</span>
+        <span class="badge">Remote</span>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>// Services</h3>
+      <div class="badge-row">
+        <span class="badge">Site vitrine</span>
+        <span class="badge">E-commerce</span>
+        <span class="badge">Web app</span>
+        <span class="badge">Landing page</span>
+        <span class="badge">Firebase</span>
+        <span class="badge">DeFi / Web3</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FORMULAIRE -->
+  <div class="form-card">
+    <h2>Votre demande</h2>
+    <p>Remplissez ce formulaire et je vous recontacte rapidement avec un devis détaillé.</p>
+
+    <form id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nom / Prénom *</label>
+          <input type="text" id="name" name="name" placeholder="Jean Dupont" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="jean@exemple.fr" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Téléphone (optionnel)</label>
+        <input type="tel" id="phone" name="phone" placeholder="06 XX XX XX XX" />
+      </div>
+
+      <div class="form-group">
+        <label for="project">Type de projet *</label>
+        <select id="project" name="project" required>
+          <option value="" disabled selected>Sélectionnez un type</option>
+          <option value="vitrine">Site vitrine</option>
+          <option value="ecommerce">Boutique e-commerce</option>
+          <option value="webapp">Application web</option>
+          <option value="landing">Landing page</option>
+          <option value="refonte">Refonte de site existant</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Budget estimé</label>
+        <select id="budget" name="budget">
+          <option value="" disabled selected>Fourchette budgétaire</option>
+          <option value="<500">Moins de 500 €</option>
+          <option value="500-1000">500 – 1 000 €</option>
+          <option value="1000-2500">1 000 – 2 500 €</option>
+          <option value="2500+">Plus de 2 500 €</option>
+          <option value="nsp">Je ne sais pas encore</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Description du projet *</label>
+        <textarea id="message" name="message" placeholder="Décrivez votre projet : objectif, fonctionnalités souhaitées, délai..." required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <span id="btnText">Envoyer ma demande →</span>
+      </button>
+
+      <div class="feedback" id="feedback"></div>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 <a href="/">JERCAT</a> · Développeur Web Freelance · Aisne, France</p>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  const feedback = document.getElementById('feedback');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Validation basique
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const project = document.getElementById('project').value;
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !project || !message) {
+      showFeedback('error', '⚠️ Merci de remplir tous les champs obligatoires.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showFeedback('error', '⚠️ Adresse email invalide.');
+      return;
+    }
+
+    btn.disabled = true;
+    btnText.textContent = 'Envoi en cours...';
+
+    // Simulation envoi (remplacer par Formspree, EmailJS, ou API)
+    // Exemple avec Formspree : action="https://formspree.io/f/VOTRE_ID"
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1200)); // <- remplacer par fetch réel
+      showFeedback('success', '✅ Message envoyé ! Je vous réponds sous 24h.');
+      form.reset();
+    } catch (err) {
+      showFeedback('error', '❌ Une erreur est survenue. Contactez-moi directement sur Telegram.');
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = 'Envoyer ma demande →';
+    }
+  });
+
+  function showFeedback(type, msg) {
+    feedback.className = 'feedback ' + type;
+    feedback.textContent = msg;
+    feedback.style.display = 'block';
+    feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+</body>
+</html>
