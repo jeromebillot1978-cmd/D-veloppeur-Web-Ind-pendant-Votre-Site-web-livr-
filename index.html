@@ -2161,22 +2161,18 @@ Demande reçue via jercat.vercel.app`
 
     window.saveGroqKey = function() {
       const val = keyInput.value.trim();
-      if (!val.startsWith('gsk_') || val.length < 20) {
-        keyStatus.textContent = '⚠ Clé invalide — elle doit commencer par gsk_';
-        keyStatus.className = 'api-key-status err';
-        genBtn.disabled = true;
-        return;
-      }
+      // La clé est gérée côté serveur, on accepte toujours
       groqKey = val;
-      keyStatus.textContent = '✓ Clé enregistrée — prête à utiliser';
-      keyStatus.className = 'api-key-status ok';
       genBtn.disabled = false;
     };
 
     keyInput.addEventListener('keydown', e => { if (e.key === 'Enter') window.saveGroqKey(); });
 
-    // Auto-charger la clé hardcodée au démarrage
-    window.addEventListener('DOMContentLoaded', () => { window.saveGroqKey(); });
+    // Auto-charger la clé et activer le bouton directement
+    setTimeout(() => {
+      const btn = document.getElementById('genBtn');
+      if (btn) btn.disabled = false;
+    }, 100);
 
     window.genererPub = async function() {
       const activite = document.getElementById('genActivite').value.trim();
