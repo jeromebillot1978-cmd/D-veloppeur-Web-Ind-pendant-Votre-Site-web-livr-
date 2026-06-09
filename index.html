@@ -1060,11 +1060,13 @@
     box-shadow: 0 4px 30px rgba(0,0,0,0.5);
   }
   .navbar-logo img {
-    height: 46px;
+    height: 72px;
     width: auto;
     display: block;
-    filter: drop-shadow(0 0 8px rgba(184,152,90,0.35));
+    filter: drop-shadow(0 0 10px rgba(184,152,90,0.45));
+    transition: transform 0.2s;
   }
+  .navbar-logo img:hover { transform: scale(1.05); }
   .navbar-links {
     display: flex;
     align-items: center;
@@ -1938,12 +1940,19 @@ Demande reçue via jercat.vercel.app`
       popup.classList.remove('show');
       document.getElementById('chatBadge').style.display = 'none';
     });
+
+    // Navbar : fond plus opaque au scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.style.background = 'rgba(10,10,8,0.95)';
+      } else {
+        navbar.style.background = 'rgba(10,10,8,0.75)';
+      }
+    });
   </script>
 
-</body>
-</html>
   <style>
-    /* Bouton flottant */
     .chat-fab {
       position: fixed; bottom: 28px; right: 28px; z-index: 9999;
       width: 62px; height: 62px; border-radius: 50%;
