@@ -573,6 +573,206 @@
       text-transform: uppercase;
     }
 
+    /* ── GÉNÉRATEUR DE PUB ── */
+    .gen-pub {
+      padding: 100px 80px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .gen-pub-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .api-key-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .api-key-block label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .api-key-input {
+      flex: 1;
+      min-width: 220px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      padding: 10px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .api-key-input::placeholder { color: var(--muted); opacity: 0.6; }
+    .api-key-input:focus { border-color: var(--gold); }
+    .api-key-save {
+      padding: 10px 22px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .api-key-save:hover { background: rgba(201,168,76,0.1); }
+    .api-key-status {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--muted);
+      width: 100%;
+    }
+    .api-key-status.ok { color: #6dbf82; }
+    .api-key-status.err { color: #e07070; }
+
+    .gen-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .gen-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .gen-field label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .gen-field input,
+    .gen-field select,
+    .gen-field textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .gen-field input::placeholder,
+    .gen-field textarea::placeholder { color: var(--muted); opacity: 0.6; }
+    .gen-field input:focus,
+    .gen-field select:focus,
+    .gen-field textarea:focus { border-color: var(--gold); }
+    .gen-field select option { background: var(--card); }
+    .gen-field-full { grid-column: 1 / -1; }
+
+    .gen-btn {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+      background-size: 200% 200%;
+      color: #0a0a08;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background-position 0.4s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.2);
+      margin-top: 8px;
+    }
+    .gen-btn:hover:not(:disabled) {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+    }
+    .gen-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .gen-result {
+      margin-top: 32px;
+      display: none;
+    }
+    .gen-result.visible { display: block; }
+    .gen-result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .gen-result-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .gen-copy-btn {
+      padding: 7px 18px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .gen-copy-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .gen-output {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text);
+      white-space: pre-wrap;
+      position: relative;
+    }
+    .gen-output::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .gen-loading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+    }
+    .gen-spinner {
+      width: 16px; height: 16px;
+      border: 2px solid var(--border);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 900px) {
+      .gen-pub { padding: 70px 28px; }
+      .gen-fields { grid-template-columns: 1fr; }
+    }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -1267,6 +1467,90 @@
     </div>
   </section>
 
+  <!-- ── GÉNÉRATEUR DE PUB IA ── -->
+  <section class="gen-pub" id="generateur-pub">
+    <div class="gen-pub-inner">
+      <div class="section-tag" style="text-align:center;margin-bottom:16px;">Intelligence Artificielle</div>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,52px);margin-bottom:12px;">
+        Générez votre <em>Publicité</em>
+      </h2>
+      <p class="section-intro" style="margin-bottom:40px;">
+        Décrivez votre activité — l'IA rédige votre pub en quelques secondes.
+      </p>
+
+      <!-- Clé API -->
+      <div class="api-key-block">
+        <label for="groqKeyInput">Clé Groq</label>
+        <input
+          type="password"
+          id="groqKeyInput"
+          class="api-key-input"
+          placeholder="gsk_xxxxxxxxxxxxxxxxxxxxxxxx"
+          autocomplete="off"
+        />
+        <button class="api-key-save" onclick="saveGroqKey()">Valider</button>
+        <div class="api-key-status" id="keyStatus">
+          Clé non configurée — <a href="https://console.groq.com" target="_blank" style="color:var(--gold);">Obtenir une clé Groq gratuite ↗</a>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="gen-fields">
+        <div class="gen-field">
+          <label for="genActivite">Votre activité</label>
+          <input type="text" id="genActivite" placeholder="Ex : coiffeur, restaurant, plombier…" maxlength="80" />
+        </div>
+        <div class="gen-field">
+          <label for="genTon">Ton</label>
+          <select id="genTon">
+            <option value="professionnel">Professionnel</option>
+            <option value="dynamique">Dynamique & accrocheur</option>
+            <option value="luxe">Luxe & élégant</option>
+            <option value="humoristique">Humoristique</option>
+            <option value="local">Proximité locale</option>
+          </select>
+        </div>
+        <div class="gen-field">
+          <label for="genFormat">Format</label>
+          <select id="genFormat">
+            <option value="réseaux sociaux">Réseaux sociaux (court)</option>
+            <option value="Google Ads">Google Ads (titre + description)</option>
+            <option value="flyer">Flyer / affiche</option>
+            <option value="email">Email marketing</option>
+            <option value="SMS">SMS promotionnel</option>
+          </select>
+        </div>
+        <div class="gen-field">
+          <label for="genPromo">Offre / Promotion (optionnel)</label>
+          <input type="text" id="genPromo" placeholder="Ex : -20% ce mois-ci, livraison offerte…" maxlength="100" />
+        </div>
+        <div class="gen-field gen-field-full">
+          <label for="genInfos">Infos supplémentaires (optionnel)</label>
+          <textarea id="genInfos" rows="2" placeholder="Public cible, valeur ajoutée, message clé…" maxlength="300"></textarea>
+        </div>
+      </div>
+
+      <button class="gen-btn" id="genBtn" onclick="genererPub()" disabled>
+        ✦ Générer ma publicité
+      </button>
+
+      <!-- Résultat -->
+      <div class="gen-result" id="genResult">
+        <div class="gen-result-header">
+          <span class="gen-result-label">✦ Publicité générée</span>
+          <button class="gen-copy-btn" onclick="copierPub()">Copier</button>
+        </div>
+        <div class="gen-output" id="genOutput">
+          <div class="gen-loading" id="genLoading">
+            <div class="gen-spinner"></div>
+            Rédaction en cours…
+          </div>
+          <span id="genText"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── FOOTER ── -->
   <footer>
     <div class="footer-logo">Jercat</div>
@@ -1854,6 +2138,99 @@ Demande reçue via jercat.vercel.app`
 
     // Popup auto après 4s
     setTimeout(() => { if (!isOpen) badge.style.animation = 'pulse-badge 1s infinite'; }, 4000);
+  })();
+  </script>
+
+  <!-- ── SCRIPT GÉNÉRATEUR DE PUB ── -->
+  <script>
+  (function() {
+    const keyInput  = document.getElementById('groqKeyInput');
+    const keyStatus = document.getElementById('keyStatus');
+    const genBtn    = document.getElementById('genBtn');
+    let groqKey = '';
+
+    window.saveGroqKey = function() {
+      const val = keyInput.value.trim();
+      if (!val.startsWith('gsk_') || val.length < 20) {
+        keyStatus.textContent = '⚠ Clé invalide — elle doit commencer par gsk_';
+        keyStatus.className = 'api-key-status err';
+        genBtn.disabled = true;
+        return;
+      }
+      groqKey = val;
+      keyStatus.textContent = '✓ Clé enregistrée — prête à utiliser';
+      keyStatus.className = 'api-key-status ok';
+      genBtn.disabled = false;
+    };
+
+    keyInput.addEventListener('keydown', e => { if (e.key === 'Enter') window.saveGroqKey(); });
+
+    window.genererPub = async function() {
+      const activite = document.getElementById('genActivite').value.trim();
+      if (!activite) { alert('Merci de renseigner votre activité.'); return; }
+      const ton    = document.getElementById('genTon').value;
+      const format = document.getElementById('genFormat').value;
+      const promo  = document.getElementById('genPromo').value.trim();
+      const infos  = document.getElementById('genInfos').value.trim();
+
+      const result  = document.getElementById('genResult');
+      const loading = document.getElementById('genLoading');
+      const genText = document.getElementById('genText');
+
+      result.classList.add('visible');
+      loading.style.display = 'flex';
+      genText.textContent = '';
+      genBtn.disabled = true;
+      genBtn.textContent = '⏳ Génération…';
+
+      const prompt = `Tu es un expert en copywriting publicitaire français.
+Rédige une publicité ${format} pour un(e) ${activite}.
+Ton souhaité : ${ton}.${promo ? `\nOffre à mettre en avant : ${promo}.` : ''}${infos ? `\nInfos complémentaires : ${infos}.` : ''}
+Réponds uniquement avec le texte publicitaire, sans explication, sans balises markdown.`;
+
+      try {
+        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + groqKey
+          },
+          body: JSON.stringify({
+            model: 'llama3-8b-8192',
+            messages: [{ role: 'user', content: prompt }],
+            max_tokens: 500,
+            temperature: 0.85
+          })
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err?.error?.message || 'Erreur API Groq (' + res.status + ')');
+        }
+
+        const data = await res.json();
+        const texte = data.choices?.[0]?.message?.content?.trim() || 'Aucun résultat.';
+        loading.style.display = 'none';
+        genText.textContent = texte;
+
+      } catch (e) {
+        loading.style.display = 'none';
+        genText.textContent = '⚠ Erreur : ' + e.message;
+      }
+
+      genBtn.disabled = false;
+      genBtn.textContent = '✦ Générer ma publicité';
+    };
+
+    window.copierPub = function() {
+      const texte = document.getElementById('genText').textContent;
+      if (!texte) return;
+      navigator.clipboard.writeText(texte).then(() => {
+        const btn = document.querySelector('.gen-copy-btn');
+        btn.textContent = 'Copié ✓';
+        setTimeout(() => { btn.textContent = 'Copier'; }, 2000);
+      });
+    };
   })();
   </script>
 
