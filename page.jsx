@@ -1,379 +1,2426 @@
-"use client";
+<!DOCTYPE html>
+<html lang="fr" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="XZAf4N79QWMUV8uBKlAU2U5zWjHI09EDAaQ22s3cwkg" />
 
-import { useState } from "react";
-import Head from "next/head";
+  <!-- ── SEO TITLE & META ── -->
+  <title>Création Site Web Professionnel — Jercat Développeur Freelance | Devis Gratuit</title>
+  <meta name="description" content="Jercat, développeur web freelance — création site web vitrine, e-commerce, landing page sur-mesure. Design moderne, livraison rapide 7 jours, devis gratuit. Contactez-moi dès aujourd'hui !" />
+  <meta name="keywords" content="création site web, développeur web freelance, site vitrine pas cher, création e-commerce, landing page, refonte site web, développeur web indépendant, site web professionnel, jercat développeur" />
+  <meta name="author" content="Jercat" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="theme-color" content="#0a0a08" />
+  <link rel="canonical" href="https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/" />
 
-const BUSINESS_TYPES = [
-  { value: "restaurant", label: "🍽 Restaurant / Café" },
-  { value: "coiffeur",   label: "✂️ Coiffeur / Barbier" },
-  { value: "artisan",    label: "🔧 Artisan / BTP" },
-  { value: "coach",      label: "🎯 Coach / Consultant" },
-  { value: "boutique",   label: "🛍 Boutique / Commerce" },
-];
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/" />
+  <meta property="og:site_name" content="Jercat — Développeur Web Freelance" />
+  <meta property="og:title" content="Création Site Web Professionnel — Jercat | Devis Gratuit" />
+  <meta property="og:description" content="Site vitrine, e-commerce, landing page sur-mesure. Design moderne, livraison rapide, prix abordable. Premier échange gratuit !" />
+  <meta property="og:image" content="https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jercat — Développeur web freelance, création de sites web professionnels" />
+  <meta property="og:locale" content="fr_FR" />
 
-const OBJECTIVES = [
-  { value: "leads",     label: "📋 Générer des Leads" },
-  { value: "whatsapp",  label: "💬 Messages WhatsApp" },
-  { value: "appels",    label: "📞 Appels téléphoniques" },
-  { value: "visites",   label: "🌐 Visites du site web" },
-];
+  <!-- ── TWITTER CARD ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Création Site Web — Jercat Développeur Freelance" />
+  <meta name="twitter:description" content="Site vitrine, e-commerce, landing page sur-mesure. Devis gratuit sous 24h !" />
+  <meta name="twitter:image" content="https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/preview.png" />
 
-export default function GenerateurPub() {
-  const [form, setForm] = useState({
-    businessType: "restaurant",
-    nom: "",
-    ville: "",
-    offre: "",
-    objectif: "leads",
-  });
-  const [results, setResults]   = useState(null);
-  const [loading, setLoading]   = useState(false);
-  const [error, setError]       = useState("");
-  const [copied, setCopied]     = useState({});
+  <!-- ── JSON-LD STRUCTURED DATA ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/#business",
+        "name": "Jercat — Développeur Web Freelance",
+        "description": "Création de sites web professionnels sur-mesure : site vitrine, e-commerce, landing page, SEO et maintenance. Livraison rapide, devis gratuit.",
+        "url": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/",
+        "email": "jercat.bilman@gmail.com",
+        "sameAs": ["https://t.me/JEROME1978"],
+        "priceRange": "€€",
+        "currenciesAccepted": "EUR",
+        "openingHours": "Mo-Fr 09:00-19:00",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services de création web",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création site vitrine professionnel" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création site e-commerce" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création landing page optimisée" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Référencement SEO naturel" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Refonte et maintenance site web" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Application web sur-mesure" } }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "ratingCount": "12"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/#person",
+        "name": "Jercat",
+        "jobTitle": "Développeur Web Freelance",
+        "email": "jercat.bilman@gmail.com",
+        "url": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/",
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "WordPress", "Shopify", "SEO", "PHP"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/#website",
+        "url": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/",
+        "name": "Jercat — Création site web freelance",
+        "description": "Développeur web freelance spécialisé en création de sites web professionnels",
+        "publisher": { "@id": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/#person" },
+        "inLanguage": "fr-FR",
+        "potentialAction": {
+          "@type": "ContactAction",
+          "target": "mailto:jercat.bilman@gmail.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Combien coûte la création d'un site web professionnel ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Le prix dépend du type et de la complexité du projet. Je propose des tarifs adaptés à tous les budgets. Contactez-moi pour un devis gratuit et personnalisé." }
+          },
+          {
+            "@type": "Question",
+            "name": "Quel est le délai de création d'un site web ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "En moyenne 7 jours pour un site vitrine. Le délai varie selon la complexité — je vous communique un délai précis lors du devis gratuit." }
+          },
+          {
+            "@type": "Question",
+            "name": "Proposez-vous la maintenance après la livraison du site ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Oui, je propose un service de maintenance et suivi post-lancement. Votre site reste toujours à jour et opérationnel." }
+          },
+          {
+            "@type": "Question",
+            "name": "Mon site sera-t-il optimisé pour Google ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Oui ! Chaque site est livré avec les bases SEO on-page incluses : balises optimisées, structure sémantique, performances et sitemap." }
+          },
+          {
+            "@type": "Question",
+            "name": "Comment se passe la demande de devis ?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Remplissez le formulaire de devis sur mon site, ou contactez-moi par email ou Telegram. Je vous réponds sous 24h avec un devis personnalisé gratuit." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/#services" },
+          { "@type": "ListItem", "position": 3, "name": "Devis Gratuit", "item": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/#contact" }
+        ]
+      }
+    ]
+  }
+  </script>
 
-  const handleChange = (e) =>
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  <!-- ── PERFORMANCE ── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a08'/><text y='.9em' font-size='80' x='10'>💻</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* ── Appel vers /api/generate-pub (route sécurisée) ── */
-  async function generate() {
-    if (!form.nom.trim() || !form.ville.trim() || !form.offre.trim()) {
-      setError("Remplis tous les champs avant de générer.");
-      return;
+    :root {
+      --bg: #0a0a08;
+      --surface: #111110;
+      --card: #141412;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-dark: #8b6914;
+      --text: #f0e6d0;
+      --muted: #8a7d65;
+      --border: rgba(201,168,76,0.2);
     }
-    setError("");
-    setResults(null);
-    setLoading(true);
 
-    try {
-      const res = await fetch("/api/generate-pub", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Erreur serveur");
-      setResults(data.pubs);
-    } catch (e) {
-      setError(e.message || "Erreur lors de la génération. Réessaie.");
-    } finally {
-      setLoading(false);
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
     }
-  }
 
-  /* ── Copier tout le bloc ── */
-  function copyBlock(pub, idx) {
-    const txt = `✦ PUB META — ${pub.angle.toUpperCase()}
+    /* Gold divider ornament */
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+    }
+    .ornament::before, .ornament::after {
+      content: '';
+      height: 1px;
+      width: 60px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .ornament::after { background: linear-gradient(90deg, var(--gold), transparent); }
 
-📌 TITRE (${pub.titre.length}/40) :
-${pub.titre}
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 40px;
+      position: relative;
+      overflow: hidden;
+    }
 
-📝 TEXTE PRINCIPAL (${pub.texte.length}/125) :
-${pub.texte}
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 50% 100%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    }
 
-📄 DESCRIPTION (${pub.description.length}/30) :
-${pub.description}
 
-🖼 PROMPT IMAGE DALL-E (1080×1080) :
-${pub.prompt_image}
+    .hero-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 1s 0.2s forwards;
+    }
 
-🎯 CIBLAGE META :
-• Âge : ${pub.ciblage_age}
-• Centres d'intérêt : ${pub.interets.join(", ")}
-• Rayon : ${pub.rayon_km} km autour de ${form.ville}`;
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(52px, 8vw, 110px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      opacity: 0;
+      animation: fadeUp 1s 0.4s forwards;
+    }
+    h1 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.15em;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
 
-    navigator.clipboard.writeText(txt).then(() => {
-      setCopied((p) => ({ ...p, [idx]: true }));
-      setTimeout(() => setCopied((p) => ({ ...p, [idx]: false })), 2200);
-    });
-  }
+    .hero-sub {
+      margin-top: 32px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 1s 0.6s forwards;
+    }
 
-  /* ── Compteur de caractères coloré ── */
-  function cc(str, max) {
-    const n = str?.length || 0;
-    const c = n > max ? "#ff4757" : n > max * 0.85 ? "#f4a31a" : "#22d678";
-    return <span style={{ fontSize: "0.7rem", color: c, fontFamily: "monospace" }}>{n}/{max}</span>;
-  }
+    .hero-actions {
+      margin-top: 52px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s 0.8s forwards;
+    }
 
-  /* ════════════════════════════════════════════════════════ RENDER */
-  return (
-    <>
-      <Head>
-        <title>Générateur de Pubs Meta IA — Jercat Développeur Web</title>
-        <meta name="description" content="Génère 3 publicités Facebook/Instagram optimisées en quelques secondes grâce à l'IA Llama 3. Outil gratuit par Jercat." />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-      </Head>
+    .btn-gold {
+      padding: 16px 40px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+      background-size: 200% 200%;
+      color: #0a0a08;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-position 0.4s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.2);
+    }
+    .btn-gold:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+    }
 
-      <style>{CSS}</style>
+    .btn-outline-gold {
+      padding: 15px 40px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+    .btn-outline-gold:hover {
+      background: rgba(201,168,76,0.08);
+      transform: translateY(-2px);
+    }
 
-      {/* NAV */}
-      <nav className="nav">
-        <a href="/" className="nav-logo">Jer<em>cat</em></a>
-        <span className="nav-badge">IA · Llama 3</span>
-        <a href="/" className="nav-back">← Retour au site</a>
-      </nav>
+    /* ── STATS ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat-item {
+      padding: 48px 40px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 52px;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      margin-top: 10px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+      font-family: 'Cinzel', serif;
+    }
 
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-eyebrow"><span className="spark">✦</span>Outil gratuit — Développeur Web IA</div>
-        <h1>Générateur de pubs<br /><em>Meta</em> par IA</h1>
-        <p className="hero-sub">Crée 3 publicités Facebook & Instagram optimisées en quelques secondes. Titres, textes, ciblage et prompts image inclus.</p>
-        <div className="hero-pills">
-          <span className="pill"><span className="dot" />Gratuit &amp; sans inscription</span>
-          <span className="pill"><span className="dot" />Facebook &amp; Instagram Ads</span>
-          <span className="pill"><span className="dot" />Limites Meta respectées</span>
-          <span className="pill"><span className="dot" />Propulsé par Llama 3</span>
-        </div>
-      </section>
+    /* ── SECTION COMMONS ── */
+    .section { padding: 100px 80px; }
+    .section-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(36px, 4vw, 64px);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .section-title em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
+    .section-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--muted);
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 60px;
+      line-height: 1.7;
+    }
 
-      {/* FORM */}
-      <div className="form-section">
-        <div className="card">
-          <div className="card-title">✦ Ton business</div>
-          <div className="form-grid">
-            <div className="field">
-              <label>Type de business</label>
-              <select name="businessType" value={form.businessType} onChange={handleChange}>
-                {BUSINESS_TYPES.map((b) => <option key={b.value} value={b.value}>{b.label}</option>)}
-              </select>
-            </div>
-            <div className="field">
-              <label>Objectif pub</label>
-              <select name="objectif" value={form.objectif} onChange={handleChange}>
-                {OBJECTIVES.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
-              </select>
-            </div>
-            <div className="field">
-              <label>Nom du business *</label>
-              <input type="text" name="nom" value={form.nom} onChange={handleChange} placeholder="Ex : Chez Mario, Studio Zara…" maxLength={60} />
-            </div>
-            <div className="field">
-              <label>Ville *</label>
-              <input type="text" name="ville" value={form.ville} onChange={handleChange} placeholder="Ex : Paris, Lyon, Bordeaux…" maxLength={50} />
-            </div>
-            <div className="field full">
-              <label>Offre / accroche principale *</label>
-              <input type="text" name="offre" value={form.offre} onChange={handleChange} placeholder="Ex : Menu burger + frites offert ce week-end" maxLength={120} />
-            </div>
-          </div>
-        </div>
+    /* ── AVANTAGES — cartes 3D ── */
+    .avantages { background: var(--surface); }
 
-        {error && <div className="error-msg">⚠ {error}</div>}
+    .avantages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      perspective: 1000px;
+    }
 
-        <button className="btn-generate" onClick={generate} disabled={loading}>
-          {loading
-            ? <><Spinner />Génération en cours…</>
-            : <>✦ Générer 3 pubs Meta</>}
-        </button>
+    .card-3d {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 44px 32px;
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease, box-shadow 0.3s;
+      cursor: default;
+    }
+    .card-3d::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card-3d:hover::before { opacity: 1; }
+    .card-3d:hover {
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(201,168,76,0.08);
+    }
+    .card-3d::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card-3d:hover::after { opacity: 1; }
 
-        {loading && (
-          <div className="loader-wrap">
-            <div className="loader-ring" />
-            <div className="loader-text">Llama 3 rédige tes publicités…</div>
-          </div>
-        )}
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .card-num {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gold-dark);
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 300;
+    }
 
-        {/* RESULTS */}
-        {results && (
-          <div style={{ marginTop: 36 }}>
-            <div className="results-header">
-              <div className="results-title">3 pubs <em>prêtes à diffuser</em></div>
-              <span style={{ fontSize: "0.75rem", color: "var(--muted)", fontFamily: "JetBrains Mono, monospace" }}>
-                pour {form.nom} · {form.ville}
-              </span>
-            </div>
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      perspective: 1000px;
+    }
 
-            {results.map((pub, idx) => (
-              <div className="pub-card" key={idx}>
-                <div className="pub-card-header">
-                  <span className={`pub-angle-badge angle-${idx}`}>
-                    {["❤ Émotionnel", "📊 Rationnel", "⚡ Urgence"][idx]}
-                  </span>
-                  <span style={{ fontSize: "0.75rem", color: "var(--muted)", marginLeft: "auto" }}>
-                    Variante {idx + 1} / 3
-                  </span>
-                </div>
+    /* ── PROCESS ── */
+    .process { background: var(--surface); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .step {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+    .step:hover { border-top-color: var(--gold); }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 72px;
+      color: rgba(201,168,76,0.08);
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+    .step-title {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      color: var(--gold-light);
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
 
-                <div className="pub-card-body">
-                  <Field label={<>📌 Titre {cc(pub.titre, 40)}</>} bold>{pub.titre}</Field>
-                  <Field label={<>📝 Texte principal {cc(pub.texte, 125)}</>}>{pub.texte}</Field>
-                  <Field label={<>📄 Description {cc(pub.description, 30)}</>}>{pub.description}</Field>
+    /* ── DÉMO VIDÉO ── */
+    .video-demo {
+      padding: 100px 80px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .video-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .video-wrapper video {
+      width: 100%;
+      border: 1px solid var(--border);
+      display: block;
+      background: #000;
+    }
+    .video-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, var(--gold-dark), transparent 50%, var(--gold-dark));
+      z-index: -1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .video-demo { padding: 60px 24px; }
+    }
 
-                  <hr className="divider" />
+    /* ── TECH ── */
+    .stack { padding: 60px 80px; border-top: 1px solid var(--border); }
+    .stack-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .tech-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tech-pill {
+      padding: 8px 20px;
+      border: 1px solid var(--border);
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tech-pill:hover { border-color: var(--gold); color: var(--gold); }
 
-                  <Field label="🖼 Prompt image DALL-E · 1080×1080" mono>{pub.prompt_image}</Field>
+    /* ── CTA ── */
+    .cta {
+      padding: 120px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);
+    }
+    .cta h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(40px, 5vw, 80px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .cta h2 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+      display: block;
+    }
+    .cta p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .contact-row {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .contact-row a { color: var(--gold); text-decoration: none; }
+    .contact-row a:hover { color: var(--gold-light); }
+    .sep { color: var(--border); }
 
-                  <hr className="divider" />
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 80px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface);
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+    }
+    .footer-copy {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
 
-                  {/* Ciblage */}
-                  <div className="pub-field">
-                    <div className="pub-field-label">🎯 Ciblage Meta Ads</div>
-                    <div className="targeting-grid">
-                      <div className="targeting-item">
-                        <div className="targeting-item-label">Âge</div>
-                        <div className="targeting-item-value">{pub.ciblage_age}</div>
-                      </div>
-                      <div className="targeting-item">
-                        <div className="targeting-item-label">Rayon</div>
-                        <div className="targeting-item-value">{pub.rayon_km} km — {form.ville}</div>
-                      </div>
-                      <div className="targeting-item" style={{ gridColumn: "1 / -1" }}>
-                        <div className="targeting-item-label" style={{ marginBottom: 6 }}>Centres d'intérêt</div>
-                        <div className="interets-list">
-                          {pub.interets.map((t, i) => <span key={i} className="interet-tag">{t}</span>)}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+    /* ── GÉNÉRATEUR DE PUB ── */
+    .gen-pub {
+      padding: 100px 80px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .gen-pub-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .api-key-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 24px 28px;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .api-key-block label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .api-key-input {
+      flex: 1;
+      min-width: 220px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      padding: 10px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .api-key-input::placeholder { color: var(--muted); opacity: 0.6; }
+    .api-key-input:focus { border-color: var(--gold); }
+    .api-key-save {
+      padding: 10px 22px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .api-key-save:hover { background: rgba(201,168,76,0.1); }
+    .api-key-status {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--muted);
+      width: 100%;
+    }
+    .api-key-status.ok { color: #6dbf82; }
+    .api-key-status.err { color: #e07070; }
 
-                  <button className={`btn-copy${copied[idx] ? " ok" : ""}`} onClick={() => copyBlock(pub, idx)}>
-                    {copied[idx] ? "✓ Copié !" : "📋 Copier tout le bloc"}
-                  </button>
-                </div>
-              </div>
-            ))}
+    .gen-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .gen-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .gen-field label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .gen-field input,
+    .gen-field select,
+    .gen-field textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .gen-field input::placeholder,
+    .gen-field textarea::placeholder { color: var(--muted); opacity: 0.6; }
+    .gen-field input:focus,
+    .gen-field select:focus,
+    .gen-field textarea:focus { border-color: var(--gold); }
+    .gen-field select option { background: var(--card); }
+    .gen-field-full { grid-column: 1 / -1; }
 
-            {/* CTA */}
-            <div className="card" style={{ textAlign: "center", marginTop: 8, borderColor: "rgba(201,168,76,0.15)" }}>
-              <p style={{ fontSize: "0.9rem", color: "var(--muted)", marginBottom: 14, lineHeight: 1.7 }}>
-                Tu veux un site web qui convertit autant que tes pubs ?
-              </p>
-              <a href="/#contact" className="btn-cta">✦ Demander un devis gratuit</a>
-            </div>
-          </div>
-        )}
+    .gen-btn {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+      background-size: 200% 200%;
+      color: #0a0a08;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background-position 0.4s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.2);
+      margin-top: 8px;
+    }
+    .gen-btn:hover:not(:disabled) {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+    }
+    .gen-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .gen-result {
+      margin-top: 32px;
+      display: none;
+    }
+    .gen-result.visible { display: block; }
+    .gen-result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .gen-result-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .gen-copy-btn {
+      padding: 7px 18px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .gen-copy-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .gen-output {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text);
+      white-space: pre-wrap;
+      position: relative;
+    }
+    .gen-output::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .gen-loading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 16px;
+    }
+    .gen-spinner {
+      width: 16px; height: 16px;
+      border: 2px solid var(--border);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .gen-fb-guide {
+      margin-top: 24px;
+      border: 1px solid var(--border);
+      background: rgba(201,168,76,0.04);
+    }
+    .gen-fb-actions {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .gen-fb-step-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-right: 1px solid var(--border);
+    }
+    .gen-fb-step-btn:last-child { border-right: none; }
+    .gen-fb-step-btn:hover { background: rgba(201,168,76,0.08); }
+    .step-num {
+      font-family: 'Cinzel', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .step-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--text);
+      text-align: left;
+      text-transform: uppercase;
+      line-height: 1.6;
+    }
+    .step2 .step-num { color: #1877F2; }
+    .gen-fb-steps {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .gen-fb-step-item {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .gen-fb-step-num {
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .gen-fb-step-item strong { color: var(--text); }
+    .gen-fb-btn {
+      padding: 7px 18px;
+      background: #1877F2;
+      border: none;
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      font-weight: 600;
+    }
+    .gen-fb-btn:hover { background: #1464d4; transform: translateY(-1px); }
+
+    @media (max-width: 900px) {
+      .gen-pub { padding: 70px 28px; }
+      .gen-fields { grid-template-columns: 1fr; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .stats { grid-template-columns: 1fr; }
+      .avantages-grid, .services-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .section, .cta { padding: 70px 28px; }
+      .stack, footer { padding: 50px 28px; }
+    }
+    /* ── FORMULAIRE DEVIS ── */
+    .devis-section {
+      padding: 100px 80px;
+      background: var(--surface);
+    }
+    .devis-form {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      padding: 14px 18px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      width: 100%;
+      appearance: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(201,168,76,0.1);
+    }
+    .form-group select option { background: var(--card); color: var(--text); }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-submit {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .form-notice {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 12px;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px;
+      border: 1px solid var(--gold);
+      background: rgba(201,168,76,0.05);
+    }
+    .form-success .success-icon { font-size: 40px; margin-bottom: 16px; }
+    .form-success h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .form-success p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .devis-section { padding: 70px 24px; }
+    }
+    /* ── TARIFS ── */
+    .tarifs { padding: 100px 80px; background: var(--bg); }
+    .tarifs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; perspective: 1000px; }
+    .tarif-card { background: var(--card); border: 1px solid var(--border); padding: 44px 32px; text-align: center; position: relative; transition: transform 0.3s, box-shadow 0.3s; }
+    .tarif-card.featured { border-color: var(--gold); box-shadow: 0 0 40px rgba(201,168,76,0.12); }
+    .tarif-card.featured::before { content: '⭐ POPULAIRE'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #0a0a08; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; padding: 4px 16px; }
+    .tarif-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .tarif-name { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; }
+    .tarif-price { font-family: 'Cormorant Garamond', serif; font-size: 68px; color: var(--gold); line-height: 1; font-weight: 300; }
+    .tarif-price span { font-size: 24px; vertical-align: super; }
+    .tarif-desc { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--muted); margin: 12px 0 28px; }
+    .tarif-features { list-style: none; text-align: left; margin-bottom: 32px; display: flex; flex-direction: column; gap: 10px; }
+    .tarif-features li { font-size: 13px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+    .tarif-features li::before { content: '✦'; color: var(--gold); font-size: 10px; margin-top: 2px; flex-shrink: 0; }
+
+    /* ── TÉMOIGNAGES ── */
+    .temoignages { padding: 100px 80px; background: var(--surface); }
+    .temoignages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .temo-card { background: var(--card); border: 1px solid var(--border); padding: 36px 28px; position: relative; }
+    .temo-card::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 80px; color: rgba(201,168,76,0.12); position: absolute; top: 10px; left: 20px; line-height: 1; }
+    .temo-stars { color: var(--gold); font-size: 14px; margin-bottom: 16px; letter-spacing: 3px; }
+    .temo-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 24px; position: relative; z-index: 1; }
+    .temo-author { display: flex; align-items: center; gap: 14px; }
+    .temo-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 16px; color: #0a0a08; font-weight: 700; flex-shrink: 0; }
+    .temo-name { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.1em; color: var(--gold-light); }
+    .temo-job { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* ── GARANTIES ── */
+    .garanties { padding: 80px; border-top: 1px solid var(--border); background: var(--bg); }
+    .garanties-row { display: flex; gap: 0; flex-wrap: wrap; justify-content: center; }
+    .garantie-item { flex: 1; min-width: 180px; text-align: center; padding: 40px 24px; border-right: 1px solid var(--border); }
+    .garantie-item:last-child { border-right: none; }
+    .garantie-icon { font-size: 36px; margin-bottom: 14px; }
+    .garantie-title { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+    .garantie-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* ── LEGAL ── */
+    .legal-bar { background: var(--surface); border-top: 1px solid var(--border); padding: 16px 80px; text-align: center; font-size: 11px; color: var(--muted); font-family: 'DM Sans', sans-serif; line-height: 1.8; }
+    .legal-bar a { color: var(--gold); text-decoration: none; margin: 0 8px; }
+    .legal-bar a:hover { text-decoration: underline; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9000; align-items: center; justify-content: center; padding: 20px; }
+    .modal-overlay.open { display: flex; }
+    .modal-box { background: var(--surface); border: 1px solid var(--border); max-width: 640px; width: 100%; max-height: 80vh; overflow-y: auto; padding: 48px; position: relative; }
+    .modal-box h3 { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold); margin-bottom: 24px; }
+    .modal-box p, .modal-box li { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+    .modal-box strong { color: var(--text); }
+    .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--muted); font-size: 24px; cursor: pointer; }
+
+    /* ── PORTFOLIO ── */
+    .portfolio { padding: 100px 80px; background: var(--bg); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 0; }
+    .portfolio-card {
+      position: relative; overflow: hidden;
+      border: 1px solid var(--border); background: var(--card);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none; display: block;
+    }
+    .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+    .portfolio-img-wrap { position: relative; overflow: hidden; height: 200px; }
+    .portfolio-img-wrap iframe {
+      width: 170%; height: 170%;
+      transform: scale(0.59) translate(-25%, -25%);
+      border: none; pointer-events: none;
+    }
+    .portfolio-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(10,10,8,0.95) 100%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-visit {
+      position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em;
+      color: var(--gold); text-transform: uppercase; white-space: nowrap;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .portfolio-card:hover .portfolio-visit { opacity: 1; }
+    .portfolio-info { padding: 20px 22px; border-top: 1px solid var(--border); }
+    .portfolio-title { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.1em; color: var(--gold-light); margin-bottom: 6px; }
+    .portfolio-desc { font-size: 12px; color: var(--muted); font-family: 'DM Sans', sans-serif; line-height: 1.5; }
+    .portfolio-tag { display: inline-block; margin-top: 10px; padding: 3px 10px; border: 1px solid var(--border); font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
+    @media (max-width: 900px) { .portfolio-grid { grid-template-columns: 1fr; } .portfolio { padding: 70px 24px; } }
+
+    @media (max-width: 900px) {
+      .tarifs-grid, .temoignages-grid { grid-template-columns: 1fr; }
+      .garanties-row { flex-direction: column; }
+      .garantie-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .tarifs, .temoignages, .garanties { padding: 70px 24px; }
+      .legal-bar { padding: 16px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-tag">Développeur Web Indépendant</div>
+    <h1>
+      Votre Site
+      <em>web personnalisé.</em>
+    </h1>
+    <p style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:0.35em; color:var(--gold); opacity:0.65; margin-top:10px; text-transform:uppercase;">— Jercat —</p>
+    <div class="ornament">✦</div>
+    <p class="hero-sub">
+      Full-stack spécialisé dans la création de sites performants, modernes et sur-mesure — du landing page au e-commerce complet.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-gold">Démarrer un projet</a>
+      <a href="#services" class="btn-outline-gold">Mes services</a>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-num">5★</div>
+      <div class="stat-label">Note moyenne</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7j</div>
+      <div class="stat-label">Délai moyen</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Clients satisfaits</div>
+    </div>
+  </div>
+
+  <!-- ── AVANTAGES ── -->
+  <section class="section avantages" id="avantages">
+    <div class="section-tag">Pourquoi c'est essentiel</div>
+    <h2 class="section-title">Pourquoi avoir <em>un site web ?</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Dans un monde 100% connecté, votre présence en ligne n'est plus une option — c'est votre premier commercial.</p>
+    <div class="avantages-grid">
+
+      <div class="card-3d">
+        <div class="card-num">01</div>
+        <span class="card-icon">🌐</span>
+        <div class="card-title">Visible 24h/24, 7j/7</div>
+        <p class="card-desc">Votre site travaille même quand vous dormez. Vos clients peuvent vous trouver et vous contacter à n'importe quelle heure.</p>
       </div>
 
-      {/* FOOTER */}
-      <footer className="footer">
-        <div className="footer-left">
-          <div className="footer-logo">Jer<em>cat</em></div>
-          <div style={{ marginTop: 4 }}>Développeur Web Freelance — <a href="/">jercat.vercel.app</a></div>
-        </div>
-        <div className="footer-right">
-          Propulsé par Llama 3 via Groq<br />
-          <a href="/" style={{ color: "var(--muted)", textDecoration: "none", fontSize: "0.72rem" }}>← Retour à l'accueil</a>
-        </div>
-      </footer>
-    </>
-  );
-}
+      <div class="card-3d">
+        <div class="card-num">02</div>
+        <span class="card-icon">🎯</span>
+        <div class="card-title">Crédibilité & Confiance</div>
+        <p class="card-desc">75% des consommateurs jugent la crédibilité d'une entreprise par son site. Sans site, vous perdez des clients avant même qu'ils vous contactent.</p>
+      </div>
 
-/* ── Sous-composants ── */
-function Field({ label, children, bold, mono }) {
-  return (
-    <div className="pub-field">
-      <div className="pub-field-label">{label}</div>
-      <div className={`pub-field-value${mono ? " prompt" : ""}`} style={bold ? { fontWeight: 600 } : {}}>
-        {children}
+      <div class="card-3d">
+        <div class="card-num">03</div>
+        <span class="card-icon">📈</span>
+        <div class="card-title">Nouveaux Clients en Continu</div>
+        <p class="card-desc">Grâce au référencement Google, votre site attire des prospects qualifiés qui cherchent exactement ce que vous proposez.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">04</div>
+        <span class="card-icon">💼</span>
+        <div class="card-title">Votre Vitrine Professionnelle</div>
+        <p class="card-desc">Présentez vos services, vos réalisations, vos avis clients. Un site bien fait remplace une brochure, un commercial et un service client.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">05</div>
+        <span class="card-icon">🚀</span>
+        <div class="card-title">Devancer la Concurrence</div>
+        <p class="card-desc">Vos concurrents ont déjà un site. Si ce n'est pas vous qui apparaissez en premier sur Google, c'est eux.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">06</div>
+        <span class="card-icon">💰</span>
+        <div class="card-title">Meilleur Retour sur Investissement</div>
+        <p class="card-desc">Un site internet est l'outil marketing le moins cher et le plus rentable. Chaque visiteur est un client potentiel sans coût supplémentaire.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="section" id="services">
+    <div class="section-tag">Ce que je fais</div>
+    <h2 class="section-title">Mes <em>Services</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Des solutions web taillées sur-mesure pour chaque besoin, chaque budget, chaque ambition.</p>
+    <div class="services-grid">
+
+      <div class="card-3d">
+        <div class="card-num">01</div>
+        <span class="card-icon">🖥</span>
+        <div class="card-title">Site Vitrine</div>
+        <p class="card-desc">Un site professionnel qui présente votre activité, renforce votre image et convertit vos visiteurs en clients. Design soigné, rapide et mobile-first.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">02</div>
+        <span class="card-icon">🛒</span>
+        <div class="card-title">E-Commerce</div>
+        <p class="card-desc">Boutique en ligne complète avec gestion des produits, paiement sécurisé, suivi des commandes. Prêt à vendre dès le lancement.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">03</div>
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Landing Page</div>
+        <p class="card-desc">Une page percutante, optimisée pour la conversion. Idéale pour lancer un produit, une offre ou une campagne publicitaire.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">04</div>
+        <span class="card-icon">🔍</span>
+        <div class="card-title">SEO & Performance</div>
+        <p class="card-desc">Audit, optimisation technique et référencement naturel pour que votre site remonte sur Google et charge en moins d'une seconde.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">05</div>
+        <span class="card-icon">🔧</span>
+        <div class="card-title">Refonte & Maintenance</div>
+        <p class="card-desc">Votre site est vieillissant ou cassé ? Je le remets à neuf, modernise son design et assure sa maintenance continue.</p>
+      </div>
+
+      <div class="card-3d">
+        <div class="card-num">06</div>
+        <span class="card-icon">📱</span>
+        <div class="card-title">Application Web</div>
+        <p class="card-desc">Tableau de bord, outil métier, app sur-mesure. Interface intuitive, données en temps réel, expérience utilisateur irréprochable.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <section class="section process">
+    <div class="section-tag">Comment ça marche</div>
+    <h2 class="section-title">Mon <em>Processus</em></h2>
+    <div class="ornament">✦</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Échange Gratuit</div>
+        <p class="step-desc">On discute de votre projet, vos objectifs, votre budget. Je cerne exactement ce dont vous avez besoin.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Devis & Maquette</div>
+        <p class="step-desc">Devis clair et première maquette visuelle. Vous validez avant qu'on commence — aucune surprise.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Développement</div>
+        <p class="step-desc">Je code votre site en vous tenant informé à chaque étape. Accès à une préversion en temps réel.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Livraison & Suivi</div>
+        <p class="step-desc">Mise en ligne, formation, support post-lancement. Votre site est entre de bonnes mains.</p>
       </div>
     </div>
-  );
-}
+  </section>
 
-function Spinner() {
-  return <span style={{ width: 18, height: 18, border: "2px solid rgba(0,0,0,0.2)", borderTopColor: "#0a0a08", borderRadius: "50%", display: "inline-block", animation: "spin 0.7s linear infinite" }} />;
-}
+  <!-- ── DÉMO VIDÉO ── -->
+  <section class="video-demo" id="demo">
+    <div class="section-tag">En action</div>
+    <h2 class="section-title">Voir mon <em>Travail</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Un aperçu concret de ce que je construis — design, rapidité, finition.</p>
+    <div class="video-wrapper">
+      <video
+        controls
+        preload="metadata"
+        poster="preview.png"
+        aria-label="Démonstration des réalisations de Jercat développeur web freelance"
+      >
+        <source src="jercat_avec_musique_48f3d395.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture vidéo.
+      </video>
+    </div>
+  </section>
 
-/* ════════════════════════════════════════════════════════ CSS */
-const CSS = `
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0a0a08; --bg2: #111110; --bg3: #181816; --bg4: #1e1e1b;
-    --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-    --text: #e8e6e0; --muted: #6b6860;
-    --gold: #c9a84c; --gold2: #f4cc7a;
-    --accent: #1877f2; --green: #22d678; --red: #ff4757; --r: 10px;
-  }
-  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  <!-- ── TECH ── -->
+  <div class="stack">
+    <div class="stack-label">Technologies maîtrisées</div>
+    <div class="tech-row">
+      <div class="tech-pill">HTML / CSS</div>
+      <div class="tech-pill">JavaScript</div>
+      <div class="tech-pill">React</div>
+      <div class="tech-pill">Vue.js</div>
+      <div class="tech-pill">Node.js</div>
+      <div class="tech-pill">PHP</div>
+      <div class="tech-pill">WordPress</div>
+      <div class="tech-pill">Shopify</div>
+      <div class="tech-pill">MySQL</div>
+      <div class="tech-pill">Figma</div>
+      <div class="tech-pill">Git</div>
+      <div class="tech-pill">Vercel</div>
+    </div>
+  </div>
 
-  .nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,8,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); padding: 0 clamp(16px,5vw,60px); display: flex; align-items: center; gap: 14px; height: 62px; }
-  .nav-logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.25rem; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
-  .nav-logo em { font-style: italic; color: var(--gold); }
-  .nav-badge { padding: 2px 9px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25); border-radius: 20px; font-size: 0.65rem; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
-  .nav-back { margin-left: auto; font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-  .nav-back:hover { color: var(--text); }
+  <!-- ── FORMULAIRE DEVIS ── -->
+  <section class="devis-section" id="contact">
+    <div class="section-tag">Prêt à commencer ?</div>
+    <h2 class="section-title">Demande de <em>Devis Gratuit</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Remplissez le formulaire — je vous réponds sous 24h avec un devis personnalisé.</p>
 
-  .hero { text-align: center; padding: clamp(48px,8vw,100px) clamp(16px,5vw,60px) clamp(36px,5vw,64px); position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -120px; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(24,119,242,0.07) 0%, transparent 70%); pointer-events: none; }
-  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
-  .spark { color: var(--gold2); }
-  .hero h1 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: clamp(2rem,5vw,3.4rem); line-height: 1.15; letter-spacing: -1px; margin-bottom: 18px; }
-  .hero h1 em { font-style: italic; color: var(--gold2); }
-  .hero-sub { font-size: clamp(0.9rem,2vw,1.05rem); color: var(--muted); max-width: 520px; margin: 0 auto 36px; font-weight: 300; line-height: 1.7; }
-  .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-  .pill { padding: 5px 14px; border: 1px solid var(--border2); border-radius: 20px; font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
-  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); display: inline-block; }
+    <form class="devis-form" id="devisForm">
 
-  .form-section { max-width: 780px; margin: 0 auto; padding: 0 clamp(16px,4vw,32px) 80px; }
-  .card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); padding: clamp(20px,4vw,36px); margin-bottom: 20px; }
-  .card-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: 22px; }
-  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
-  .field { display: flex; flex-direction: column; gap: 7px; }
-  .field.full { grid-column: 1 / -1; }
-  label { font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-  input, select { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 11px 14px; font-size: 0.88rem; font-family: 'Inter', sans-serif; color: var(--text); outline: none; width: 100%; transition: border-color 0.2s, box-shadow 0.2s; -webkit-appearance: none; }
-  input:focus, select:focus { border-color: rgba(201,168,76,0.4); box-shadow: 0 0 0 3px rgba(201,168,76,0.06); }
-  input::placeholder { color: var(--muted); }
-  select option { background: #181816; }
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nom">Nom & Prénom *</label>
+          <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required />
+        </div>
+        <div class="form-group">
+          <label for="tel">Téléphone *</label>
+          <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00" required />
+        </div>
+      </div>
 
-  .btn-generate { width: 100%; margin-top: 6px; padding: 15px 24px; background: linear-gradient(135deg, #c9a84c 0%, #f4cc7a 50%, #c9a84c 100%); background-size: 200% auto; border: none; border-radius: 8px; font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: #0a0a08; cursor: pointer; transition: background-position 0.4s, transform 0.15s, box-shadow 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-  .btn-generate:hover:not(:disabled) { background-position: right center; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(201,168,76,0.25); }
-  .btn-generate:disabled { opacity: 0.6; cursor: not-allowed; }
+      <div class="form-group">
+        <label for="email">Adresse Email *</label>
+        <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+      </div>
 
-  .loader-wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 52px 20px; }
-  .loader-ring { width: 40px; height: 40px; border: 3px solid var(--border2); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.75s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .loader-text { font-size: 0.82rem; color: var(--muted); font-family: 'JetBrains Mono', monospace; animation: blink 1.4s ease-in-out infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+      <div class="form-group">
+        <label for="adresse">Adresse / Ville</label>
+        <input type="text" id="adresse" name="adresse" placeholder="Paris, France" />
+      </div>
 
-  .error-msg { padding: 12px 16px; background: rgba(255,71,87,0.08); border: 1px solid rgba(255,71,87,0.25); border-radius: 8px; color: var(--red); font-size: 0.82rem; margin-top: 12px; }
+      <div class="form-group">
+        <label for="type">Type de site souhaité *</label>
+        <select id="type" name="type" required>
+          <option value="" disabled selected>Choisir...</option>
+          <option value="Site Vitrine">Site Vitrine</option>
+          <option value="E-Commerce">E-Commerce / Boutique en ligne</option>
+          <option value="Landing Page">Landing Page</option>
+          <option value="Refonte">Refonte de site existant</option>
+          <option value="Application Web">Application Web</option>
+          <option value="SEO">SEO & Performance</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
 
-  .results-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-  .results-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; }
-  .results-title em { font-style: italic; color: var(--gold2); }
+      <div class="form-row">
+        <div class="form-group">
+          <label for="budget">Budget estimé</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Choisir...</option>
+            <option value="Moins de 300€">Moins de 300€</option>
+            <option value="300€ - 600€">300€ - 600€</option>
+            <option value="600€ - 1000€">600€ - 1 000€</option>
+            <option value="1000€ - 2000€">1 000€ - 2 000€</option>
+            <option value="Plus de 2000€">Plus de 2 000€</option>
+            <option value="À définir">À définir ensemble</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="delai">Délai souhaité</label>
+          <select id="delai" name="delai">
+            <option value="" disabled selected>Choisir...</option>
+            <option value="Le plus vite possible">Le plus vite possible</option>
+            <option value="1 à 2 semaines">1 à 2 semaines</option>
+            <option value="1 mois">1 mois</option>
+            <option value="Pas de contrainte">Pas de contrainte</option>
+          </select>
+        </div>
+      </div>
 
-  .pub-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: 16px; animation: fadeUp 0.4s ease both; }
-  .pub-card:nth-child(2) { animation-delay: 0.08s; }
-  .pub-card:nth-child(3) { animation-delay: 0.16s; }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+      <div class="form-group">
+        <label for="projet">Description de votre projet *</label>
+        <textarea id="projet" name="projet" placeholder="Décrivez votre activité, vos besoins, vos idées, des exemples de sites que vous aimez..." required></textarea>
+      </div>
 
-  .pub-card-header { padding: 14px 20px; background: var(--bg3); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-  .pub-angle-badge { padding: 3px 11px; border-radius: 20px; font-size: 0.68rem; letter-spacing: 1px; font-family: 'JetBrains Mono', monospace; font-weight: 500; }
-  .angle-0 { background: rgba(201,168,76,0.12); color: var(--gold); border: 1px solid rgba(201,168,76,0.2); }
-  .angle-1 { background: rgba(24,119,242,0.12); color: #5ba3f5; border: 1px solid rgba(24,119,242,0.2); }
-  .angle-2 { background: rgba(34,214,120,0.1); color: var(--green); border: 1px solid rgba(34,214,120,0.2); }
+      <div class="form-submit">
+        <button type="submit" class="btn-gold">✉ Envoyer ma demande de devis</button>
+        <p class="form-notice">Réponse garantie sous 24h — Premier échange toujours gratuit</p>
+      </div>
 
-  .pub-card-body { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
-  .pub-field { display: flex; flex-direction: column; gap: 5px; }
-  .pub-field-label { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-family: 'JetBrains Mono', monospace; display: flex; align-items: center; gap: 8px; }
-  .pub-field-value { font-size: 0.9rem; line-height: 1.6; background: var(--bg3); border: 1px solid var(--border); border-radius: 7px; padding: 10px 14px; color: var(--text); }
-  .pub-field-value.prompt { font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: var(--muted); line-height: 1.7; }
+    </form>
 
-  .targeting-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  @media (max-width: 480px) { .targeting-grid { grid-template-columns: 1fr; } }
-  .targeting-item { background: var(--bg3); border: 1px solid var(--border); border-radius: 7px; padding: 10px 13px; display: flex; flex-direction: column; gap: 4px; }
-  .targeting-item-label { font-size: 0.62rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-  .targeting-item-value { font-size: 0.84rem; color: var(--text); }
-  .interets-list { display: flex; flex-wrap: wrap; gap: 6px; }
-  .interet-tag { padding: 3px 10px; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.18); border-radius: 20px; font-size: 0.75rem; color: var(--gold); }
+    <!-- Message de succès -->
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">✦</div>
+      <h3>Demande envoyée !</h3>
+      <p>Merci pour votre message. Je vous réponds sous 24h à l'adresse indiquée.</p>
+    </div>
 
-  .divider { border: none; border-top: 1px solid var(--border); }
+    <div class="contact-row" style="margin-top: 48px;">
+      <a href="mailto:jercat.bilman@gmail.com">jercat.bilman@gmail.com</a>
+      <span class="sep">—</span>
+      <a href="https://t.me/JEROME1978" target="_blank">✈ Telegram @JEROME1978</a>
+    </div>
+  </section>
 
-  .btn-copy { align-self: flex-start; padding: 9px 18px; background: transparent; border: 1px solid var(--border2); border-radius: 7px; font-size: 0.78rem; color: var(--text); font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.18s; display: flex; align-items: center; gap: 7px; }
-  .btn-copy:hover { background: var(--bg4); border-color: rgba(201,168,76,0.3); }
-  .btn-copy.ok { border-color: rgba(34,214,120,0.4); color: var(--green); }
+  <!-- ── PORTFOLIO ── -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-tag">Mes réalisations</div>
+    <h2 class="section-title">Sites créés <em>par Jercat</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Découvrez quelques-uns de mes derniers projets livrés — chaque site est unique et sur-mesure.</p>
+    <div class="portfolio-grid">
 
-  .btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 24px; background: linear-gradient(135deg, #c9a84c, #f4cc7a); border-radius: 8px; color: #0a0a08; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: opacity 0.2s; }
-  .btn-cta:hover { opacity: 0.88; }
+      <a href="https://plateforme-revenus.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://plateforme-revenus.vercel.app/" title="Plateforme Revenus" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Plateforme Revenus</div>
+          <div class="portfolio-desc">Plateforme web de gestion et suivi de revenus en ligne.</div>
+          <span class="portfolio-tag">Application Web</span>
+        </div>
+      </a>
 
-  .footer { border-top: 1px solid var(--border); padding: 32px clamp(16px,5vw,60px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
-  .footer-left { font-size: 0.78rem; color: var(--muted); }
-  .footer-left a { color: var(--gold); text-decoration: none; }
-  .footer-logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1rem; }
-  .footer-logo em { font-style: italic; color: var(--gold); }
-  .footer-right { font-size: 0.75rem; color: var(--muted); font-family: 'JetBrains Mono', monospace; text-align: right; }
-`;
+      <a href="https://aux-folie-s-burger.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://aux-folie-s-burger.vercel.app/" title="Aux Folie's Burger" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Aux Folie's Burger</div>
+          <div class="portfolio-desc">Site vitrine élégant pour un restaurant burger artisanal.</div>
+          <span class="portfolio-tag">Site Vitrine</span>
+        </div>
+      </a>
+
+      <a href="https://fredrenovation.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://fredrenovation.vercel.app/" title="Fred Rénovation" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Fred Rénovation</div>
+          <div class="portfolio-desc">Site professionnel pour un artisan en rénovation intérieure.</div>
+          <span class="portfolio-tag">Site Vitrine</span>
+        </div>
+      </a>
+
+      <a href="https://bi-by-doris.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://bi-by-doris.vercel.app/" title="Bi by Doris" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Bi by Doris</div>
+          <div class="portfolio-desc">Boutique en ligne mode & accessoires tendance.</div>
+          <span class="portfolio-tag">E-Commerce</span>
+        </div>
+      </a>
+
+      <a href="https://tanjiro59.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <iframe src="https://tanjiro59.vercel.app/" title="Tanjiro59" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-title">Tanjiro59</div>
+          <div class="portfolio-desc">Site web créé sur-mesure par Jercat.</div>
+          <span class="portfolio-tag">Site Web</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── TARIFS ── -->
+  <section class="tarifs" id="tarifs">
+    <div class="section-tag">Transparent & Accessible</div>
+    <h2 class="section-title">Nos <em>Tarifs</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Des prix clairs, sans surprise. À partir de 99€ pour avoir votre présence professionnelle en ligne.</p>
+    <div class="tarifs-grid">
+
+      <div class="tarif-card">
+        <div class="tarif-name">Essentiel</div>
+        <div class="tarif-price"><span>à partir de </span>99<span>€</span></div>
+        <div class="tarif-desc">Idéal pour démarrer</div>
+        <ul class="tarif-features">
+          <li>Site vitrine 1 à 3 pages</li>
+          <li>Design professionnel</li>
+          <li>100% responsive mobile</li>
+          <li>Formulaire de contact</li>
+          <li>Mise en ligne incluse</li>
+          <li>Livraison 7 jours</li>
+        </ul>
+        <a href="#contact" class="btn-outline-gold">Demander un devis</a>
+      </div>
+
+      <div class="tarif-card featured">
+        <div class="tarif-name">Pro</div>
+        <div class="tarif-price"><span>à partir de </span>199<span>€</span></div>
+        <div class="tarif-desc">Le plus demandé</div>
+        <ul class="tarif-features">
+          <li>Site vitrine jusqu'à 8 pages</li>
+          <li>Design sur-mesure premium</li>
+          <li>SEO optimisé Google</li>
+          <li>Blog / actualités</li>
+          <li>Galerie photos & vidéos</li>
+          <li>Formation à la gestion</li>
+          <li>1 mois de support inclus</li>
+        </ul>
+        <a href="#contact" class="btn-gold">Demander un devis</a>
+      </div>
+
+      <div class="tarif-card">
+        <div class="tarif-name">E-Commerce</div>
+        <div class="tarif-price"><span>à partir de </span>300<span>€</span></div>
+        <div class="tarif-desc">Vendez en ligne</div>
+        <ul class="tarif-features">
+          <li>Boutique en ligne complète</li>
+          <li>Paiement sécurisé</li>
+          <li>Gestion des stocks</li>
+          <li>Fiches produits illimitées</li>
+          <li>Suivi des commandes</li>
+          <li>SEO e-commerce avancé</li>
+          <li>3 mois de support inclus</li>
+        </ul>
+        <a href="#contact" class="btn-outline-gold">Demander un devis</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TÉMOIGNAGES ── -->
+  <section class="temoignages" id="temoignages">
+    <div class="section-tag">Ils me font confiance</div>
+    <h2 class="section-title">Ce que disent <em>mes clients</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">La satisfaction de mes clients est ma meilleure publicité.</p>
+    <div class="temoignages-grid">
+
+      <div class="temo-card">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">Jercat a créé mon site vitrine en moins d'une semaine. Résultat professionnel, design moderne, et il a tout expliqué clairement. Je recommande vivement !</p>
+        <div class="temo-author">
+          <div class="temo-avatar">S</div>
+          <div>
+            <div class="temo-name">Sophie M.</div>
+            <div class="temo-job">Coiffeuse indépendante</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="temo-card">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">Très réactif, à l'écoute et de bons conseils. Mon e-commerce est en ligne et les commandes arrivent déjà ! Excellent rapport qualité-prix.</p>
+        <div class="temo-author">
+          <div class="temo-avatar">K</div>
+          <div>
+            <div class="temo-name">Karim B.</div>
+            <div class="temo-job">Gérant boutique en ligne</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="temo-card">
+        <div class="temo-stars">★★★★★</div>
+        <p class="temo-text">J'avais un vieux site qui ne fonctionnait plus. Jercat l'a entièrement refait, il est maintenant rapide et visible sur Google. Merci !</p>
+        <div class="temo-author">
+          <div class="temo-avatar">M</div>
+          <div>
+            <div class="temo-name">Marie-Claire T.</div>
+            <div class="temo-job">Restauratrice</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GARANTIES ── -->
+  <section class="garanties">
+    <div class="section-tag" style="text-align:center;margin-bottom:40px;">Mes engagements</div>
+    <div class="garanties-row">
+      <div class="garantie-item">
+        <div class="garantie-icon">🛡️</div>
+        <div class="garantie-title">Satisfait ou Corrigé</div>
+        <p class="garantie-desc">Modifications incluses jusqu'à votre satisfaction totale.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-icon">⏱️</div>
+        <div class="garantie-title">Délai Garanti</div>
+        <p class="garantie-desc">Je respecte les délais annoncés lors du devis, sans exception.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-icon">💬</div>
+        <div class="garantie-title">Support Réactif</div>
+        <p class="garantie-desc">Réponse garantie sous 24h, 7j/7 via email ou Telegram.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-icon">🔒</div>
+        <div class="garantie-title">Site Sécurisé</div>
+        <p class="garantie-desc">HTTPS, protection des données, conformité RGPD incluse.</p>
+      </div>
+      <div class="garantie-item">
+        <div class="garantie-icon">📱</div>
+        <div class="garantie-title">100% Mobile</div>
+        <p class="garantie-desc">Votre site est parfait sur tous les écrans, mobile, tablette, PC.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GÉNÉRATEUR DE PUB IA ── -->
+  <section class="gen-pub" id="generateur-pub">
+    <div class="gen-pub-inner">
+      <div class="section-tag" style="text-align:center;margin-bottom:16px;">Intelligence Artificielle</div>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,52px);margin-bottom:12px;">
+        Générez votre <em>Publicité</em>
+      </h2>
+      <p class="section-intro" style="margin-bottom:40px;">
+        Décrivez votre activité — l'IA rédige votre pub en quelques secondes.
+      </p>
+
+      <!-- Clé API gérée côté serveur -->
+      <div style="display:none">
+        <input id="groqKeyInput" value="ok" />
+        <div id="keyStatus"></div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="gen-fields">
+        <div class="gen-field">
+          <label for="genActivite">Votre activité</label>
+          <input type="text" id="genActivite" placeholder="Ex : coiffeur, restaurant, plombier…" maxlength="80" />
+        </div>
+        <div class="gen-field">
+          <label for="genTon">Ton</label>
+          <select id="genTon">
+            <option value="professionnel">Professionnel</option>
+            <option value="dynamique">Dynamique & accrocheur</option>
+            <option value="luxe">Luxe & élégant</option>
+            <option value="humoristique">Humoristique</option>
+            <option value="local">Proximité locale</option>
+          </select>
+        </div>
+        <div class="gen-field">
+          <label for="genFormat">Format</label>
+          <select id="genFormat">
+            <option value="réseaux sociaux">Réseaux sociaux (court)</option>
+            <option value="Google Ads">Google Ads (titre + description)</option>
+            <option value="flyer">Flyer / affiche</option>
+            <option value="email">Email marketing</option>
+            <option value="SMS">SMS promotionnel</option>
+          </select>
+        </div>
+        <div class="gen-field">
+          <label for="genPromo">Offre / Promotion (optionnel)</label>
+          <input type="text" id="genPromo" placeholder="Ex : -20% ce mois-ci, livraison offerte…" maxlength="100" />
+        </div>
+        <div class="gen-field gen-field-full">
+          <label for="genInfos">Infos supplémentaires (optionnel)</label>
+          <textarea id="genInfos" rows="2" placeholder="Public cible, valeur ajoutée, message clé…" maxlength="300"></textarea>
+        </div>
+        <div class="gen-field gen-field-full">
+          <label for="genLienImage">Lien image / URL (optionnel)</label>
+          <input type="url" id="genLienImage" placeholder="https://monsite.com/image.jpg" />
+        </div>
+      </div>
+
+      <button class="gen-btn" id="genBtn" onclick="genererPub()" disabled>
+        ✦ Générer ma publicité
+      </button>
+
+      <!-- Résultat -->
+      <div class="gen-result" id="genResult">
+        <div class="gen-result-header">
+          <span class="gen-result-label">✦ Publicité générée</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="gen-copy-btn" onclick="copierPub()">Copier</button>
+          </div>
+        </div>
+        <div class="gen-output" id="genOutput">
+          <div class="gen-loading" id="genLoading">
+            <div class="gen-spinner"></div>
+            Rédaction en cours…
+          </div>
+          <span id="genText"></span>
+        </div>
+
+        <!-- Guide publication Facebook -->
+        <div class="gen-fb-guide" id="genFbGuide" style="display:none;">
+          <div class="gen-fb-actions">
+            <button class="gen-fb-step-btn step1" onclick="telechargerVisuel()">
+              <span class="step-num">1</span>
+              <span class="step-label">Télécharger<br>visuel JERCAT</span>
+            </button>
+            <button class="gen-fb-step-btn step2" onclick="posterFacebook()">
+              <span class="step-num">2</span>
+              <span class="step-label">Poster sur<br>Facebook</span>
+            </button>
+          </div>
+          <div class="gen-fb-steps">
+            <div class="gen-fb-step-item">
+              <span class="gen-fb-step-num">① </span>Clique <strong>Télécharger visuel</strong> — l'image JERCAT est sauvegardée sur ton téléphone
+            </div>
+            <div class="gen-fb-step-item">
+              <span class="gen-fb-step-num">② </span>Clique <strong>Poster sur Facebook</strong> — la fenêtre de publication s'ouvre avec le texte
+            </div>
+            <div class="gen-fb-step-item">
+              <span class="gen-fb-step-num">③ </span>Dans Facebook, clique <strong>"Ajouter une photo"</strong> puis sélectionne l'image téléchargée
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo">Jercat</div>
+    <div class="footer-copy">© 2026 — Développeur Web Indépendant</div>
+    <div class="footer-copy">Site créé par <span style="color: var(--gold); font-family: 'Cinzel', serif;">Jercat</span></div>
+  </footer>
+
+  <!-- ── BARRE LÉGALE ── -->
+  <div class="legal-bar">
+    Jercat — Développeur Web Freelance &nbsp;|&nbsp;
+    <a href="#" onclick="openModal('mentions');return false;">Mentions légales</a>
+    <a href="#" onclick="openModal('rgpd');return false;">Politique de confidentialité (RGPD)</a>
+    <a href="#" onclick="openModal('cgv');return false;">CGV</a>
+    &nbsp;|&nbsp; jercat.bilman@gmail.com
+  </div>
+
+  <!-- ── MODAL MENTIONS LÉGALES ── -->
+  <div class="modal-overlay" id="modal-mentions">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('mentions')">✕</button>
+      <h3>Mentions Légales</h3>
+      <p><strong>Éditeur du site :</strong> Jercat — Développeur Web Freelance</p>
+      <p><strong>Contact :</strong> jercat.bilman@gmail.com</p>
+      <p><strong>Hébergeur :</strong> Vercel Inc., 340 Pine Street Suite 701, San Francisco, CA 94104, USA</p>
+      <p><strong>Activité :</strong> Développement et création de sites web professionnels à titre indépendant.</p>
+      <p>Tout contenu présent sur ce site (textes, visuels, code) est la propriété exclusive de Jercat. Toute reproduction sans autorisation est interdite.</p>
+    </div>
+  </div>
+
+  <!-- ── MODAL RGPD ── -->
+  <div class="modal-overlay" id="modal-rgpd">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('rgpd')">✕</button>
+      <h3>Politique de Confidentialité (RGPD)</h3>
+      <p><strong>Données collectées :</strong> Nom, téléphone, email, adresse et description de projet via le formulaire de devis.</p>
+      <p><strong>Finalité :</strong> Ces données sont utilisées uniquement pour répondre à votre demande de devis. Elles ne sont ni vendues, ni partagées à des tiers.</p>
+      <p><strong>Conservation :</strong> Vos données sont conservées le temps nécessaire au traitement de votre demande, maximum 1 an.</p>
+      <p><strong>Vos droits :</strong> Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez : jercat.bilman@gmail.com</p>
+      <p><strong>Cookies :</strong> Ce site n'utilise pas de cookies de traçage. Aucune donnée analytique n'est collectée.</p>
+    </div>
+  </div>
+
+  <!-- ── MODAL CGV ── -->
+  <div class="modal-overlay" id="modal-cgv">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('cgv')">✕</button>
+      <h3>Conditions Générales de Vente</h3>
+      <p><strong>Devis :</strong> Tout projet démarre par un devis gratuit et sans engagement. Le devis est valable 30 jours.</p>
+      <p><strong>Paiement :</strong> 50% d'acompte à la commande, 50% à la livraison.</p>
+      <p><strong>Délais :</strong> Les délais sont indiqués dans le devis et respectés sauf cas de force majeure ou retard de transmission des éléments par le client.</p>
+      <p><strong>Révisions :</strong> 3 allers-retours de corrections inclus. Au-delà, des frais supplémentaires peuvent s'appliquer.</p>
+      <p><strong>Propriété :</strong> Le site devient propriété du client après règlement intégral de la facture.</p>
+      <p><strong>Litiges :</strong> En cas de litige, une solution amiable sera privilégiée. Contact : jercat.bilman@gmail.com</p>
+    </div>
+  </div>
+
+  <script>
+    // 3D tilt effect on cards
+    document.querySelectorAll('.card-3d').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rotateX = ((y - cy) / cy) * -10;
+        const rotateY = ((x - cx) / cx) * 10;
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(8px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      });
+    });
+
+    // ── FORMULAIRE DEVIS → Gmail ──
+    document.getElementById('devisForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nom     = document.getElementById('nom').value;
+      const tel     = document.getElementById('tel').value;
+      const email   = document.getElementById('email').value;
+      const adresse = document.getElementById('adresse').value;
+      const type    = document.getElementById('type').value;
+      const budget  = document.getElementById('budget').value;
+      const delai   = document.getElementById('delai').value;
+      const projet  = document.getElementById('projet').value;
+
+      const sujet = encodeURIComponent(`[DEVIS] ${type} — ${nom}`);
+      const corps = encodeURIComponent(
+`📋 NOUVELLE DEMANDE DE DEVIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👤 Nom       : ${nom}
+📞 Téléphone : ${tel}
+📧 Email     : ${email}
+📍 Adresse   : ${adresse || 'Non renseignée'}
+
+🌐 Type de site : ${type}
+💰 Budget       : ${budget || 'Non renseigné'}
+⏱ Délai        : ${delai || 'Non renseigné'}
+
+📝 Description du projet :
+${projet}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Demande reçue via jercat.vercel.app`
+      );
+
+      // Ouvre Gmail avec les infos pré-remplies
+      window.location.href = `mailto:jercat.bilman@gmail.com?subject=${sujet}&body=${corps}`;
+
+      // Affiche le message de succès
+      setTimeout(() => {
+        document.getElementById('devisForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }, 800);
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = e.target.classList.contains('card-3d')
+            ? 'perspective(800px) rotateX(0) rotateY(0) translateZ(0)'
+            : 'translateY(0)';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('.card-3d, .stat-item, .step, .tarif-card, .temo-card, .garantie-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = el.classList.contains('card-3d')
+        ? 'perspective(800px) rotateX(4deg) rotateY(0) translateZ(-10px)'
+        : 'translateY(20px)';
+      el.style.transition = 'opacity 0.7s, transform 0.7s';
+      observer.observe(el);
+    });
+  </script>
+
+  <script>
+    function openModal(id) {
+      document.getElementById('modal-' + id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById('modal-' + id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+      m.addEventListener('click', e => { if (e.target === m) { m.classList.remove('open'); document.body.style.overflow = ''; } });
+    });
+  </script>
+
+  <!-- ── CHATBOT FLOTTANT ── -->
+  <style>
+    .chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .chat-channels { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; opacity: 0; transform: translateY(20px) scale(0.9); pointer-events: none; transition: opacity 0.3s, transform 0.3s; }
+    .chat-channels.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+    .chat-bubble { display: flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 50px; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.1em; color: white; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap; }
+    .chat-bubble:hover { transform: scale(1.05); box-shadow: 0 8px 28px rgba(0,0,0,0.5); }
+    .chat-bubble.telegram { background: linear-gradient(135deg, #0088cc, #229ED9); }
+    .chat-bubble.messenger { background: linear-gradient(135deg, #0078FF, #A334FA); }
+    .chat-bubble svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+    .chat-label { background: rgba(10,10,8,0.92); border: 1px solid var(--border); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; padding: 8px 16px; border-radius: 20px; white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+    .chat-toggle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light)); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(201,168,76,0.4); transition: transform 0.3s, box-shadow 0.3s; position: relative; }
+    .chat-toggle:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(201,168,76,0.5); }
+    .chat-toggle svg { width: 28px; height: 28px; fill: #0a0a08; }
+    .chat-icon-close { display: none; }
+    .chat-toggle.open .chat-icon-chat { display: none; }
+    .chat-toggle.open .chat-icon-close { display: block; }
+    .chat-badge { position: absolute; top: 2px; right: 2px; width: 16px; height: 16px; background: #ff4757; border-radius: 50%; border: 2px solid var(--bg); animation: pulse-badge 2s infinite; }
+    @keyframes pulse-badge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+    .chat-popup { position: absolute; bottom: 72px; right: 0; background: rgba(10,10,8,0.95); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; width: 240px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s; }
+    .chat-popup.show { opacity: 1; pointer-events: all; transform: translateY(0); }
+    .chat-popup-name { font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold); margin-bottom: 6px; letter-spacing: 0.1em; }
+    .chat-popup-msg { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--text); line-height: 1.5; }
+    .chat-popup-time { font-size: 10px; color: var(--muted); margin-top: 6px; font-family: 'DM Sans', sans-serif; }
+    .chat-popup-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: var(--muted); cursor: pointer; font-size: 16px; }
+    @media (max-width: 600px) { .chat-widget { bottom: 18px; right: 18px; } .chat-toggle { width: 52px; height: 52px; } }
+  </style>
+
+  <div class="chat-widget" id="chatWidget">
+
+    <div class="chat-popup" id="chatPopup">
+      <button class="chat-popup-close" onclick="document.getElementById('chatPopup').classList.remove('show')">✕</button>
+      <div class="chat-popup-name">💬 Jercat</div>
+      <div class="chat-popup-msg">Bonjour ! 👋 Vous avez un projet de site web ? Je suis disponible !</div>
+      <div class="chat-popup-time">En ligne maintenant</div>
+    </div>
+
+    <div class="chat-channels" id="chatChannels">
+      <div class="chat-label">Choisissez votre messagerie</div>
+      <a href="https://t.me/JEROME1978" target="_blank" rel="noopener" class="chat-bubble telegram">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.67l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.958.889z"/></svg>
+        Telegram @JEROME1978
+      </a>
+      <a href="https://m.me/jerome.billot.1978" target="_blank" rel="noopener" class="chat-bubble messenger">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111S18.627 0 12 0zm1.191 14.963-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+        Messenger
+      </a>
+    </div>
+
+    <button class="chat-toggle" id="chatToggle" aria-label="Ouvrir le chat">
+      <div class="chat-badge" id="chatBadge"></div>
+      <svg class="chat-icon-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+      <svg class="chat-icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+  </div>
+
+  <script>
+    const toggle   = document.getElementById('chatToggle');
+    const channels = document.getElementById('chatChannels');
+    const popup    = document.getElementById('chatPopup');
+
+    setTimeout(() => popup.classList.add('show'), 3000);
+
+    toggle.addEventListener('click', () => {
+      const isOpen = channels.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      popup.classList.remove('show');
+      document.getElementById('chatBadge').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
+  <style>
+    /* Bouton flottant */
+    .chat-fab {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      width: 62px; height: 62px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(201,168,76,0.45);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .chat-fab:hover { transform: scale(1.1); box-shadow: 0 8px 36px rgba(201,168,76,0.55); }
+    .chat-fab svg { width: 28px; height: 28px; fill: #0a0a08; }
+    .chat-fab-badge {
+      position: absolute; top: 2px; right: 2px;
+      width: 16px; height: 16px; background: #ff4757;
+      border-radius: 50%; border: 2px solid var(--bg);
+      animation: pulse-badge 2s infinite;
+    }
+    @keyframes pulse-badge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.25)} }
+
+    /* Fenêtre chat */
+    .chat-window {
+      position: fixed; bottom: 104px; right: 28px; z-index: 9998;
+      width: 340px; max-height: 520px;
+      background: #111110; border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex; flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+      transform: scale(0.9) translateY(20px);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .chat-window.open { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
+
+    /* Header */
+    .chat-header {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      padding: 14px 18px; display: flex; align-items: center; gap: 12px;
+    }
+    .chat-header-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: #0a0a08; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .chat-header-info { flex: 1; }
+    .chat-header-name { font-family: 'Cinzel', serif; font-size: 13px; color: #0a0a08; font-weight: 700; letter-spacing: 0.1em; }
+    .chat-header-status { font-size: 11px; color: rgba(10,10,8,0.7); display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+    .status-dot { width: 7px; height: 7px; background: #2ecc71; border-radius: 50%; }
+    .chat-close-btn { background: rgba(0,0,0,0.25); border: none; cursor: pointer; color: #0a0a08; font-size: 18px; font-weight: 700; padding: 0; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+    .chat-close-btn:hover { background: rgba(0,0,0,0.4); }
+
+    /* Messages */
+    .chat-messages {
+      flex: 1; overflow-y: auto; padding: 16px; display: flex;
+      flex-direction: column; gap: 12px; max-height: 320px;
+    }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .msg { display: flex; flex-direction: column; max-width: 82%; }
+    .msg.bot { align-self: flex-start; }
+    .msg.user { align-self: flex-end; }
+    .msg-bubble {
+      padding: 10px 14px; border-radius: 2px; font-size: 13px; line-height: 1.6;
+    }
+    .msg.bot .msg-bubble {
+      background: #1a1a18; border: 1px solid var(--border); color: var(--text);
+      font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px;
+    }
+    .msg.user .msg-bubble {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: #0a0a08; font-size: 13px; font-family: 'DM Sans', sans-serif;
+    }
+    .msg-time { font-size: 10px; color: var(--muted); margin-top: 4px; font-family: 'DM Sans', sans-serif; }
+    .msg.user .msg-time { text-align: right; }
+
+    /* Boutons réponses rapides */
+    .quick-replies {
+      display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 16px 0;
+    }
+    .qr-btn {
+      padding: 6px 12px; border: 1px solid var(--border); background: transparent;
+      color: var(--gold); font-family: 'Cinzel', serif; font-size: 10px;
+      letter-spacing: 0.08em; cursor: pointer; border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .qr-btn:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+
+    /* Typing indicator */
+    .typing { display: flex; align-items: center; gap: 4px; padding: 10px 14px; background: #1a1a18; border: 1px solid var(--border); width: fit-content; }
+    .typing span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: typing 1.2s infinite; }
+    .typing span:nth-child(2) { animation-delay: 0.2s; }
+    .typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+    /* Input zone */
+    .chat-input-zone {
+      border-top: 1px solid var(--border); padding: 12px 14px;
+      display: flex; gap: 8px; align-items: center;
+    }
+    .chat-input {
+      flex: 1; background: #1a1a18; border: 1px solid var(--border);
+      color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px;
+      padding: 10px 14px; outline: none; border-radius: 2px;
+      transition: border-color 0.2s;
+    }
+    .chat-input:focus { border-color: var(--gold); }
+    .chat-input::placeholder { color: var(--muted); }
+    .chat-send-btn {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform 0.2s;
+    }
+    .chat-send-btn:hover { transform: scale(1.1); }
+    .chat-send-btn svg { width: 16px; height: 16px; fill: #0a0a08; }
+
+    /* Liens contact dans chat */
+    .chat-contact-links { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+    .chat-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 20px; font-size: 12px;
+      text-decoration: none; color: white; font-family: 'DM Sans', sans-serif;
+      width: fit-content;
+    }
+    .chat-link.tg { background: #0088cc; }
+    .chat-link.ms { background: #0078FF; }
+
+    @media (max-width: 400px) {
+      .chat-window { width: calc(100vw - 32px); right: 16px; }
+      .chat-fab { bottom: 16px; right: 16px; }
+    }
+  </style>
+
+  <!-- Bouton flottant -->
+  <button class="chat-fab" id="chatFab" aria-label="Ouvrir le chat">
+    <div class="chat-fab-badge" id="chatBadge"></div>
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+  </button>
+
+  <!-- Fenêtre chat -->
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat avec Jercat">
+    <div class="chat-header">
+      <div class="chat-header-avatar">💻</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">Jercat</div>
+        <div class="chat-header-status"><span class="status-dot"></span>En ligne — Répond en quelques minutes</div>
+      </div>
+      <button class="chat-close-btn" id="chatCloseBtn" aria-label="Fermer">✕</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages"></div>
+
+    <div class="quick-replies" id="quickReplies"></div>
+
+    <div class="chat-input-zone">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Écrivez votre message..." maxlength="200" />
+      <button class="chat-send-btn" id="chatSendBtn" aria-label="Envoyer">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    const fab       = document.getElementById('chatFab');
+    const win       = document.getElementById('chatWindow');
+    const closeBtn  = document.getElementById('chatCloseBtn');
+    const msgBox    = document.getElementById('chatMessages');
+    const input     = document.getElementById('chatInput');
+    const sendBtn   = document.getElementById('chatSendBtn');
+    const qrBox     = document.getElementById('quickReplies');
+    const badge     = document.getElementById('chatBadge');
+    let isOpen      = false;
+
+    // ── BASE DE RÉPONSES ──
+    const responses = [
+      {
+        keys: ['bonjour','salut','hello','bonsoir','coucou','bjr'],
+        reply: "Bonjour ! 👋 Je suis Jercat, développeur web freelance. Comment puis-je vous aider aujourd'hui ?",
+        quick: ['💰 Tarifs', '⏱ Délais', '🌐 Types de sites', '📞 Nous contacter']
+      },
+      {
+        keys: ['prix','tarif','coût','coute','combien','budget'],
+        reply: "Mes tarifs démarrent à :\n\n✦ Site vitrine → à partir de 99€\n✦ Site Pro → à partir de 199€\n✦ E-Commerce → à partir de 300€\n\nChaque projet est unique — demandez un devis gratuit !",
+        quick: ['📋 Devis gratuit', '⏱ Délais', '🌐 Types de sites']
+      },
+      {
+        keys: ['délai','delai','temps','durée','duree','rapide','vite','combien de temps'],
+        reply: "⏱ En moyenne :\n\n✦ Site vitrine → 7 jours\n✦ Site Pro → 10 à 14 jours\n✦ E-Commerce → 2 à 3 semaines\n\nJe respecte toujours les délais annoncés !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit', '🌐 Types de sites']
+      },
+      {
+        keys: ['vitrine','présentation','présenter','présente','entreprise'],
+        reply: "Le site vitrine est parfait pour présenter votre activité ! Il inclut :\n\n✦ Design professionnel sur-mesure\n✦ 1 à 3 pages optimisées\n✦ Formulaire de contact\n✦ 100% responsive mobile\n✦ Livraison en 7 jours\n\nÀ partir de 99€ seulement !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit', '⏱ Délais']
+      },
+      {
+        keys: ['ecommerce','e-commerce','boutique','vendre','shop','produit','commande'],
+        reply: "Parfait pour vendre en ligne ! Votre boutique e-commerce inclura :\n\n✦ Catalogue produits illimité\n✦ Paiement sécurisé (CB, PayPal)\n✦ Gestion des stocks & commandes\n✦ SEO e-commerce optimisé\n\nÀ partir de 300€ — devis gratuit sans engagement !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit', '⏱ Délais']
+      },
+      {
+        keys: ['landing','page','pub','publicité','campagne','conversion'],
+        reply: "La landing page est idéale pour convertir vos visiteurs ! Une page percutante, centrée sur un seul objectif (vente, inscription, contact).\n\nÀ partir de 99€ — résultat garanti !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit']
+      },
+      {
+        keys: ['seo','google','référencement','visible','classement','premier'],
+        reply: "🔍 Tous mes sites incluent les bases SEO :\n\n✦ Balises optimisées (title, meta)\n✦ Structure HTML sémantique\n✦ Chargement rapide < 2s\n✦ Sitemap & robots.txt\n✦ Données structurées Google\n\nPour un SEO avancé, contactez-moi !",
+        quick: ['📋 Devis gratuit', '📞 Nous contacter']
+      },
+      {
+        keys: ['garantie','satisfait','remboursement','modification','correction','révision'],
+        reply: "🛡️ Mes garanties :\n\n✦ Satisfait ou corrigé — modifications incluses\n✦ Délai respecté garanti\n✦ Support réactif 7j/7\n✦ Site sécurisé HTTPS\n✦ 3 révisions incluses",
+        quick: ['💰 Tarifs', '📋 Devis gratuit']
+      },
+      {
+        keys: ['paiement','payer','acompte','virement','facture'],
+        reply: "💳 Modalités de paiement :\n\n✦ 50% d'acompte à la commande\n✦ 50% à la livraison du site\n✦ Virement bancaire ou PayPal\n\nAucun paiement sans devis validé par vous !",
+        quick: ['📋 Devis gratuit', '📞 Nous contacter']
+      },
+      {
+        keys: ['contact','joindre','appeler','téléphone','mail','email','telegram','messenger'],
+        reply: "Contactez-moi directement ici 👇",
+        links: true,
+        quick: ['📋 Devis gratuit', '💰 Tarifs']
+      },
+      {
+        keys: ['devis','commencer','démarrer','projet','lancer'],
+        reply: "Super ! Remplissez le formulaire de devis en bas de page — c'est gratuit et sans engagement. Je vous réponds sous 24h avec une proposition personnalisée ! 🎯",
+        action: () => { win.classList.remove('open'); isOpen = false; document.getElementById('contact').scrollIntoView({behavior:'smooth'}); },
+        quick: ['📞 Nous contacter', '💰 Tarifs']
+      },
+      {
+        keys: ['merci','super','parfait','nickel','top','génial','excellent'],
+        reply: "Merci à vous ! 😊 N'hésitez pas si vous avez d'autres questions. Je suis là pour vous aider à avoir le meilleur site possible !",
+        quick: ['📋 Devis gratuit', '📞 Nous contacter']
+      },
+      {
+        keys: ['wordpress','shopify','react','php','html','technologie','tech'],
+        reply: "🛠 Je maîtrise :\n\n✦ HTML / CSS / JavaScript\n✦ React, Vue.js, Node.js\n✦ WordPress & Shopify\n✦ PHP & MySQL\n✦ Figma, Git, Vercel\n\nJe choisis la meilleure techno selon votre projet !",
+        quick: ['💰 Tarifs', '📋 Devis gratuit']
+      },
+      {
+        keys: ['maintenance','mise à jour','maj','update','modifier','changer'],
+        reply: "🔧 Je propose un service de maintenance mensuel :\n\n✦ Mises à jour de sécurité\n✦ Modifications de contenu\n✦ Sauvegardes régulières\n✦ Support technique inclus\n\nContactez-moi pour un devis !",
+        quick: ['📋 Devis gratuit', '📞 Nous contacter']
+      }
+    ];
+
+    const defaultReply = {
+      reply: "Je n'ai pas bien compris votre question 😅 Voici ce que je peux vous dire :",
+      quick: ['💰 Tarifs', '⏱ Délais', '🌐 Types de sites', '📞 Nous contacter', '📋 Devis gratuit']
+    };
+
+    const quickMap = {
+      '💰 Tarifs': 'tarifs prix combien',
+      '⏱ Délais': 'délai temps durée',
+      '🌐 Types de sites': 'vitrine ecommerce landing',
+      '📞 Nous contacter': 'contact',
+      '📋 Devis gratuit': 'devis'
+    };
+
+    function now() {
+      return new Date().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'});
+    }
+
+    function addMsg(text, type, links) {
+      const div = document.createElement('div');
+      div.className = 'msg ' + type;
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      bubble.style.whiteSpace = 'pre-line';
+      bubble.textContent = text;
+      div.appendChild(bubble);
+      if (links) {
+        const lc = document.createElement('div');
+        lc.className = 'chat-contact-links';
+        lc.innerHTML = `
+          <a href="https://t.me/JEROME1978" target="_blank" class="chat-link tg">✈ Telegram @JEROME1978</a>
+          <a href="mailto:jercat.bilman@gmail.com" class="chat-link ms">✉ jercat.bilman@gmail.com</a>`;
+        div.appendChild(lc);
+      }
+      const time = document.createElement('div');
+      time.className = 'msg-time';
+      time.textContent = now();
+      div.appendChild(time);
+      msgBox.appendChild(div);
+      msgBox.scrollTop = msgBox.scrollHeight;
+    }
+
+    function addTyping() {
+      const t = document.createElement('div');
+      t.className = 'msg bot'; t.id = 'typingIndicator';
+      t.innerHTML = '<div class="typing"><span></span><span></span><span></span></div>';
+      msgBox.appendChild(t);
+      msgBox.scrollTop = msgBox.scrollHeight;
+    }
+
+    function removeTyping() {
+      const t = document.getElementById('typingIndicator');
+      if (t) t.remove();
+    }
+
+    function setQuickReplies(items) {
+      qrBox.innerHTML = '';
+      items.forEach(label => {
+        const btn = document.createElement('button');
+        btn.className = 'qr-btn';
+        btn.textContent = label;
+        btn.onclick = () => handleInput(quickMap[label] || label, label);
+        qrBox.appendChild(btn);
+      });
+    }
+
+    function handleInput(text, displayText) {
+      const shown = displayText || text;
+      if (!text.trim()) return;
+      addMsg(shown, 'user');
+      input.value = '';
+      qrBox.innerHTML = '';
+      addTyping();
+
+      setTimeout(() => {
+        removeTyping();
+        const lower = text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+        let matched = null;
+        for (const r of responses) {
+          if (r.keys.some(k => lower.includes(k))) { matched = r; break; }
+        }
+        const r = matched || defaultReply;
+        addMsg(r.reply, 'bot', r.links);
+        if (r.action) setTimeout(r.action, 1200);
+        if (r.quick) setQuickReplies(r.quick);
+      }, 900 + Math.random() * 600);
+    }
+
+    // Init
+    function openChat() {
+      isOpen = true;
+      win.classList.add('open');
+      badge.style.display = 'none';
+      if (msgBox.children.length === 0) {
+        setTimeout(() => {
+          addMsg("Bonjour ! 👋 Je suis Jercat, développeur web freelance. Comment puis-je vous aider ?", 'bot');
+          setQuickReplies(['💰 Tarifs', '⏱ Délais', '🌐 Types de sites', '📞 Nous contacter', '📋 Devis gratuit']);
+        }, 400);
+      }
+    }
+
+    fab.addEventListener('click', () => { isOpen ? (win.classList.remove('open'), isOpen=false) : openChat(); });
+    closeBtn.addEventListener('click', () => { win.classList.remove('open'); isOpen = false; });
+    sendBtn.addEventListener('click', () => handleInput(input.value, input.value));
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') handleInput(input.value, input.value); });
+
+    // Popup auto après 4s
+    setTimeout(() => { if (!isOpen) badge.style.animation = 'pulse-badge 1s infinite'; }, 4000);
+  })();
+  </script>
+
+  <!-- ── SCRIPT GÉNÉRATEUR DE PUB ── -->
+  <script>
+  (function() {
+    const keyInput  = document.getElementById('groqKeyInput');
+    const keyStatus = document.getElementById('keyStatus');
+    const genBtn    = document.getElementById('genBtn');
+    let groqKey = '';
+
+    window.saveGroqKey = function() {
+      const val = keyInput.value.trim();
+      // La clé est gérée côté serveur, on accepte toujours
+      groqKey = val;
+      genBtn.disabled = false;
+    };
+
+    keyInput.addEventListener('keydown', e => { if (e.key === 'Enter') window.saveGroqKey(); });
+
+    // Auto-charger la clé et activer le bouton directement
+    setTimeout(() => {
+      const btn = document.getElementById('genBtn');
+      if (btn) btn.disabled = false;
+    }, 100);
+
+    window.genererPub = async function() {
+      const activite = document.getElementById('genActivite').value.trim();
+      if (!activite) { alert('Merci de renseigner votre activité.'); return; }
+      const ton    = document.getElementById('genTon').value;
+      const format = document.getElementById('genFormat').value;
+      const promo  = document.getElementById('genPromo').value.trim();
+      const infos  = document.getElementById('genInfos').value.trim();
+
+      const result  = document.getElementById('genResult');
+      const loading = document.getElementById('genLoading');
+      const genText = document.getElementById('genText');
+
+      result.classList.add('visible');
+      loading.style.display = 'flex';
+      genText.textContent = '';
+      genBtn.disabled = true;
+      genBtn.textContent = '⏳ Génération…';
+
+      const prompt = `Tu es un expert en copywriting publicitaire français.
+Rédige une publicité ${format} pour un(e) ${activite}.
+Ton souhaité : ${ton}.${promo ? `\nOffre à mettre en avant : ${promo}.` : ''}${infos ? `\nInfos complémentaires : ${infos}.` : ''}
+Réponds uniquement avec le texte publicitaire, sans explication, sans balises markdown.`;
+
+      try {
+        const res = await fetch('/api/generate-pub', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ activite, ton, format, promo, infos })
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err?.error || 'Erreur serveur (' + res.status + ')');
+        }
+
+        const data = await res.json();
+        const texte = data.texte || 'Aucun résultat.';
+        loading.style.display = 'none';
+        genText.textContent = texte;
+        document.getElementById('genFbGuide').style.display = 'block';
+
+      } catch (e) {
+        loading.style.display = 'none';
+        genText.textContent = '⚠ Erreur : ' + e.message;
+      }
+
+      genBtn.disabled = false;
+      genBtn.textContent = '✦ Générer ma publicité';
+    };
+
+    window.telechargerVisuel = function() {
+      const a = document.createElement('a');
+      a.href = '/preview.png';
+      a.download = 'visuel-jercat.png';
+      a.click();
+    };
+
+    window.posterFacebook = function() {
+      const texte = document.getElementById('genText').textContent;
+      if (!texte) return;
+      const url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '&quote=' + encodeURIComponent(texte);
+      window.open(url, '_blank', 'width=600,height=500,noopener');
+    };
+
+    window.copierEtPartager = function() {
+      const texte = document.getElementById('genText').textContent;
+      const lien  = document.getElementById('genLienImage').value.trim();
+      if (!texte) return;
+
+      // 1. Copier le texte
+      navigator.clipboard.writeText(texte).then(() => {
+        // 2. Afficher le tooltip
+        const btn = document.querySelector('.gen-fb-btn');
+        const original = btn.textContent;
+        btn.textContent = '✓ Texte copié — colle-le sur Facebook !';
+        btn.style.background = '#2d7a2d';
+
+        // 3. Ouvrir Facebook après 800ms
+        setTimeout(() => {
+          const base = 'https://www.facebook.com/sharer/sharer.php?';
+          const params = lien
+            ? 'u=' + encodeURIComponent(lien)
+            : 'u=' + encodeURIComponent(window.location.href);
+          window.open(base + params, '_blank', 'width=600,height=500,noopener');
+          btn.textContent = original;
+          btn.style.background = '';
+        }, 800);
+      });
+    };
+
+    window.partagerFacebook = function() {
+      const texte = document.getElementById('genText').textContent;
+      const lien  = document.getElementById('genLienImage').value.trim();
+      if (!texte) return;
+      const base = 'https://www.facebook.com/sharer/sharer.php?';
+      const params = lien
+        ? 'u=' + encodeURIComponent(lien) + '&quote=' + encodeURIComponent(texte)
+        : 'u=' + encodeURIComponent(window.location.href) + '&quote=' + encodeURIComponent(texte);
+      window.open(base + params, '_blank', 'width=600,height=500,noopener');
+    };
+
+    window.copierPub = function() {
+      const texte = document.getElementById('genText').textContent;
+      if (!texte) return;
+      navigator.clipboard.writeText(texte).then(() => {
+        const btn = document.querySelector('.gen-copy-btn');
+        btn.textContent = 'Copié ✓';
+        setTimeout(() => { btn.textContent = 'Copier'; }, 2000);
+      });
+    };
+  })();
+  </script>
+
+</body>
+</html>
