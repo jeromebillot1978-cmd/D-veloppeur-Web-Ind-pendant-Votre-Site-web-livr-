@@ -470,6 +470,37 @@
       line-height: 1.8;
     }
 
+    /* ── DÉMO VIDÉO ── */
+    .video-demo {
+      padding: 100px 80px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .video-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .video-wrapper video {
+      width: 100%;
+      border: 1px solid var(--border);
+      display: block;
+      background: #000;
+    }
+    .video-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, var(--gold-dark), transparent 50%, var(--gold-dark));
+      z-index: -1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .video-demo { padding: 60px 24px; }
+    }
+
     /* ── TECH ── */
     .stack { padding: 60px 80px; border-top: 1px solid var(--border); }
     .stack-label {
@@ -1211,6 +1242,25 @@
         <div class="step-title">Livraison & Suivi</div>
         <p class="step-desc">Mise en ligne, formation, support post-lancement. Votre site est entre de bonnes mains.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- ── DÉMO VIDÉO ── -->
+  <section class="video-demo" id="demo">
+    <div class="section-tag">En action</div>
+    <h2 class="section-title">Voir mon <em>Travail</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Un aperçu concret de ce que je construis — design, rapidité, finition.</p>
+    <div class="video-wrapper">
+      <video
+        controls
+        preload="metadata"
+        poster="preview.png"
+        aria-label="Démonstration des réalisations de Jercat développeur web freelance"
+      >
+        <source src="jercat_avec_musique_48f3d395.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture vidéo.
+      </video>
     </div>
   </section>
 
