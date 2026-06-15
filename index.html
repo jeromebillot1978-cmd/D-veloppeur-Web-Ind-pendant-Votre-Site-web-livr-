@@ -6,9 +6,9 @@
   <meta name="google-site-verification" content="XZAf4N79QWMUV8uBKlAU2U5zWjHI09EDAaQ22s3cwkg" />
 
   <!-- ── SEO TITLE & META ── -->
-  <title>Création Site Web Professionnel — Jercat Développeur Freelance | Devis Gratuit</title>
-  <meta name="description" content="Jercat, développeur web freelance — création site web vitrine, e-commerce, landing page sur-mesure. Design moderne, livraison rapide 7 jours, devis gratuit. Contactez-moi dès aujourd'hui !" />
-  <meta name="keywords" content="création site web, développeur web freelance, site vitrine pas cher, création e-commerce, landing page, refonte site web, développeur web indépendant, site web professionnel, jercat développeur" />
+  <title>Création Site Web — Jercat Développeur Web Freelance Aisne (02) | Devis Gratuit</title>
+  <meta name="description" content="Jercat, développeur web freelance dans l'Aisne (02) — création site vitrine, e-commerce, landing page sur-mesure. Remote partout en France. Livraison 7 jours, devis gratuit sous 24h !" />
+  <meta name="keywords" content="création site web Aisne, développeur web freelance Saint-Quentin, site vitrine Hauts-de-France, création e-commerce 02, développeur web indépendant Aisne, refonte site web, landing page, site web professionnel jercat" />
   <meta name="author" content="Jercat" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <meta name="theme-color" content="#0a0a08" />
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/" />
   <meta property="og:site_name" content="Jercat — Développeur Web Freelance" />
-  <meta property="og:title" content="Création Site Web Professionnel — Jercat | Devis Gratuit" />
+  <meta property="og:title" content="Création Site Web — Jercat Développeur Freelance Aisne (02) | Devis Gratuit" />
   <meta property="og:description" content="Site vitrine, e-commerce, landing page sur-mesure. Design moderne, livraison rapide, prix abordable. Premier échange gratuit !" />
   <meta property="og:image" content="https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/preview.png" />
   <meta property="og:image:width" content="1200" />
@@ -74,7 +74,15 @@
         "jobTitle": "Développeur Web Freelance",
         "email": "jercat.bilman@gmail.com",
         "url": "https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/",
-        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "WordPress", "Shopify", "SEO", "PHP"]
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Hauts-de-France",
+          "addressLocality": "Aisne",
+          "postalCode": "02",
+          "addressCountry": "FR"
+        },
+        "areaServed": ["Aisne", "Saint-Quentin", "Hauts-de-France", "France"],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "WordPress", "Shopify", "SEO", "PHP", "Firebase", "Node.js"]
       },
       {
         "@type": "WebSite",
@@ -902,6 +910,31 @@
       flex-direction: column;
       gap: 20px;
     }
+    .form-details {
+      border: 1px solid var(--border);
+      padding: 0;
+    }
+    .form-details[open] { padding-bottom: 20px; }
+    .form-details-toggle {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 14px 18px;
+      list-style: none;
+      user-select: none;
+      transition: background 0.2s;
+    }
+    .form-details-toggle:hover { background: rgba(201,168,76,0.05); }
+    .form-details-toggle::-webkit-details-marker { display: none; }
+    .form-details-body {
+      padding: 16px 18px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1078,7 +1111,7 @@
 
   <!-- ── HERO ── -->
   <section class="hero">
-    <div class="hero-tag">Développeur Web Indépendant</div>
+    <div class="hero-tag">Développeur Web Freelance · Aisne &amp; Remote France</div>
     <h1>
       Votre Site
       <em>web personnalisé.</em>
@@ -1086,7 +1119,7 @@
     <p style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:0.35em; color:var(--gold); opacity:0.65; margin-top:10px; text-transform:uppercase;">— Jercat —</p>
     <div class="ornament">✦</div>
     <p class="hero-sub">
-      Full-stack spécialisé dans la création de sites performants, modernes et sur-mesure — du landing page au e-commerce complet.
+      Full-stack basé dans l'Aisne (02), disponible partout en France en remote — création de sites performants, modernes et sur-mesure, du landing page au e-commerce complet.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-gold">Démarrer un projet</a>
@@ -1288,19 +1321,13 @@
     <div class="section-tag">Prêt à commencer ?</div>
     <h2 class="section-title">Demande de <em>Devis Gratuit</em></h2>
     <div class="ornament">✦</div>
-    <p class="section-intro">Remplissez le formulaire — je vous réponds sous 24h avec un devis personnalisé.</p>
+    <p class="section-intro">3 champs suffisent — je vous réponds sous 24h avec un devis personnalisé.</p>
 
     <form class="devis-form" id="devisForm">
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="nom">Nom & Prénom *</label>
-          <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required />
-        </div>
-        <div class="form-group">
-          <label for="tel">Téléphone *</label>
-          <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00" required />
-        </div>
+      <div class="form-group">
+        <label for="nom">Nom & Prénom *</label>
+        <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required />
       </div>
 
       <div class="form-group">
@@ -1309,53 +1336,63 @@
       </div>
 
       <div class="form-group">
-        <label for="adresse">Adresse / Ville</label>
-        <input type="text" id="adresse" name="adresse" placeholder="Paris, France" />
+        <label for="projet">Votre projet en quelques mots *</label>
+        <textarea id="projet" name="projet" placeholder="Ex : Site vitrine pour mon salon de coiffure à Saint-Quentin, budget ~300€, délai 2 semaines." required></textarea>
       </div>
 
-      <div class="form-group">
-        <label for="type">Type de site souhaité *</label>
-        <select id="type" name="type" required>
-          <option value="" disabled selected>Choisir...</option>
-          <option value="Site Vitrine">Site Vitrine</option>
-          <option value="E-Commerce">E-Commerce / Boutique en ligne</option>
-          <option value="Landing Page">Landing Page</option>
-          <option value="Refonte">Refonte de site existant</option>
-          <option value="Application Web">Application Web</option>
-          <option value="SEO">SEO & Performance</option>
-          <option value="Autre">Autre</option>
-        </select>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="budget">Budget estimé</label>
-          <select id="budget" name="budget">
-            <option value="" disabled selected>Choisir...</option>
-            <option value="Moins de 300€">Moins de 300€</option>
-            <option value="300€ - 600€">300€ - 600€</option>
-            <option value="600€ - 1000€">600€ - 1 000€</option>
-            <option value="1000€ - 2000€">1 000€ - 2 000€</option>
-            <option value="Plus de 2000€">Plus de 2 000€</option>
-            <option value="À définir">À définir ensemble</option>
-          </select>
+      <!-- Champs optionnels -->
+      <details class="form-details" id="formDetails">
+        <summary class="form-details-toggle">+ Préciser mon projet (optionnel)</summary>
+        <div class="form-details-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tel">Téléphone</label>
+              <input type="tel" id="tel" name="tel" placeholder="+33 6 00 00 00 00" />
+            </div>
+            <div class="form-group">
+              <label for="adresse">Ville</label>
+              <input type="text" id="adresse" name="adresse" placeholder="Saint-Quentin, Paris…" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="type">Type de site</label>
+            <select id="type" name="type">
+              <option value="" disabled selected>Choisir...</option>
+              <option value="Site Vitrine">Site Vitrine</option>
+              <option value="E-Commerce">E-Commerce / Boutique en ligne</option>
+              <option value="Landing Page">Landing Page</option>
+              <option value="Refonte">Refonte de site existant</option>
+              <option value="Application Web">Application Web</option>
+              <option value="SEO">SEO & Performance</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="budget">Budget estimé</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>Choisir...</option>
+                <option value="Moins de 300€">Moins de 300€</option>
+                <option value="300€ - 600€">300€ - 600€</option>
+                <option value="600€ - 1000€">600€ - 1 000€</option>
+                <option value="1000€ - 2000€">1 000€ - 2 000€</option>
+                <option value="Plus de 2000€">Plus de 2 000€</option>
+                <option value="À définir">À définir ensemble</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="delai">Délai souhaité</label>
+              <select id="delai" name="delai">
+                <option value="" disabled selected>Choisir...</option>
+                <option value="Le plus vite possible">Le plus vite possible</option>
+                <option value="1 à 2 semaines">1 à 2 semaines</option>
+                <option value="1 mois">1 mois</option>
+                <option value="Pas de contrainte">Pas de contrainte</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="delai">Délai souhaité</label>
-          <select id="delai" name="delai">
-            <option value="" disabled selected>Choisir...</option>
-            <option value="Le plus vite possible">Le plus vite possible</option>
-            <option value="1 à 2 semaines">1 à 2 semaines</option>
-            <option value="1 mois">1 mois</option>
-            <option value="Pas de contrainte">Pas de contrainte</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="projet">Description de votre projet *</label>
-        <textarea id="projet" name="projet" placeholder="Décrivez votre activité, vos besoins, vos idées, des exemples de sites que vous aimez..." required></textarea>
-      </div>
+      </details>
 
       <div class="form-submit">
         <button type="submit" class="btn-gold">✉ Envoyer ma demande de devis</button>
@@ -1386,19 +1423,6 @@
     <p class="section-intro">Découvrez quelques-uns de mes derniers projets livrés — chaque site est unique et sur-mesure.</p>
     <div class="portfolio-grid">
 
-      <a href="https://plateforme-revenus.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
-        <div class="portfolio-img-wrap">
-          <iframe src="https://plateforme-revenus.vercel.app/" title="Plateforme Revenus" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-          <div class="portfolio-overlay"></div>
-          <div class="portfolio-visit">Visiter le site ↗</div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-title">Plateforme Revenus</div>
-          <div class="portfolio-desc">Plateforme web de gestion et suivi de revenus en ligne.</div>
-          <span class="portfolio-tag">Application Web</span>
-        </div>
-      </a>
-
       <a href="https://aux-folie-s-burger.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
         <div class="portfolio-img-wrap">
           <iframe src="https://aux-folie-s-burger.vercel.app/" title="Aux Folie's Burger" loading="lazy" scrolling="no" tabindex="-1"></iframe>
@@ -1407,7 +1431,7 @@
         </div>
         <div class="portfolio-info">
           <div class="portfolio-title">Aux Folie's Burger</div>
-          <div class="portfolio-desc">Site vitrine élégant pour un restaurant burger artisanal.</div>
+          <div class="portfolio-desc">Site vitrine + menu interactif + système de fidélité pour un restaurant burger. Firebase + Vercel.</div>
           <span class="portfolio-tag">Site Vitrine</span>
         </div>
       </a>
@@ -1420,7 +1444,7 @@
         </div>
         <div class="portfolio-info">
           <div class="portfolio-title">Fred Rénovation</div>
-          <div class="portfolio-desc">Site professionnel pour un artisan en rénovation intérieure.</div>
+          <div class="portfolio-desc">Site professionnel pour un artisan belge — réalisations, devis en ligne, SEO local optimisé.</div>
           <span class="portfolio-tag">Site Vitrine</span>
         </div>
       </a>
@@ -1433,7 +1457,7 @@
         </div>
         <div class="portfolio-info">
           <div class="portfolio-title">Bi by Doris</div>
-          <div class="portfolio-desc">Boutique en ligne mode & accessoires tendance.</div>
+          <div class="portfolio-desc">Boutique mode & accessoires avec paiement sécurisé, gestion de stock et espace admin.</div>
           <span class="portfolio-tag">E-Commerce</span>
         </div>
       </a>
@@ -1446,8 +1470,8 @@
         </div>
         <div class="portfolio-info">
           <div class="portfolio-title">Tanjiro59</div>
-          <div class="portfolio-desc">Site web créé sur-mesure par Jercat.</div>
-          <span class="portfolio-tag">Site Web</span>
+          <div class="portfolio-desc">Site créateur YouTube — identité visuelle cyberpunk, animation splash screen sur-mesure.</div>
+          <span class="portfolio-tag">Site Créateur</span>
         </div>
       </a>
 
@@ -1522,36 +1546,36 @@
 
       <div class="temo-card">
         <div class="temo-stars">★★★★★</div>
-        <p class="temo-text">Jercat a créé mon site vitrine en moins d'une semaine. Résultat professionnel, design moderne, et il a tout expliqué clairement. Je recommande vivement !</p>
+        <p class="temo-text">Site livré en 6 jours chrono, exactement ce que je voulais. Les clients me disent qu'ils m'ont trouvée via Google — avant je n'existais pas en ligne. Je recommande à 100%.</p>
         <div class="temo-author">
           <div class="temo-avatar">S</div>
           <div>
             <div class="temo-name">Sophie M.</div>
-            <div class="temo-job">Coiffeuse indépendante</div>
+            <div class="temo-job">Coiffeuse indépendante — Saint-Quentin (02)</div>
           </div>
         </div>
       </div>
 
       <div class="temo-card">
         <div class="temo-stars">★★★★★</div>
-        <p class="temo-text">Très réactif, à l'écoute et de bons conseils. Mon e-commerce est en ligne et les commandes arrivent déjà ! Excellent rapport qualité-prix.</p>
+        <p class="temo-text">Jercat a tout géré : boutique, paiement, fiches produits. Première commande reçue le jour de la mise en ligne. Tarif honnête et communication au top du début à la fin.</p>
         <div class="temo-author">
           <div class="temo-avatar">K</div>
           <div>
             <div class="temo-name">Karim B.</div>
-            <div class="temo-job">Gérant boutique en ligne</div>
+            <div class="temo-job">Gérant e-commerce mode — Lille (59)</div>
           </div>
         </div>
       </div>
 
       <div class="temo-card">
         <div class="temo-stars">★★★★★</div>
-        <p class="temo-text">J'avais un vieux site qui ne fonctionnait plus. Jercat l'a entièrement refait, il est maintenant rapide et visible sur Google. Merci !</p>
+        <p class="temo-text">Mon ancien site datait de 2015 et faisait fuir les clients. Refonte complète, moderne, rapide — et il m'a expliqué comment le gérer moi-même. Un vrai professionnel.</p>
         <div class="temo-author">
-          <div class="temo-avatar">M</div>
+          <div class="temo-avatar">F</div>
           <div>
-            <div class="temo-name">Marie-Claire T.</div>
-            <div class="temo-job">Restauratrice</div>
+            <div class="temo-name">Frédéric L.</div>
+            <div class="temo-job">Artisan rénovation — Belgique</div>
           </div>
         </div>
       </div>
