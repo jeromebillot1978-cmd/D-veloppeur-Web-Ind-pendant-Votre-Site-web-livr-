@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://d-veloppeur-web-ind-pendant-votre-s.vercel.app/sitemap.xml
+Sitemap: https://dev.jercat.fr/sitemap.xml

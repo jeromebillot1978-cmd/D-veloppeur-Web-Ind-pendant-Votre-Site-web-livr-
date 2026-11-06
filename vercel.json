@@ -1,4 +1,14 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "d-veloppeur-web-ind-pendant-votre-s.vercel.app" }],
+      "destination": "https://dev.jercat.fr/:path*",
+      "permanent": true
+    },
+    { "source": "/contact.html", "destination": "/#contact", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" }
   ],

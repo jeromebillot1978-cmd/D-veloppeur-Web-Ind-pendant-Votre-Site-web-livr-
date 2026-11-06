@@ -976,7 +976,7 @@
     .faq-item[open] summary::after { content: '−'; }
     .faq-item summary h3 { font: inherit; letter-spacing: inherit; color: inherit; display: inline; }
     .faq-answer { padding: 0 24px 22px; font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; }
-    .faq-answer a, .section-intro a, .hero-sub a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.35); }
+    .faq-answer a, .section-intro a, .hero-sub a, .step-desc a, .garantie-desc a, .cta p a, .form-success a, .temo-job a, .modal-box a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.35); }
     .site-links { margin-top: 6px; }
     .site-links a { margin: 0 6px; }
     .cta-section { border-top: 1px solid var(--border); background: var(--surface); }
