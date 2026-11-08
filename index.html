@@ -166,6 +166,18 @@
         ],
         "founder": {
           "@id": "https://dev.jercat.fr/#person"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Origny-Sainte-Benoîte",
+          "postalCode": "02390",
+          "addressRegion": "Hauts-de-France",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 49.8361,
+          "longitude": 3.4975
         }
       },
       {
@@ -178,9 +190,9 @@
         "url": "https://dev.jercat.fr/",
         "address": {
           "@type": "PostalAddress",
+          "addressLocality": "Origny-Sainte-Benoîte",
+          "postalCode": "02390",
           "addressRegion": "Hauts-de-France",
-          "addressLocality": "Aisne",
-          "postalCode": "02",
           "addressCountry": "FR"
         },
         "areaServed": [
@@ -211,11 +223,7 @@
         "publisher": {
           "@id": "https://dev.jercat.fr/#person"
         },
-        "inLanguage": "fr-FR",
-        "potentialAction": {
-          "@type": "ContactAction",
-          "target": "mailto:jercat.bilman@gmail.com"
-        }
+        "inLanguage": "fr-FR"
       },
       {
         "@type": "FAQPage",
@@ -302,29 +310,6 @@
           }
         ],
         "@id": "https://dev.jercat.fr/#faq"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://dev.jercat.fr/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://dev.jercat.fr/#services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Devis Gratuit",
-            "item": "https://dev.jercat.fr/#contact"
-          }
-        ]
       }
     ]
   }
@@ -419,7 +404,7 @@
       letter-spacing: 0.05em;
       color: var(--text);
       opacity: 0;
-      animation: fadeUp 1s 0.4s forwards;
+      animation: fadeUp 0.6s 0s forwards;
     }
     h1 em {
       font-family: 'Cormorant Garamond', serif;
@@ -949,7 +934,7 @@
     .tarifs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; perspective: 1000px; }
     .tarif-card { background: var(--card); border: 1px solid var(--border); padding: 44px 32px; text-align: center; position: relative; transition: transform 0.3s, box-shadow 0.3s; }
     .tarif-card.featured { border-color: var(--gold); box-shadow: 0 0 40px rgba(201,168,76,0.12); }
-    .tarif-card.featured::before { content: '⭐ POPULAIRE'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #0a0a08; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; padding: 4px 16px; }
+    .tarif-card.featured::before { content: '★ RECOMMANDÉ'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #0a0a08; font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; padding: 4px 16px; }
     .tarif-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
     .tarif-name { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 20px; }
     .tarif-price { font-family: 'Cormorant Garamond', serif; font-size: 68px; color: var(--gold); line-height: 1; font-weight: 300; }
@@ -1066,15 +1051,75 @@
       .tarifs, .temoignages, .garanties { padding: 70px 24px; }
       .legal-bar { padding: 16px 24px; }
     }
+  
+    /* ══ AJOUTS AUDIT NOV. 2026 ══ */
+    html { scroll-padding-top: 84px; }
+    .site-header { position: sticky; top: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 40px; background: rgba(10,10,8,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .site-header .logo { font-family: 'Cinzel', serif; font-weight: 700; font-size: 18px; letter-spacing: 0.2em; color: var(--gold); text-decoration: none; }
+    .site-header nav { display: flex; gap: 26px; }
+    .site-header nav a { color: var(--text); text-decoration: none; font-size: 14px; letter-spacing: 0.04em; opacity: 0.85; }
+    .site-header nav a:hover { color: var(--gold-light); opacity: 1; }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .header-tel { color: var(--gold); text-decoration: none; font-size: 14px; white-space: nowrap; }
+    .header-cta { background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light)); color: #0a0a08; text-decoration: none; font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 11px 18px; white-space: nowrap; }
+    @media (max-width: 960px) { .site-header nav, .header-tel { display: none; } .site-header { padding: 12px 16px; } }
+
+    .hero-proofs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; width: 100%; margin: 44px auto 0; position: relative; opacity: 0; animation: fadeUp 1s 0.6s forwards; }
+    .proof { display: flex; align-items: center; gap: 14px; text-align: left; padding: 16px 18px; border: 1px solid var(--border); background: rgba(20,20,18,0.7); }
+    .proof-ico { flex: 0 0 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; font-weight: 700; font-size: 16px; }
+    .proof strong { display: block; color: var(--text); font-size: 15px; font-weight: 500; margin-bottom: 3px; }
+    .proof span.proof-txt { display: block; color: #b9ae96; font-size: 13px; line-height: 1.45; }
+    .hero-recent { position: relative; margin-top: 22px; font-size: 14px; color: #b9ae96; }
+    .hero-recent a { color: var(--gold-light); }
+    @media (max-width: 760px) { .hero-proofs { grid-template-columns: 1fr; } }
+
+    .portfolio-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.5s; }
+    .portfolio-card:hover .portfolio-img-wrap img { transform: scale(1.04); }
+    .portfolio-img-wrap { height: 220px; }
+
+    .about-badge { width: 120px; height: 120px; margin: 0 auto 28px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 52px; font-weight: 700; color: var(--gold); background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%); overflow: hidden; }
+    .about-badge img { width: 100%; height: 100%; object-fit: cover; }
+
+    .tarif-note { max-width: 760px; margin: 40px auto 0; padding: 22px 26px; border: 1px solid var(--border); background: var(--card); color: #c9bfa8; font-size: 15px; line-height: 1.7; text-align: center; }
+    .tarif-note strong { color: var(--gold-light); }
+
+    .mobile-cta { display: none; }
+    @media (max-width: 760px) {
+      .mobile-cta { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000; border-top: 1px solid var(--border); }
+      .mobile-cta a { text-align: center; padding: 15px 8px; font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
+      .mobile-cta .m-tel { background: #141412; color: var(--gold); }
+      .mobile-cta .m-devis { background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light)); color: #0a0a08; }
+      body { padding-bottom: 56px; }
+      .chat-fab { bottom: 76px !important; width: 52px !important; height: 52px !important; }
+    }
+    .chat-fab-badge { display: none !important; }
   </style>
 </head>
 <body>
+
+  <!-- ── EN-TÊTE FIXE ── -->
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="Jercat, retour en haut de page">JERCAT</a>
+    <nav aria-label="Navigation principale">
+      <a href="#portfolio">Réalisations</a>
+      <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#qui-suis-je">À propos</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:+33631040364" class="header-tel">📞 06 31 04 03 64</a>
+      <a href="#contact" class="header-cta">Devis gratuit</a>
+    </div>
+  </header>
+
+  <main>
 
   <!-- ── HERO ── -->
   <section class="hero">
     <p class="hero-tag">Création de site internet · Saint-Quentin, Aisne &amp; à distance partout en France</p>
     <h1>
-      Votre Site
+      Création de site
       <em>internet dans l'Aisne.</em>
     </h1>
     <p style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:0.35em; color:var(--gold); opacity:0.65; margin-top:10px; text-transform:uppercase;">— Jercat —</p>
@@ -1086,23 +1131,14 @@
       <a href="#contact" class="btn-gold">Demander un devis gratuit</a>
       <a href="tel:+33631040364" class="btn-outline-gold" aria-label="Appeler Jercat au 06 31 04 03 64">📞 06 31 04 03 64</a>
     </div>
+    <div class="hero-proofs">
+      <div class="proof"><span class="proof-ico">J</span><div><strong>Un seul interlocuteur</strong><span class="proof-txt">Moi, du premier appel à la mise en ligne</span></div></div>
+      <div class="proof"><span class="proof-ico">€</span><div><strong>Prix fixé avant de commencer</strong><span class="proof-txt">Devis gratuit, aucun dépassement surprise</span></div></div>
+      <div class="proof"><span class="proof-ico">✓</span><div><strong>Solde payé à la livraison</strong><span class="proof-txt">50 % à la commande, 50 % quand le site vous convient</span></div></div>
+    </div>
+    <p class="hero-recent">Derniers sites livrés : <a href="#portfolio">Fred Rénovation, Aux Folie's Burger, Bi by Doris →</a></p>
   </section>
 
-  <!-- ── STATS ── -->
-  <div class="stats">
-    <div class="stat-item">
-      <div class="stat-num">5</div>
-      <div class="stat-label">Sites en ligne</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">7j</div>
-      <div class="stat-label">Délai moyen</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">24h</div>
-      <div class="stat-label">Réponse aux devis</div>
-    </div>
-  </div>
 
   <!-- ── AVANTAGES ── -->
   <section class="section avantages" id="avantages">
@@ -1153,6 +1189,78 @@
         <h3 class="card-title">Meilleur Retour sur Investissement</h3>
         <p class="card-desc">Un site internet est l'outil marketing le moins cher et le plus rentable. Chaque visiteur est un client potentiel sans coût supplémentaire.</p>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ── RÉALISATIONS ── -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-tag">Mes réalisations</div>
+    <h2 class="section-title">Sites créés <em>par Jercat</em></h2>
+    <div class="ornament">✦</div>
+    <p class="section-intro">Découvrez quelques-uns de mes derniers projets livrés — chaque site est unique et sur-mesure. Un projet similaire ? <a href="#contact">Demandez votre devis gratuit</a>.</p>
+    <div class="portfolio-grid">
+
+      <a href="https://fredrenovation.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <img src="realisations/fred-renovation.webp" alt="Page d'accueil du site de l'artisan Fred Rénovation" width="800" height="500" loading="lazy" decoding="async">
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">Fred Rénovation</h3>
+          <div class="portfolio-desc">Site professionnel pour un artisan belge — réalisations, devis en ligne, SEO local optimisé.</div>
+          <span class="portfolio-tag">Site Vitrine</span>
+        </div>
+      </a>
+      <a href="https://aux-folie-s-burger.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <img src="realisations/aux-folies-burger.webp" alt="Page d'accueil du site du restaurant Aux Folie's Burger" width="800" height="500" loading="lazy" decoding="async">
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">Aux Folie's Burger</h3>
+          <div class="portfolio-desc">Site vitrine + menu interactif + système de fidélité pour un restaurant burger. Firebase + Vercel.</div>
+          <span class="portfolio-tag">Site Vitrine</span>
+        </div>
+      </a>
+      <a href="https://bi-by-doris.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <img src="realisations/bi-by-doris.webp" alt="Page d'accueil de la boutique en ligne Bi by Doris" width="800" height="500" loading="lazy" decoding="async">
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">Bi by Doris</h3>
+          <div class="portfolio-desc">Boutique mode & accessoires avec paiement sécurisé, gestion de stock et espace admin.</div>
+          <span class="portfolio-tag">E-Commerce</span>
+        </div>
+      </a>
+      <a href="https://plateforme-revenus.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <img src="realisations/bon-plan-et-reduction.webp" alt="Page d'accueil du site Bon plan et réduction" width="800" height="500" loading="lazy" decoding="async">
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">Bon plan et réduction</h3>
+          <div class="portfolio-desc">Site éditorial cashback &amp; parrainage : près de 40 pages de guides, comparatifs et fiches marchands, simulateur de gains, vidéos tutos, mode sombre et SEO optimisé pour Google.</div>
+          <span class="portfolio-tag">Site Éditorial</span>
+        </div>
+      </a>
+      <a href="https://tanjiro59.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <img src="realisations/tanjiro59.webp" alt="Page d'accueil du site du créateur YouTube Tanjiro59" width="800" height="500" loading="lazy" decoding="async">
+          <div class="portfolio-overlay"></div>
+          <div class="portfolio-visit">Visiter le site ↗</div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">Tanjiro59</h3>
+          <div class="portfolio-desc">Site créateur YouTube — identité visuelle cyberpunk, animation splash screen sur-mesure.</div>
+          <span class="portfolio-tag">Site Créateur</span>
+        </div>
+      </a>
 
     </div>
   </section>
@@ -1247,8 +1355,10 @@
 
   <!-- ── QUI SUIS-JE ── -->
   <section class="section" id="qui-suis-je">
+    <!-- Remplacer le « J » par ta photo : <img src="jercat-photo.webp" alt="Jercat, développeur web dans l'Aisne" width="240" height="240"> -->
+    <div class="about-badge" aria-hidden="true">J</div>
     <div class="section-tag">Votre interlocuteur</div>
-    <h2 class="section-title">Qui <em>suis-je ?</em></h2>
+    <h2 class="section-title">Jercat, <em>venu du terrain</em></h2>
     <div class="ornament">✦</div>
     <p class="section-intro">Je suis Jercat, développeur web indépendant installé dans l'Aisne, à quelques kilomètres de Saint-Quentin. Avant le web, j'ai travaillé près de vingt ans dans l'industrie et la logistique : je connais le quotidien des métiers de terrain, qui n'ont ni le temps ni l'envie de se battre avec un site internet.</p>
     <p class="section-intro">Mon travail : vous livrer un site clair, rapide et facile à trouver sur Google, à un prix adapté aux petites entreprises, sans jargon. Pas de standard ni de chef de projet : vous parlez toujours à la même personne, avant, pendant et après la mise en ligne.</p>
@@ -1422,80 +1532,7 @@
   </section>
 
   <!-- ── PORTFOLIO ── -->
-  <section class="portfolio" id="portfolio">
-    <div class="section-tag">Mes réalisations</div>
-    <h2 class="section-title">Sites créés <em>par Jercat</em></h2>
-    <div class="ornament">✦</div>
-    <p class="section-intro">Découvrez quelques-uns de mes derniers projets livrés — chaque site est unique et sur-mesure. Un projet similaire ? <a href="#contact">Demandez votre devis gratuit</a>.</p>
-    <div class="portfolio-grid">
 
-      <a href="https://aux-folie-s-burger.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
-        <div class="portfolio-img-wrap">
-          <iframe src="https://aux-folie-s-burger.vercel.app/" title="Aux Folie's Burger" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-          <div class="portfolio-overlay"></div>
-          <div class="portfolio-visit">Visiter le site ↗</div>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">Aux Folie's Burger</h3>
-          <div class="portfolio-desc">Site vitrine + menu interactif + système de fidélité pour un restaurant burger. Firebase + Vercel.</div>
-          <span class="portfolio-tag">Site Vitrine</span>
-        </div>
-      </a>
-
-      <a href="https://plateforme-revenus.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
-        <div class="portfolio-img-wrap">
-          <iframe src="https://plateforme-revenus.vercel.app/" title="Bon plan et réduction" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-          <div class="portfolio-overlay"></div>
-          <div class="portfolio-visit">Visiter le site ↗</div>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">Bon plan et réduction</h3>
-          <div class="portfolio-desc">Site éditorial cashback &amp; parrainage : près de 40 pages de guides, comparatifs et fiches marchands, simulateur de gains, vidéos tutos, mode sombre et SEO optimisé pour Google.</div>
-          <span class="portfolio-tag">Site Éditorial</span>
-        </div>
-      </a>
-
-      <a href="https://fredrenovation.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
-        <div class="portfolio-img-wrap">
-          <iframe src="https://fredrenovation.vercel.app/" title="Fred Rénovation" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-          <div class="portfolio-overlay"></div>
-          <div class="portfolio-visit">Visiter le site ↗</div>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">Fred Rénovation</h3>
-          <div class="portfolio-desc">Site professionnel pour un artisan belge — réalisations, devis en ligne, SEO local optimisé.</div>
-          <span class="portfolio-tag">Site Vitrine</span>
-        </div>
-      </a>
-
-      <a href="https://bi-by-doris.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
-        <div class="portfolio-img-wrap">
-          <iframe src="https://bi-by-doris.vercel.app/" title="Bi by Doris" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-          <div class="portfolio-overlay"></div>
-          <div class="portfolio-visit">Visiter le site ↗</div>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">Bi by Doris</h3>
-          <div class="portfolio-desc">Boutique mode & accessoires avec paiement sécurisé, gestion de stock et espace admin.</div>
-          <span class="portfolio-tag">E-Commerce</span>
-        </div>
-      </a>
-
-      <a href="https://tanjiro59.vercel.app/" target="_blank" rel="noopener" class="portfolio-card">
-        <div class="portfolio-img-wrap">
-          <iframe src="https://tanjiro59.vercel.app/" title="Tanjiro59" loading="lazy" scrolling="no" tabindex="-1"></iframe>
-          <div class="portfolio-overlay"></div>
-          <div class="portfolio-visit">Visiter le site ↗</div>
-        </div>
-        <div class="portfolio-info">
-          <h3 class="portfolio-title">Tanjiro59</h3>
-          <div class="portfolio-desc">Site créateur YouTube — identité visuelle cyberpunk, animation splash screen sur-mesure.</div>
-          <span class="portfolio-tag">Site Créateur</span>
-        </div>
-      </a>
-
-    </div>
-  </section>
 
   <!-- ── TARIFS ── -->
   <section class="tarifs" id="tarifs">
@@ -1553,57 +1590,10 @@
       </div>
 
     </div>
+      <p class="tarif-note"><strong>Pourquoi si peu cher ?</strong> Pas d'agence, pas de locaux, pas de commerciaux : vous ne payez que le travail. Les prix affichés sont des prix de départ ; le prix définitif est fixé dans un devis gratuit, avant tout démarrage.</p>
   </section>
 
-  <!-- ── TÉMOIGNAGES ── -->
-  <!-- Les exemples d'avis ont été retirés (faux avis = pratique commerciale trompeuse).
-       Pour ajouter un VRAI avis : copier un bloc temo-card, mettre la citation exacte du client
-       dans temo-text, ★★★★★ dans temo-stars, son prénom + nom (avec son accord) et son entreprise. -->
-  <section class="temoignages" id="temoignages">
-    <div class="section-tag">Résultats concrets</div>
-    <h2 class="section-title">Projets <em>livrés</em></h2>
-    <div class="ornament">✦</div>
-    <p class="section-intro">Pas de promesses, du concret : voici ce que j'ai livré récemment. Chaque site est en ligne et consultable, jugez sur pièce.</p>
-    <div class="temoignages-grid">
 
-      <div class="temo-card">
-        <div class="temo-stars">Restaurant · Site vitrine</div>
-        <p class="temo-text">Site vitrine avec menu interactif et système de fidélité pour un restaurant burger : les clients consultent la carte sur leur téléphone et cumulent leurs points.</p>
-        <div class="temo-author">
-          <div class="temo-avatar">A</div>
-          <div>
-            <div class="temo-name">Aux Folie's Burger</div>
-            <div class="temo-job"><a href="https://aux-folie-s-burger.vercel.app/" target="_blank" rel="noopener">Voir le site ↗</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="temo-card">
-        <div class="temo-stars">Artisan · Site vitrine</div>
-        <p class="temo-text">Site professionnel pour un artisan de la rénovation : présentation des réalisations, demande de devis en ligne et référencement local.</p>
-        <div class="temo-author">
-          <div class="temo-avatar">F</div>
-          <div>
-            <div class="temo-name">Fred Rénovation</div>
-            <div class="temo-job"><a href="https://fredrenovation.vercel.app/" target="_blank" rel="noopener">Voir le site ↗</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="temo-card">
-        <div class="temo-stars">Commerce · Boutique en ligne</div>
-        <p class="temo-text">Boutique de mode et d'accessoires avec paiement sécurisé, gestion de stock et espace d'administration pour gérer les produits en autonomie.</p>
-        <div class="temo-author">
-          <div class="temo-avatar">B</div>
-          <div>
-            <div class="temo-name">Bi by Doris</div>
-            <div class="temo-job"><a href="https://bi-by-doris.vercel.app/" target="_blank" rel="noopener">Voir le site ↗</a></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
 
 
   <!-- ── FAQ (contenu identique aux données structurées FAQPage) ── -->
@@ -1696,6 +1686,8 @@
   </section>
 
   <!-- ── FOOTER ── -->
+  </main>
+
   <footer>
     <div class="footer-logo">Jercat</div>
     <div class="footer-copy">© 2026 — Développeur Web Indépendant</div>
@@ -1710,7 +1702,7 @@
     <a href="#" onclick="openModal('cgv');return false;">CGV</a>
     &nbsp;|&nbsp; <a href="tel:+33631040364">06 31 04 03 64</a> · jercat.bilman@gmail.com
     <nav class="site-links" aria-label="Plan du site">
-      <a href="#services">Services</a>·<a href="#processus">Processus</a>·<a href="#qui-suis-je">Qui suis-je</a>·<a href="#portfolio">Réalisations</a>·<a href="#tarifs">Tarifs</a>·<a href="#temoignages">Projets livrés</a>·<a href="#faq">FAQ</a>·<a href="#contact">Devis gratuit</a>
+      <a href="#services">Services</a>·<a href="#processus">Processus</a>·<a href="#qui-suis-je">Qui suis-je</a>·<a href="#portfolio">Réalisations</a>·<a href="#tarifs">Tarifs</a>·<a href="#faq">FAQ</a>·<a href="#contact">Devis gratuit</a>
     </nav>
     <div>Création de sites internet à <a href="creation-site-internet-saint-quentin.html">Saint-Quentin</a>, <a href="creation-site-internet-laon.html">Laon</a>, <a href="creation-site-internet-soissons.html">Soissons</a>, <a href="creation-site-internet-chauny.html">Chauny</a>, <a href="creation-site-internet-tergnier.html">Tergnier</a> et dans toute l'Aisne (02) — <a href="developpeur-web-freelance-aisne.html">développeur web freelance dans l'Aisne</a></div>
     <div>Guides : <a href="prix-site-internet-2026.html">Prix d'un site internet en 2026</a> · <a href="creation-site-artisan.html">Site pour artisan</a> · <a href="creation-site-commercant.html">Site pour commerçant</a> · <a href="refonte-site-internet.html">Refonte de site</a></div>
@@ -2267,5 +2259,10 @@ Demande reçue via ${window.location.hostname}`;
   })();
   </script>
 
+  <!-- ── BARRE D'ACTION MOBILE ── -->
+  <div class="mobile-cta">
+    <a href="tel:+33631040364" class="m-tel">📞 Appeler</a>
+    <a href="#contact" class="m-devis">Devis gratuit</a>
+  </div>
 </body>
 </html>
