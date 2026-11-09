@@ -122,7 +122,7 @@
     .faq-answer { padding: 0 24px 22px; font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; }
     .related { padding: 80px; border-top: 1px solid var(--border); background: var(--bg); }
     .related-grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
-    .related h2 { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
+    .related h2, .related .related-title { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
     .related ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
     .related li::before { content: '✦'; color: var(--gold); font-size: 9px; margin-right: 10px; }
     .cta .btn-gold { position: relative; display: inline-block; }
@@ -162,7 +162,7 @@
 
   <section class="section" style="padding-top:60px;">
     <div class="section-tag">Questions fréquentes</div>
-    <h2 class="section-title">Vos <em>questions</em></h2>
+    <h2 class="section-title">Vos questions <em>sur les prix</em></h2>
     <div class="ornament">✦</div>
     <div class="faq-list">
       <details class="faq-item">
@@ -189,11 +189,11 @@
   <section class="related" aria-label="Pages liées">
     <div class="related-grid">
       <div>
-        <h2>Création de site par ville</h2>
+        <p class="related-title">Création de site par ville</p>
         <ul><li><a href="creation-site-internet-saint-quentin.html">Site internet à Saint-Quentin</a></li><li><a href="creation-site-internet-laon.html">Site internet à Laon</a></li><li><a href="creation-site-internet-soissons.html">Site internet à Soissons</a></li><li><a href="creation-site-internet-chauny.html">Site internet à Chauny</a></li><li><a href="creation-site-internet-tergnier.html">Site internet à Tergnier</a></li></ul>
       </div>
       <div>
-        <h2>Guides &amp; services</h2>
+        <p class="related-title">Guides &amp; services</p>
         <ul><li><a href="developpeur-web-freelance-aisne.html">Développeur web freelance Aisne</a></li><li><a href="creation-site-artisan.html">Création de site pour artisan</a></li><li><a href="creation-site-commercant.html">Création de site pour commerçant</a></li><li><a href="refonte-site-internet.html">Refonte de site internet</a></li>
           <li><a href="./#tarifs">Tarifs et formules</a></li>
           <li><a href="./#portfolio">Réalisations</a></li>

@@ -1,23 +1,136 @@
 {
+  "cleanUrls": false,
+  "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "d-veloppeur-web-ind-pendant-votre-s.vercel.app" }],
-      "destination": "https://dev.jercat.fr/:path*",
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "d-veloppeur-web-ind-pendant-votre-s.vercel.app"
+        }
+      ],
+      "destination": "https://dev.jercat.fr/",
       "permanent": true
     },
-    { "source": "/contact.html", "destination": "/#contact", "permanent": true },
-    { "source": "/contact", "destination": "/#contact", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" }
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "d-veloppeur-web-ind-pendant-votre-s.vercel.app"
+        }
+      ],
+      "destination": "https://dev.jercat.fr/$1",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:page(creation-site-artisan|creation-site-commercant|creation-site-internet-saint-quentin|creation-site-internet-laon|creation-site-internet-soissons|creation-site-internet-chauny|creation-site-internet-tergnier|developpeur-web-freelance-aisne|prix-site-internet-2026|refonte-site-internet)",
+      "destination": "/:page.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    }
   ],
   "headers": [
     {
+      "source": "/(.*)",
+      "missing": [
+        {
+          "type": "host",
+          "value": "dev.jercat.fr"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/googled3d0c27eb2364fda.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(webp|png|ico|mp4)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/jercat.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     }
   ]
