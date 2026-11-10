@@ -2,47 +2,103 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dev.jercat.fr/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/creation-site-internet-saint-quentin.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/creation-site-internet</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/creation-site-internet-laon.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/creation-site-vitrine</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/creation-site-internet-soissons.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/developpeur-web-freelance</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/creation-site-internet-chauny.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/developpeur-react</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/creation-site-internet-tergnier.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/developpeur-javascript</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/developpeur-web-freelance-aisne.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/developpement-application-web</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/prix-site-internet-2026.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/automatisation-ia</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/creation-site-artisan.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/maintenance-site-web</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/creation-site-commercant.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/refonte-site-internet</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
-    <loc>https://dev.jercat.fr/refonte-site-internet.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://dev.jercat.fr/developpeur-full-stack</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
-  <!-- Ajouter ici chaque nouvelle page (une balise <url> par page) -->
+  <url>
+    <loc>https://dev.jercat.fr/etudes-de-cas</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/blog</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/blog/site-vitrine-ou-site-e-commerce</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/blog/cahier-des-charges-site-internet</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/blog/automatiser-son-entreprise-avec-l-ia</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/prix-site-internet-2026</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/creation-site-artisan</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/creation-site-commercant</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/creation-site-internet-saint-quentin</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/creation-site-internet-laon</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/creation-site-internet-soissons</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/creation-site-internet-chauny</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/creation-site-internet-tergnier</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://dev.jercat.fr/developpeur-web-freelance-aisne</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <!-- Généré par gen/build.py -->
 </urlset>

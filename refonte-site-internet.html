@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Page générée à partir de gen/pages.py — pour modifier le texte, modifier pages.py puis relancer build.py,
-       ou modifier directement ce fichier. Les feuilles de style communes sont dans jercat.css. -->
+  <!-- Page générée par gen/build.py à partir de gen/content.py : modifier le contenu là-bas puis relancer le script. -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Refonte de site internet : moderniser sans perdre Google | Jercat</title>
-  <meta name="description" content="Site lent, daté ou illisible sur mobile ? Refonte de site internet moderne, rapide et sécurisée, en conservant votre référencement Google. Devis gratuit sous 24 h." />
+  <title>Refonte de site internet sans perdre Google | Jercat</title>
+  <meta name="description" content="Refonte de site internet moderne, rapide et sécurisée, en conservant votre référencement Google. Partout en France, devis gratuit sous 24 h." />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <meta name="author" content="Jercat" />
   <meta name="theme-color" content="#0a0a08" />
-  <link rel="canonical" href="https://dev.jercat.fr/refonte-site-internet.html" />
-
+  <link rel="canonical" href="https://dev.jercat.fr/refonte-site-internet" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://dev.jercat.fr/refonte-site-internet.html" />
+  <meta property="og:url" content="https://dev.jercat.fr/refonte-site-internet" />
   <meta property="og:site_name" content="Jercat — Développeur Web Freelance" />
-  <meta property="og:title" content="Refonte de site internet : moderniser sans perdre Google" />
-  <meta property="og:description" content="Site lent, daté ou illisible sur mobile ? Refonte de site internet moderne, rapide et sécurisée, en conservant votre référencement Google. Devis gratuit sous 24 h." />
+  <meta property="og:title" content="Refonte de site internet sans perdre Google" />
+  <meta property="og:description" content="Refonte de site internet moderne, rapide et sécurisée, en conservant votre référencement Google. Partout en France, devis gratuit sous 24 h." />
   <meta property="og:image" content="https://dev.jercat.fr/preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="fr_FR" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://dev.jercat.fr/preview.png" />
-
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,23 +30,24 @@
     {
       "@type": "Service",
       "name": "Refonte de site internet",
-      "serviceType": "Création de site internet",
-      "url": "https://dev.jercat.fr/refonte-site-internet.html",
+      "serviceType": "Refonte de site internet",
+      "url": "https://dev.jercat.fr/refonte-site-internet",
+      "description": "Refonte de site internet moderne, rapide et sécurisée, en conservant votre référencement Google. Partout en France, devis gratuit sous 24 h.",
       "provider": {
         "@id": "https://dev.jercat.fr/#business"
       },
-      "areaServed": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "Aisne"
-        },
-        {
-          "@type": "Country",
-          "name": "France"
-        }
-      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "TPE, PME, indépendants, commerçants, artisans, associations"
+      },
       "offers": {
         "@type": "Offer",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
         "priceSpecification": {
           "@type": "PriceSpecification",
           "minPrice": "99",
@@ -68,7 +68,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Refonte de site internet",
-          "item": "https://dev.jercat.fr/refonte-site-internet.html"
+          "item": "https://dev.jercat.fr/refonte-site-internet"
         }
       ]
     },
@@ -98,82 +98,86 @@
             "@type": "Answer",
             "text": "Oui. Le nouveau site est développé sur une préversion séparée, et l'ancien reste en ligne jusqu'à la bascule finale."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Pouvez-vous refaire un site WordPress ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, soit en restant sous WordPress, soit en passant à un site codé plus rapide si vous n'avez pas besoin de modifier souvent le contenu."
+          }
         }
       ]
     }
   ]
 }
   </script>
-
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0a08'/><text y='.9em' font-size='80' x='10'>💻</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="jercat.css" />
-  <style>
-    .hero { min-height: 72vh; }
-    h1 { font-size: clamp(38px, 6vw, 78px); }
-    .breadcrumb { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 28px; position: relative; }
-    .breadcrumb a { color: var(--gold); text-decoration: none; }
-    .prose { max-width: 760px; margin: 0 auto; font-size: 15px; color: var(--muted); line-height: 1.9; font-weight: 300; }
-    .prose h2 { font-family: 'Cinzel', serif; font-size: 22px; color: var(--gold-light); letter-spacing: 0.06em; margin: 44px 0 14px; font-weight: 600; line-height: 1.4; }
-    .prose h2:first-child { margin-top: 0; }
-    .prose p { margin-bottom: 16px; }
-    .prose strong { color: var(--text); font-weight: 500; }
-    .prose a, .related a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.35); }
-    .prose ul { margin: 0 0 16px 20px; display: flex; flex-direction: column; gap: 6px; }
-    .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-    .faq-item { border: 1px solid var(--border); background: var(--card); transition: border-color 0.2s; }
-    .faq-item[open] { border-color: var(--gold); }
-    .faq-item summary { list-style: none; cursor: pointer; padding: 20px 56px 20px 24px; position: relative; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.06em; color: var(--gold-light); line-height: 1.5; }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: '+'; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 18px; }
-    .faq-item[open] summary::after { content: '−'; }
-    .faq-item summary h3 { font: inherit; display: inline; }
-    .faq-answer { padding: 0 24px 22px; font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; }
-    .related { padding: 80px; border-top: 1px solid var(--border); background: var(--bg); }
-    .related-grid { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
-    .related h2, .related .related-title { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 400; }
-    .related ul { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
-    .related li::before { content: '✦'; color: var(--gold); font-size: 9px; margin-right: 10px; }
-    .cta .btn-gold { position: relative; display: inline-block; }
-    .legal-bar a { margin: 0 6px; }
-    @media (max-width: 900px) { .hero { padding: 70px 24px; } .related { padding: 60px 24px; } .related-grid { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="/jercat.css" />
 </head>
-<body>
+<body class="sub-page">
 
-  <section class="hero">
-    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="./">Accueil</a> › Refonte de site internet</nav>
+  <header class="site-header">
+    <a href="/" class="logo" aria-label="Jercat, accueil"><img src="/logo-jercat-icone.webp" alt="Logo Jercat" width="44" height="44">JERCAT</a>
+    <nav aria-label="Navigation principale">
+      <a href="/creation-site-internet">Création de site</a>
+      <a href="/developpement-application-web">Applications</a>
+      <a href="/automatisation-ia">IA</a>
+      <a href="/etudes-de-cas">Études de cas</a>
+      <a href="/#tarifs">Tarifs</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:+33631040364" class="header-tel">📞 06 31 04 03 64</a>
+      <a href="/#contact" class="header-cta">Devis gratuit</a>
+    </div>
+  </header>
+  <main>
+
+  <section class="hero hero-sub-page">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/">Accueil</a> › Refonte de site internet</nav>
     <p class="hero-tag">Refonte · Modernisation &amp; performance</p>
     <h1>Refonte de <em>site internet.</em></h1>
     <div class="ornament">✦</div>
-    <p class="hero-sub">Votre site a quelques années, s&#x27;affiche mal sur mobile ou ne vous apporte plus de clients ? Je le modernise, en préservant votre place sur Google.</p>
+    <p class="hero-sub">Votre site a quelques années, s&#x27;affiche mal sur mobile ou ne vous apporte plus de clients ? Je le modernise en préservant votre place sur Google, où que vous soyez en France.</p>
     <div class="hero-actions">
-      <a href="./#contact" class="btn-gold">Demander un devis gratuit</a>
+      <a href="/#contact" class="btn-gold">Demander un devis gratuit</a>
       <a href="tel:+33631040364" class="btn-outline-gold" aria-label="Appeler Jercat au 06 31 04 03 64">📞 06 31 04 03 64</a>
-      <a href="./#portfolio" class="btn-outline-gold">Voir mes réalisations</a>
     </div>
+  </section>
+
+  <section class="reassure" aria-label="Engagements">
+    <div><strong>Un seul interlocuteur</strong><span>du premier appel à la mise en ligne</span></div>
+    <div><strong>Prix fixé avant de commencer</strong><span>devis gratuit et détaillé</span></div>
+    <div><strong>50 % / 50 %</strong><span>solde payé à la livraison</span></div>
+    <div><strong>Réponse sous 24 h</strong><span>téléphone, email ou Telegram</span></div>
+    <div><strong>Partout en France</strong><span>projets menés à distance</span></div>
   </section>
 
   <section class="section avantages">
     <div class="prose">
-      <h2>Les signes qu&#x27;il est temps de refaire votre site</h2>
+      <nav class="toc" aria-label="Sommaire"><p>Sommaire</p><ol><li><a href="#s0">Les signes qu&#x27;il est temps de refaire votre site</a></li><li><a href="#s1">Moderniser sans perdre votre référencement</a></li><li><a href="#s2">Ce que la refonte apporte</a></li><li><a href="#s3">Déroulement et prix</a></li></ol></nav>
+      <h2 id="s0">Les signes qu&#x27;il est temps de refaire votre site</h2>
       <ul><li>Il s'affiche mal ou est difficile à utiliser sur smartphone.</li><li>Il met plusieurs secondes à se charger.</li><li>Le navigateur indique « non sécurisé » (pas de HTTPS).</li><li>Le design date et ne reflète plus la qualité de votre travail.</li><li>Vous ne pouvez pas modifier vos contenus sans aide.</li><li>Il ne vous apporte presque plus de demandes de contact.</li></ul>
-      <h2>Moderniser sans perdre votre référencement</h2>
-      <p>Le principal risque d'une refonte est de perdre les positions acquises sur Google. Pour l'éviter, je commence par recenser les pages existantes qui reçoivent des visites, je conserve les adresses quand c'est possible, et je mets en place des <strong>redirections permanentes (301)</strong> pour celles qui changent. Les textes qui fonctionnent sont gardés et améliorés plutôt que supprimés.</p>
-      <h2>Ce que la refonte apporte</h2>
-      <ul><li><strong>Design moderne</strong> et cohérent avec votre image.</li><li><strong>Affichage parfait sur mobile</strong>, tablette et ordinateur.</li><li><strong>Chargement rapide</strong>, apprécié des visiteurs et de Google.</li><li><strong>HTTPS</strong> et bonnes pratiques de sécurité.</li><li><strong>Parcours de contact simplifié</strong> pour transformer plus de visiteurs en clients.</li></ul>
-      <h2>Déroulement</h2>
-      <p>Analyse de votre site actuel, proposition de maquette, développement sur une préversion que vous pouvez consulter, puis bascule sur votre adresse habituelle avec vérification des redirections. Trois allers-retours de corrections sont inclus. Pour l'entretien dans la durée, une <a href="./#services">maintenance</a> peut être prévue.</p>
-      <h2>Combien coûte une refonte ?</h2>
-      <p>Une refonte se chiffre comme une création, selon le nombre de pages et les fonctionnalités : à partir de 99 € pour un petit site vitrine. Les repères de prix sont dans le <a href="prix-site-internet-2026.html">guide des prix 2026</a>, et votre tarif exact dans un <a href="./#contact">devis gratuit</a>.</p>
+      <h2 id="s1">Moderniser sans perdre votre référencement</h2>
+      <p>Le principal risque d'une refonte est de perdre les positions acquises sur Google. Pour l'éviter, je recense les pages existantes qui reçoivent des visites, je conserve les adresses quand c'est possible et je mets en place des <strong>redirections permanentes (301)</strong> pour celles qui changent. Les textes qui fonctionnent sont gardés et améliorés plutôt que supprimés.</p>
+      <h2 id="s2">Ce que la refonte apporte</h2>
+      <ul><li><strong>Design moderne</strong> et cohérent avec votre image.</li><li><strong>Affichage parfait sur mobile</strong>, tablette et ordinateur.</li><li><strong>Chargement rapide</strong>, apprécié des visiteurs et de Google.</li><li><strong>HTTPS</strong> et bonnes pratiques de sécurité.</li><li><strong>Parcours de contact simplifié</strong> : boutons d'appel et de devis visibles, formulaire court.</li></ul>
+      <h2 id="s3">Déroulement et prix</h2>
+      <p>Analyse du site actuel, maquette, développement sur une préversion séparée (l'ancien site reste en ligne), puis bascule sur votre adresse habituelle avec vérification des redirections. Trois séries de corrections sont incluses. Une refonte se chiffre comme une création, à partir de 99 € pour un petit site vitrine ; votre tarif exact figure dans un devis gratuit. Pour l'entretien ensuite, voir la <a href="/maintenance-site-web">maintenance de site web</a>.</p>
+      <h2>Comment se déroule le projet</h2>
+      <ol class="steps"><li><span class="step-n">01</span><strong>Audit</strong><span>Pages qui comptent, problèmes, opportunités.</span></li><li><span class="step-n">02</span><strong>Maquette</strong><span>Nouveau design validé avec vous.</span></li><li><span class="step-n">03</span><strong>Préversion</strong><span>Le nouveau site en test, l&#x27;ancien reste en ligne.</span></li><li><span class="step-n">04</span><strong>Bascule</strong><span>Mise en ligne, redirections 301, suivi Google.</span></li></ol>
+      <div class="inline-cta"><p><strong>Votre projet en trois champs.</strong> Décrivez votre besoin, je vous réponds sous 24 h avec un devis gratuit et sans engagement.</p><a href="/#contact" class="btn-gold">Obtenir mon devis</a></div>
+      <h2>Un exemple de réalisation</h2>
+      <a class="case-mini" href="/etudes-de-cas#fred-renovation"><img src="/realisations/fred-renovation.webp" alt="Aperçu du site Fred Rénovation" width="800" height="500" loading="lazy" decoding="async"><span><strong>Fred Rénovation</strong>Site vitrine · Artisan rénovation — lire l'étude de cas →</span></a>
     </div>
   </section>
 
   <section class="section" style="padding-top:60px;">
     <div class="section-tag">Questions fréquentes</div>
-    <h2 class="section-title">Vos questions <em>sur la refonte</em></h2>
+    <h2 class="section-title">Vos questions <em>fréquentes</em></h2>
     <div class="ornament">✦</div>
     <div class="faq-list">
       <details class="faq-item">
@@ -188,39 +192,38 @@
         <summary><h3>Mon site restera-t-il en ligne pendant les travaux ?</h3></summary>
         <div class="faq-answer">Oui. Le nouveau site est développé sur une préversion séparée, et l&#x27;ancien reste en ligne jusqu&#x27;à la bascule finale.</div>
       </details>
+      <details class="faq-item">
+        <summary><h3>Pouvez-vous refaire un site WordPress ?</h3></summary>
+        <div class="faq-answer">Oui, soit en restant sous WordPress, soit en passant à un site codé plus rapide si vous n&#x27;avez pas besoin de modifier souvent le contenu.</div>
+      </details>
     </div>
   </section>
 
+
   <section class="cta" style="border-top:1px solid var(--border);">
-    <h2>Un site neuf, <em>sans repartir de zéro.</em></h2>
-    <p>Devis gratuit et sans engagement, réponse sous 24 h. Vous préférez en parler ? Appelez-moi au <a href="tel:+33631040364">06 31 04 03 64</a>.</p>
-    <a href="./#contact" class="btn-gold">Demander mon devis gratuit</a>
+    <h2>Parlons de <em>votre projet.</em></h2>
+    <p>Devis gratuit et sans engagement, réponse sous 24 h, partout en France. Vous préférez en parler ? Appelez-moi au <a href="tel:+33631040364">06 31 04 03 64</a>.</p>
+    <a href="/#contact" class="btn-gold">Demander mon devis gratuit</a>
   </section>
 
   <section class="related" aria-label="Pages liées">
     <div class="related-grid">
-      <div>
-        <p class="related-title">Création de site par ville</p>
-        <ul><li><a href="creation-site-internet-saint-quentin.html">Site internet à Saint-Quentin</a></li><li><a href="creation-site-internet-laon.html">Site internet à Laon</a></li><li><a href="creation-site-internet-soissons.html">Site internet à Soissons</a></li><li><a href="creation-site-internet-chauny.html">Site internet à Chauny</a></li><li><a href="creation-site-internet-tergnier.html">Site internet à Tergnier</a></li></ul>
-      </div>
-      <div>
-        <p class="related-title">Guides &amp; services</p>
-        <ul><li><a href="developpeur-web-freelance-aisne.html">Développeur web freelance Aisne</a></li><li><a href="prix-site-internet-2026.html">Prix d&#x27;un site internet en 2026</a></li><li><a href="creation-site-artisan.html">Création de site pour artisan</a></li><li><a href="creation-site-commercant.html">Création de site pour commerçant</a></li>
-          <li><a href="./#tarifs">Tarifs et formules</a></li>
-          <li><a href="./#portfolio">Réalisations</a></li>
-        </ul>
-      </div>
+      <div><p class="related-title">Autres services</p><ul><li><a href="/creation-site-internet">Création de site internet</a></li><li><a href="/creation-site-vitrine">Création de site vitrine</a></li><li><a href="/developpeur-web-freelance">Développeur web freelance</a></li><li><a href="/developpeur-react">Développeur React</a></li><li><a href="/developpeur-javascript">Développeur JavaScript</a></li><li><a href="/developpement-application-web">Développement d&#x27;application web</a></li><li><a href="/automatisation-ia">Automatisation IA</a></li><li><a href="/maintenance-site-web">Maintenance de site web</a></li><li><a href="/developpeur-full-stack">Développeur full-stack</a></li></ul></div>
+      <div><p class="related-title">Guides &amp; articles</p><ul><li><a href="/prix-site-internet-2026">Prix d&#x27;un site internet en 2026</a></li><li><a href="/creation-site-artisan">Site pour artisan</a></li><li><a href="/creation-site-commercant">Site pour commerçant</a></li><li><a href="/blog/site-vitrine-ou-site-e-commerce">Site vitrine ou site e-commerce </a></li><li><a href="/blog/cahier-des-charges-site-internet">Cahier des charges site internet </a></li><li><a href="/blog/automatiser-son-entreprise-avec-l-ia">Automatiser son entreprise avec l&#x27;IA </a></li></ul></div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-logo">Jercat</div>
-    <div class="footer-copy">© 2026 — Développeur Web Indépendant</div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-cols">
+      <div><p class="footer-title">Jercat</p><p class="footer-txt">Développeur web freelance. Création de sites internet, applications web et automatisations pour les TPE, indépendants, commerçants, artisans et associations, partout en France.</p>
+        <p class="footer-txt"><a href="tel:+33631040364">📞 06 31 04 03 64</a><br>jercat.bilman@gmail.com</p></div>
+      <div><p class="footer-title">Services</p><ul><li><a href="/creation-site-internet">Création de site internet</a></li><li><a href="/creation-site-vitrine">Création de site vitrine</a></li><li><a href="/developpeur-web-freelance">Développeur web freelance</a></li><li><a href="/developpeur-react">Développeur React</a></li><li><a href="/developpeur-javascript">Développeur JavaScript</a></li><li><a href="/developpement-application-web">Développement d&#x27;application web</a></li><li><a href="/automatisation-ia">Automatisation IA</a></li><li><a href="/maintenance-site-web">Maintenance de site web</a></li><li><a href="/refonte-site-internet">Refonte de site internet</a></li><li><a href="/developpeur-full-stack">Développeur full-stack</a></li></ul></div>
+      <div><p class="footer-title">Ressources</p><ul><li><a href="/prix-site-internet-2026">Prix d&#x27;un site internet en 2026</a></li><li><a href="/creation-site-artisan">Site pour artisan</a></li><li><a href="/creation-site-commercant">Site pour commerçant</a></li><li><a href="/blog">Blog</a></li><li><a href="/etudes-de-cas">Études de cas</a></li></ul></div>
+    </div>
+    <p class="footer-local">Interventions sur place dans l'Aisne : <a href="/creation-site-internet-saint-quentin">Saint-Quentin</a> · <a href="/creation-site-internet-laon">Laon</a> · <a href="/creation-site-internet-soissons">Soissons</a> · <a href="/creation-site-internet-chauny">Chauny</a> · <a href="/creation-site-internet-tergnier">Tergnier</a> · <a href="/developpeur-web-freelance-aisne">Aisne (02)</a></p>
+    <p class="footer-copy">© 2026 Jercat — Développeur web indépendant · <a href="/#contact">Devis gratuit</a> · Mentions légales, confidentialité et CGV sur la <a href="/">page d'accueil</a></p>
   </footer>
-  <div class="legal-bar">
-    <a href="./">Accueil</a>·<a href="./#services">Services</a>·<a href="./#portfolio">Réalisations</a>·<a href="./#tarifs">Tarifs</a>·<a href="./#faq">FAQ</a>·<a href="./#contact">Devis gratuit</a>
-    <div>Jercat — Développeur web freelance · Aisne (02) · <a href="tel:+33631040364">06 31 04 03 64</a> · jercat.bilman@gmail.com · Mentions légales, confidentialité et CGV sur la <a href="./">page d'accueil</a></div>
-  </div>
-
+  <div class="mobile-cta"><a href="tel:+33631040364" class="m-tel">📞 Appeler</a><a href="/#contact" class="m-devis">Devis gratuit</a></div>
 </body>
 </html>

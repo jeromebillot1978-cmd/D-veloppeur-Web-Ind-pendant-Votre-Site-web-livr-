@@ -1,5 +1,5 @@
 {
-  "cleanUrls": false,
+  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     {
@@ -32,11 +32,6 @@
     {
       "source": "/index",
       "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/:page(creation-site-artisan|creation-site-commercant|creation-site-internet-saint-quentin|creation-site-internet-laon|creation-site-internet-soissons|creation-site-internet-chauny|creation-site-internet-tergnier|developpeur-web-freelance-aisne|prix-site-internet-2026|refonte-site-internet)",
-      "destination": "/:page.html",
       "permanent": true
     },
     {
