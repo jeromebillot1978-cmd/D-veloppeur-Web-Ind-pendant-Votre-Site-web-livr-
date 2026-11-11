@@ -452,6 +452,13 @@ CASES = [
    "solution": ["Identité visuelle cyberpunk", "Animation d'introduction sur mesure", "Liens vers les contenus et réseaux"],
    "tech": "Hébergement Vercel",
    "result": "Un site au style marqué, cohérent avec l'univers de la chaîne."},
+  {"id": "chatastrophe-studio", "name": "Chatastrophe Studio", "type": "Application web · Vidéo",
+   "url": "https://generator.jercat.fr/", "img": "realisations/chatastrophe-studio.webp",
+   "where": "Projet personnel — outil grand public",
+   "need": "Permettre à n'importe qui de créer en quelques clics des vidéos humoristiques de chats pour TikTok, YouTube Shorts et Instagram Reels.",
+   "solution": ["Générateur de scénarios absurdes (bibliothèque d'idées ou idée libre)", "Chat animé personnalisable, voix de chat et sous-titres mot par mot", "Mode viral : accroche, coupes rapides, score de viralité, hashtags", "Export vidéo, sous-titres .srt et script .txt, génération directement dans le navigateur"],
+   "tech": "JavaScript, fonctions serverless Vercel (écriture du script par IA en option)",
+   "result": "Une application web complète, utilisable sur ordinateur et mobile, sans installation."},
 ]
 
 # --------------------------------------------------------------------------------------
