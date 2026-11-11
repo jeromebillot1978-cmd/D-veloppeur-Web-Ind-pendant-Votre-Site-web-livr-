@@ -22,9 +22,9 @@ CITY_PAGES = [("creation-site-internet-saint-quentin", "Saint-Quentin"), ("creat
 GUIDES = [("prix-site-internet-2026", "Prix d'un site internet en 2026"), ("creation-site-artisan", "Site pour artisan"),
           ("creation-site-commercant", "Site pour commerçant")]
 
-HEAD_FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com" />\n'
-              '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n'
-              '  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />\n'
+# Polices hébergées sur le site (déclarées dans jercat.css) : plus de Google Fonts bloquant l'affichage
+HEAD_FONTS = ('<link rel="preload" href="/fonts/cinzel.woff2" as="font" type="font/woff2" crossorigin />\n'
+              '  <link rel="preload" href="/fonts/cormorant-italic.woff2" as="font" type="font/woff2" crossorigin />\n'
               '  <link rel="stylesheet" href="/jercat.css" />')
 
 
