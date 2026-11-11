@@ -459,6 +459,13 @@ CASES = [
    "solution": ["Générateur de scénarios absurdes (bibliothèque d'idées ou idée libre)", "Chat animé personnalisable, voix de chat et sous-titres mot par mot", "Mode viral : accroche, coupes rapides, score de viralité, hashtags", "Export vidéo, sous-titres .srt et script .txt, génération directement dans le navigateur"],
    "tech": "JavaScript, fonctions serverless Vercel (écriture du script par IA en option)",
    "result": "Une application web complète, utilisable sur ordinateur et mobile, sans installation."},
+  {"id": "chalaksa", "name": "Le Chalaksa", "type": "Site vitrine · Bar à chats & salon de thé",
+   "url": "https://chalaksa.vercel.app/", "img": "realisations/chalaksa.webp",
+   "where": "Bar à chats, salon de thé et cuisine singapourienne",
+   "need": "Un site à l'ambiance asiatique pour présenter un lieu qui réunit bar à chats, salon de thé, restaurant, hôtel pour chats, adoptions et épicerie fine.",
+   "solution": ["Identité visuelle rouge et or avec chat porte-bonheur, lanternes animées et effet de parallaxe", "Carte du restaurant et du salon de thé en onglets", "Fiches des chats filtrables (adoptables, résidents, réservés) et présentation de l'hôtel félin", "Galerie photo avec visionneuse, badge ouvert/fermé, mode sombre et menu mobile"],
+   "tech": "HTML, CSS, JavaScript, hébergement Vercel",
+   "result": "Un site vitrine immersif et rapide, sans framework, prêt à recevoir photos et coordonnées."},
 ]
 
 # --------------------------------------------------------------------------------------
