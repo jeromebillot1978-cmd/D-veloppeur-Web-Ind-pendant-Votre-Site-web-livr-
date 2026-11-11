@@ -443,6 +443,11 @@
       transform: translateY(-2px);
     }
 
+    /* Boutons : jamais coupés en morceaux quand le texte passe sur deux lignes (petits écrans, grande police) */
+    .btn-gold, .btn-outline-gold { display: inline-block; max-width: 100%; text-align: center; line-height: 1.6; }
+    .tarif-card .btn-gold, .tarif-card .btn-outline-gold { display: block; padding-left: 16px; padding-right: 16px; }
+    @media (max-width: 480px) { .tarif-card .btn-gold, .tarif-card .btn-outline-gold { letter-spacing: 0.18em; } }
+
     /* ── STATS ── */
     .stats {
       display: grid;
