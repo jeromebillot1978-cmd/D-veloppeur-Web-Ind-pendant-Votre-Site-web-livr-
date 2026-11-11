@@ -15,10 +15,10 @@ SERVICES = [
   {
     "slug": "creation-site-internet",
     "nav": "Création de site internet",
-    "title": "Création de site internet professionnel | Jercat",
+    "title": "Création de site internet sur mesure | Jercat",
     "desc": "Création de site internet pour TPE, indépendants, commerçants et associations partout en France. Site vitrine dès 99 €, e-commerce. Devis gratuit sous 24 h.",
     "tag": "Création de site internet · Partout en France, à distance",
-    "h1": "Création de site internet <em>professionnel.</em>",
+    "h1": "Création de site internet <em>sur mesure.</em>",
     "sub": "Un site rapide, beau sur mobile et pensé pour que Google vous trouve. Pour les TPE, indépendants, commerçants, artisans et associations, partout en France. Un seul interlocuteur, un prix fixé avant de commencer.",
     "service_name": "Création de site internet",
     "min_price": "99",
@@ -36,7 +36,7 @@ SERVICES = [
        "</ul>"),
       ("Ce qui est inclus dans chaque site",
        "<ul>"
-       "<li>Design professionnel et 100 % adapté au mobile, à la tablette et à l'ordinateur.</li>"
+       "<li>Design soigné et 100 % adapté au mobile, à la tablette et à l'ordinateur.</li>"
        "<li>Textes structurés pour Google : titres, descriptions, balisage, données structurées.</li>"
        "<li>Formulaire de contact protégé contre le spam, bouton d'appel et liens vers vos réseaux.</li>"
        "<li>Hébergement rapide, certificat HTTPS, mise en ligne sur votre nom de domaine.</li>"
@@ -85,7 +85,7 @@ SERVICES = [
        "</ul>"),
       ("Les trois formules",
        "<ul>"
-       "<li><strong>Essentiel, dès 99 €</strong> : site de 1 à 3 pages, design professionnel, formulaire de contact, mise en ligne incluse, livraison dès 7 jours.</li>"
+       "<li><strong>Essentiel, dès 99 €</strong> : site de 1 à 3 pages, design soigné, formulaire de contact, mise en ligne incluse, livraison dès 7 jours.</li>"
        "<li><strong>Pro, dès 199 €</strong> : jusqu'à 8 pages, design sur mesure, référencement Google optimisé, blog, galerie, formation et un mois de support.</li>"
        "<li><strong>Sur mesure</strong> : prise de rendez-vous, espace membre, plusieurs langues… chiffré dans un devis gratuit.</li>"
        "</ul>"
@@ -421,7 +421,7 @@ CASES = [
    "url": "https://fredrenovation.vercel.app/", "img": "realisations/fred-renovation.webp",
    "where": "Artisan basé en Belgique",
    "need": "Un artisan de la rénovation voulait présenter son savoir-faire, montrer ses chantiers et recevoir des demandes de devis en ligne.",
-   "solution": ["Site vitrine professionnel avec galerie de réalisations", "Formulaire de demande de devis en ligne", "Référencement local optimisé (balises, données structurées, zone d'intervention)", "Affichage optimisé sur mobile"],
+   "solution": ["Site vitrine avec galerie de réalisations", "Formulaire de demande de devis en ligne", "Référencement local optimisé (balises, données structurées, zone d'intervention)", "Affichage optimisé sur mobile"],
    "tech": "Hébergement Vercel",
    "result": "Site en ligne, avec un parcours de contact direct depuis chaque page."},
   {"id": "aux-folies-burger", "name": "Aux Folie's Burger", "type": "Site vitrine + fidélité · Restaurant",
@@ -481,7 +481,7 @@ ARTICLES = [
     "related": ["creation-site-vitrine", "creation-site-internet"],
     "body": [
       ("La différence en une phrase", "<p>Un <strong>site vitrine</strong> présente votre activité et vous fait contacter ; un <strong>site e-commerce</strong> vend directement en ligne, avec paiement et gestion des commandes. Le premier convainc, le second encaisse.</p>"),
-      ("Quand un site vitrine suffit", "<ul><li>Vous vendez un service sur devis (artisan, consultant, prestataire).</li><li>Vos clients doivent vous appeler ou venir sur place (restaurant, salon, cabinet).</li><li>Vous êtes une association qui veut informer et recruter des adhérents.</li><li>Vous débutez et voulez une présence professionnelle rapidement, avec un petit budget.</li></ul><p>Un site vitrine peut quand même inclure une prise de rendez-vous, un formulaire de devis détaillé ou un menu interactif.</p>"),
+      ("Quand un site vitrine suffit", "<ul><li>Vous vendez un service sur devis (artisan, consultant, prestataire).</li><li>Vos clients doivent vous appeler ou venir sur place (restaurant, salon, cabinet).</li><li>Vous êtes une association qui veut informer et recruter des adhérents.</li><li>Vous débutez et voulez une présence en ligne rapidement, avec un petit budget.</li></ul><p>Un site vitrine peut quand même inclure une prise de rendez-vous, un formulaire de devis détaillé ou un menu interactif.</p>"),
       ("Quand passer à l'e-commerce", "<ul><li>Vous vendez des produits physiques ou numériques à des clients qui ne viennent pas en magasin.</li><li>Vous recevez déjà des commandes par message et passez du temps à les gérer à la main.</li><li>Vous voulez vendre en dehors de vos horaires d'ouverture et au-delà de votre zone.</li></ul>"),
       ("Prix et délais", "<p>À titre indicatif, mes formules commencent à 99 € pour un site vitrine de 1 à 3 pages et à 300 € pour une boutique en ligne ; une boutique demande plus de travail (fiches produits, paiement, livraison, conditions de vente). Comptez environ 7 jours pour un site vitrine et 2 à 4 semaines pour une boutique. Les repères du marché sont détaillés dans le <a href=\"/prix-site-internet-2026\">guide des prix 2026</a>.</p>"),
       ("La solution intermédiaire", "<p>Beaucoup d'entreprises commencent par un site vitrine bien référencé, puis ajoutent une petite boutique quand la demande est là. C'est souvent le choix le plus rentable : vous testez l'intérêt de vos clients sans investir tout de suite dans une boutique complète.</p>"),
@@ -496,7 +496,7 @@ ARTICLES = [
     "related": ["creation-site-internet", "developpement-application-web"],
     "body": [
       ("Pourquoi un cahier des charges ?", "<p>Sans description claire, chaque prestataire imagine un projet différent, et vous recevez des devis impossibles à comparer. Un cahier des charges n'a pas besoin d'être long : une ou deux pages qui répondent aux questions ci-dessous suffisent pour une TPE ou une association.</p>"),
-      ("Les 10 questions à vous poser", "<ol><li><strong>Qui êtes-vous ?</strong> Activité, clients, ce qui vous différencie.</li><li><strong>À quoi doit servir le site ?</strong> Recevoir des devis, vendre, informer, recruter.</li><li><strong>Qui sont vos visiteurs ?</strong> Particuliers, professionnels, zone géographique.</li><li><strong>Quelles pages ?</strong> Listez-les : accueil, services, réalisations, contact…</li><li><strong>Quelles fonctionnalités ?</strong> Formulaire, rendez-vous, paiement, espace client, blog.</li><li><strong>Qui fournit les contenus ?</strong> Textes, photos, logo : vous, ou le prestataire.</li><li><strong>Quels sites aimez-vous ?</strong> Deux ou trois exemples, et pourquoi.</li><li><strong>Faut-il modifier le site soi-même ?</strong> Souvent, rarement, jamais.</li><li><strong>Quel budget ?</strong> Une fourchette évite de perdre du temps des deux côtés.</li><li><strong>Quel délai ?</strong> Une date de lancement, un salon, une ouverture.</li></ol>"),
+      ("Les 10 questions à vous poser", "<ol><li><strong>Qui êtes-vous ?</strong> Activité, clients, ce qui vous différencie.</li><li><strong>À quoi doit servir le site ?</strong> Recevoir des devis, vendre, informer, recruter.</li><li><strong>Qui sont vos visiteurs ?</strong> Particuliers, entreprises, zone géographique.</li><li><strong>Quelles pages ?</strong> Listez-les : accueil, services, réalisations, contact…</li><li><strong>Quelles fonctionnalités ?</strong> Formulaire, rendez-vous, paiement, espace client, blog.</li><li><strong>Qui fournit les contenus ?</strong> Textes, photos, logo : vous, ou le prestataire.</li><li><strong>Quels sites aimez-vous ?</strong> Deux ou trois exemples, et pourquoi.</li><li><strong>Faut-il modifier le site soi-même ?</strong> Souvent, rarement, jamais.</li><li><strong>Quel budget ?</strong> Une fourchette évite de perdre du temps des deux côtés.</li><li><strong>Quel délai ?</strong> Une date de lancement, un salon, une ouverture.</li></ol>"),
       ("Les erreurs à éviter", "<ul><li>Demander « un site comme Amazon » sans préciser les fonctions vraiment utiles.</li><li>Oublier qui sera propriétaire du nom de domaine et du site.</li><li>Ne pas prévoir l'après : maintenance, mises à jour, modifications.</li><li>Négliger le référencement : il se prépare dès la conception.</li></ul>"),
       ("Pas le temps de l'écrire ?", "<p>Le formulaire de devis du site reprend l'essentiel de ces questions. Remplissez-le en trois champs, je complète avec vous lors d'un échange gratuit et je vous envoie un devis détaillé sous 24 h. Pour un outil plus complexe, voir le <a href=\"/developpement-application-web\">développement d'application web</a>.</p>"),
     ],
