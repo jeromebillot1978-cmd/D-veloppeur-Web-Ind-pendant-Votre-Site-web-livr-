@@ -46,7 +46,7 @@ SERVICES = [
       ("Partout en France, à distance",
        "<p>Je travaille entièrement à distance : un premier appel ou une visio pour comprendre votre projet, une maquette à valider, puis une préversion en ligne que vous consultez depuis votre téléphone ou votre ordinateur. Vous n'avez pas besoin de vous déplacer, et vous parlez toujours à la même personne. J'ai par exemple réalisé le site d'un artisan basé en Belgique, <a href=\"/etudes-de-cas#fred-renovation\">Fred Rénovation</a>.</p>"),
       ("Combien coûte la création d'un site internet ?",
-       "<p>Mes formules démarrent à <strong>99 €</strong> pour un site vitrine de 1 à 3 pages, <strong>199 €</strong> pour un site jusqu'à 8 pages avec blog, et <strong>300 €</strong> pour une boutique en ligne. Ces prix sont bas parce qu'il n'y a ni agence, ni locaux, ni commerciaux : vous ne payez que le travail. Le prix définitif est fixé dans un devis gratuit, avant tout démarrage, et vous payez 50 % à la commande, 50 % à la livraison. Les repères du marché sont détaillés dans le <a href=\"/prix-site-internet-2026\">guide des prix 2026</a>.</p>"),
+       "<p>Mes formules démarrent à <strong>99 €</strong> pour un site vitrine de 1 à 3 pages, <strong>199 €</strong> pour un site jusqu'à 8 pages avec blog, et <strong>300 €</strong> pour une boutique en ligne. Ces prix sont bas parce qu'il n'y a ni agence, ni locaux, ni commerciaux : vous ne payez que le travail. Le prix définitif est fixé dans un devis gratuit, avant tout démarrage, et vous payez en trois fois : 30 % au démarrage, 40 % à la validation de la préversion, 30 % à la livraison. Les repères du marché sont détaillés dans le <a href=\"/prix-site-internet-2026\">guide des prix 2026</a>.</p>"),
     ],
     "steps": [("Échange gratuit", "Appel ou visio de 20 minutes pour cerner vos objectifs et votre budget."),
               ("Devis et maquette", "Un devis clair et une première maquette à valider."),
@@ -65,10 +65,10 @@ SERVICES = [
     "slug": "creation-site-vitrine",
     "nav": "Création de site vitrine",
     "title": "Création de site vitrine dès 99 € | Jercat",
-    "desc": "Site vitrine sur mesure, rapide et optimisé Google pour indépendants, artisans, commerçants et associations partout en France. Dès 99 €, livré en 7 jours.",
-    "tag": "Site vitrine · Dès 99 € · Livré en 7 jours",
+    "desc": "Site vitrine sur mesure, rapide et optimisé Google pour indépendants, artisans, commerçants et associations partout en France. Dès 99 €, livré dès 7 jours.",
+    "tag": "Site vitrine · Dès 99 € · Livré dès 7 jours",
     "h1": "Création de <em>site vitrine.</em>",
-    "sub": "Présentez votre activité, rassurez vos visiteurs et recevez des demandes de contact. Un site vitrine sur mesure, livré en 7 jours, partout en France.",
+    "sub": "Présentez votre activité, rassurez vos visiteurs et recevez des demandes de contact. Un site vitrine sur mesure, livré dès 7 jours, partout en France.",
     "service_name": "Création de site vitrine",
     "min_price": "99",
     "sections": [
@@ -85,7 +85,7 @@ SERVICES = [
        "</ul>"),
       ("Les trois formules",
        "<ul>"
-       "<li><strong>Essentiel, dès 99 €</strong> : site de 1 à 3 pages, design professionnel, formulaire de contact, mise en ligne incluse, livraison en 7 jours.</li>"
+       "<li><strong>Essentiel, dès 99 €</strong> : site de 1 à 3 pages, design professionnel, formulaire de contact, mise en ligne incluse, livraison dès 7 jours.</li>"
        "<li><strong>Pro, dès 199 €</strong> : jusqu'à 8 pages, design sur mesure, référencement Google optimisé, blog, galerie, formation et un mois de support.</li>"
        "<li><strong>Sur mesure</strong> : prise de rendez-vous, espace membre, plusieurs langues… chiffré dans un devis gratuit.</li>"
        "</ul>"
@@ -144,7 +144,7 @@ SERVICES = [
     "faq": [
       ("Travaillez-vous uniquement à distance ?", "Oui, pour la grande majorité des projets : appels, visios, emails et préversion en ligne suffisent. Je peux me déplacer dans l'Aisne et les environs si nécessaire."),
       ("Êtes-vous disponible pour une mission courte ?", "Oui, pour une correction, une nouvelle page, une intégration ou une petite fonctionnalité. Décrivez le besoin dans le formulaire, je vous réponds sous 24 h."),
-      ("Signez-vous un devis et une facture ?", "Oui, chaque projet fait l'objet d'un devis détaillé avant démarrage puis d'une facture, avec paiement en deux fois."),
+      ("Signez-vous un devis et une facture ?", "Oui, chaque projet fait l'objet d'un devis détaillé avant démarrage puis d'une facture, avec paiement en trois fois : 30 % au démarrage, 40 % à la validation de la préversion, 30 % à la livraison."),
       ("Pouvez-vous reprendre un site créé par quelqu'un d'autre ?", "Oui. Je fais d'abord un état des lieux, puis je vous propose de le corriger, de le maintenir ou de le refaire selon ce qui est le plus rentable pour vous."),
     ],
     "case": "bon-plan-et-reduction",

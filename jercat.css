@@ -1072,7 +1072,8 @@
     .post-card span { color: #b9ae96; font-size: 14px; line-height: 1.6; }
     .post-card .post-cat { color: var(--gold); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; }
 
-    .site-footer { padding: 60px 80px 30px; border-top: 1px solid var(--border); background: var(--surface); text-align: left; }
+    .site-footer { display: block; padding: 60px 80px 30px; border-top: 1px solid var(--border); background: var(--surface); text-align: left; }
+    .site-footer .footer-copy { font-family: 'DM Sans', sans-serif; letter-spacing: 0.02em; text-transform: none; }
     .footer-cols { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; }
     .site-footer a { color: #c9bfa8; text-decoration: none; }
     .site-footer a:hover { color: var(--gold-light); }
